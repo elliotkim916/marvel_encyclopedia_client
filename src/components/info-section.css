@@ -1,0 +1,26 @@
+header {
+    padding: 45px 15px;
+  }
+  
+div {
+    background-color: #bbb;
+    padding: 30px 15px;
+    min-height: 200px;
+}
+
+div:nth-child(even) {
+    background-color: #ddd;
+} 
+  
+p {
+    max-width: 650px;
+    margin: 0 auto;
+}
+  
+p + p {
+    margin-top: 15px;
+}
+
+.title {
+    background-color: white;
+}

@@ -1,0 +1,14 @@
+section {
+    background-color: #bbb;
+    padding: 30px 15px;
+    min-height: 200px;
+}
+
+a {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+header {
+    padding: 45px 15px;
+}

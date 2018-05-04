@@ -1,0 +1,9 @@
+header {
+    padding: 45px 15px;
+}
+
+section {
+    background-color: #bbb;
+    padding: 30px 15px;
+    min-height: 200px;
+}

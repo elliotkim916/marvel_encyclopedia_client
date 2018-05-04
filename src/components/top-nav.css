@@ -1,0 +1,18 @@
+nav {
+    background-color: #aaa;
+    padding: 1% 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  float: right;
+  margin-right: 15px;
+}

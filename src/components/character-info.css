@@ -1,0 +1,15 @@
+img {
+    height: 350px;
+    width: 200px;
+}
+  
+.searched-img {
+    height: 350px;
+    width: 300px;
+}
+
+section {
+    background-color: #bbb;
+    padding: 30px 15px;
+    min-height: 200px;
+}

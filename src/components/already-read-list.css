@@ -1,0 +1,11 @@
+header {
+    padding: 45px 15px;
+}
+
+img + p {
+    margin-top: 25px;
+}
+
+button {
+    margin-bottom: 25px;
+}
