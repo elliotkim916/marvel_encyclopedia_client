@@ -3,7 +3,7 @@ import './additional-links.css';
 
 export default function AdditionalLinks(props) {
     return (
-        <section>
+        <section class="additional-links-section">
             <header>
                 <h3>Additional Links</h3>
             </header>

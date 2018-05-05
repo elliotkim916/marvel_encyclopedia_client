@@ -6,12 +6,12 @@ export function NotesList(props) {
     const notes = props.notes.map((note, index) => (
         <li key={index}>
             {note.title}
-            <a href="#note"><p>[<em>Placeholder for notes 1</em>]</p></a>
+            <p>{note.content}</p>
         </li>
     ));
 
     return (
-        <section>
+        <section class="notes-section">
             <header>
                 <h3>Your Notes</h3>
             </header>

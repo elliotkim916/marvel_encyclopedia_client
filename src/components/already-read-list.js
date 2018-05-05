@@ -7,7 +7,7 @@ export function AlreadyReadList(props) {
         <li key={index}>
             <form>
                 <a href="#already-read-list">
-                <img src ="{comic.img}" alt="comic book" />
+                <img src ={comic.img} alt="comic book" />
                 <p>{comic.title}</p>
                 </a>
                 <button type="submit">Remove</button>
@@ -16,7 +16,7 @@ export function AlreadyReadList(props) {
     ));
 
     return (
-    <section>
+    <section class="already-read-section">
         <header>
             <h3>Issues You've Read</h3>
         </header>
