@@ -2,16 +2,6 @@ img {
     height: 350px;
     width: 200px;
 }
-  
-.searched-img {
-    height: 350px;
-    width: 300px;
-}
-  
-a {
-    margin-right: 10px;
-    margin-left: 10px;
-}
 
 .comics-form {
     margin-bottom: 25px;
@@ -19,4 +9,10 @@ a {
 
 ul {
     list-style-type: none;
+}
+
+.comics-list-section {
+    background-color: #bbb;
+    padding: 30px 15px;
+    min-height: 200px;
 }
