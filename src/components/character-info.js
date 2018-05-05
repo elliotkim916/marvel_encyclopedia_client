@@ -3,7 +3,7 @@ import './character-info.css';
 
 export default function CharacterInfo(props) {
     return (
-        <section>
+        <section class="character-info-section">
             <img 
                 src="http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg" 
                 alt="searched character" 

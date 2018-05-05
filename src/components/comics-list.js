@@ -22,9 +22,15 @@ export function ComicsList(props) {
     ));
 
     return (
-        <ul>
-            {allComics}
-        </ul>
+        <section class="comics-list-section">
+            <header>
+                <h3>Comics List</h3>
+            </header>
+
+            <ul>
+                {allComics}
+            </ul>
+        </section>
     );
 }
 
