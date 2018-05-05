@@ -17,12 +17,12 @@ export function ReadLaterList(props) {
     ));
 
     return (
-        <section class="read-later-section">
+        <section className="read-later-section">
             <header>
                 <h3>Read For Later</h3>
             </header>
 
-            <ul>
+            <ul className="not-done-list">
                 {unreadComics}
             </ul>
         </section>

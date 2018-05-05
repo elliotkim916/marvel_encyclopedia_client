@@ -11,12 +11,12 @@ export function NotesList(props) {
     ));
 
     return (
-        <section class="notes-section">
+        <section className="notes-section">
             <header>
                 <h3>Your Notes</h3>
             </header>
 
-            <ul>
+            <ul className="notes-list">
                 {notes}
             </ul>
         </section>

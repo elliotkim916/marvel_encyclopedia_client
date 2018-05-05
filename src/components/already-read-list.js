@@ -16,12 +16,12 @@ export function AlreadyReadList(props) {
     ));
 
     return (
-    <section class="already-read-section">
+    <section className="already-read-section">
         <header>
             <h3>Issues You've Read</h3>
         </header>
 
-        <ul>
+        <ul className="done-list">
             {readComics}
         </ul>
     </section>
