@@ -16,3 +16,7 @@ a {
 .comics-form {
     margin-bottom: 25px;
 }
+
+ul {
+    list-style-type: none;
+}
