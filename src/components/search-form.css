@@ -2,8 +2,7 @@ header {
     padding: 45px 15px;
 }
 
-input {
-    width: 100%;
+.search-input {
     max-width: 250px;
 }
   

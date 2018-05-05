@@ -1,18 +1,23 @@
 img {
     height: 350px;
-    width: 200px;
+    width: 225px;
 }
 
 .comics-form {
     margin-bottom: 25px;
+    padding-right: 40px;
 }
 
 ul {
     list-style-type: none;
 }
 
+#bookmark {
+    margin-left: 15px;
+}
+
 .comics-list-section {
     background-color: #bbb;
-    padding: 30px 15px;
+    padding-bottom: 15px;
     min-height: 200px;
 }
