@@ -1,5 +1,6 @@
-ul {
+.not-done-list {
     list-style-type: none;
+    padding-right: 40px;
 }
 
 img {
@@ -9,6 +10,6 @@ img {
 
 .read-later-section {
     background-color: #bbb;
-    padding: 30px 15px;
+    padding-bottom: 15px;
     min-height: 200px;
 }

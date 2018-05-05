@@ -1,9 +1,14 @@
-header {
+/* header {
     padding: 45px 15px;
 }
-  
+   */
 .notes-section {
     background-color: #bbb;
-    padding: 30px 15px;
+    padding-bottom: 15px;
     min-height: 200px;
+}
+
+.notes-list {
+    padding-right: 40px;
+    list-style-type: none;
 }
