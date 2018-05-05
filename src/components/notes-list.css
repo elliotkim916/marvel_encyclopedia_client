@@ -11,4 +11,6 @@
 .notes-list {
     padding-right: 40px;
     list-style-type: none;
+    max-width: 450px;
+    margin: 0 auto;
 }
