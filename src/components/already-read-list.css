@@ -9,3 +9,9 @@ img + p {
 button {
     margin-bottom: 25px;
 }
+
+.already-read-section {
+    background-color: #ddd;
+    padding: 30px 15px;
+    min-height: 200px;
+}

@@ -1,3 +1,14 @@
 ul {
     list-style-type: none;
 }
+
+img {
+    height: 350px;
+    width: 200px;
+}
+
+.read-later-section {
+    background-color: #bbb;
+    padding: 30px 15px;
+    min-height: 200px;
+}
