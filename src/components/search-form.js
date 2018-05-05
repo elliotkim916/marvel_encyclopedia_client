@@ -9,7 +9,7 @@ export default function SearchForm(props) {
             </header>
 
             <form class="search-form">
-                <input type="text" placeholder="e.g. Thor" name="search-character" />
+                <input type="text" placeholder="e.g. Thor" name="search-character" className="search-input" />
                 <button type="submit">Search</button>
             </form>
       </section>
