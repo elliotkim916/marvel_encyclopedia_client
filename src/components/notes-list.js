@@ -5,7 +5,7 @@ export default function NotesList(props) {
     const notes = props.notes.map((note, index) => (
         <li key={index}>
             {note}
-            <a href="#"><p>[<em>Placeholder for notes 1</em>]</p></a>
+            <a href="#note"><p>[<em>Placeholder for notes 1</em>]</p></a>
         </li>
     ));
 

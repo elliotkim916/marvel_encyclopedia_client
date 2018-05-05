@@ -3,7 +3,7 @@ import './sign-up.css';
 
 export default function SignUp(props) {
     return (
-        <section>
+        <section id="sign-up">
             <header>
                 <h3>Being your Marvel journey now!</h3>
             </header>

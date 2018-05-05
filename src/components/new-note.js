@@ -1,7 +1,7 @@
 import React from 'react';
 import './new-note.css';
 
-export function NewNote(props) {
+export default function NewNote(props) {
     return (
         <section class="notes-section">
             <header>

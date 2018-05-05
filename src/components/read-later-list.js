@@ -5,7 +5,7 @@ export default function ReadLaterList(props) {
     const unreadComics = props.unreadComics.map((comic, index) => (
         <li key={index}>
             <form>
-                <a href="#"><img src="//:0" alt="picture of read later 1" />
+                <a href="#read-later-list"><img src="//:0" alt="read later" />
                 <p>[<em>Placeholder for read later 1</em>]</p>
                 </a>
                 {comic}

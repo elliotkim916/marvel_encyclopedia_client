@@ -1,14 +1,14 @@
 import React from 'react';
 import './comics-list.css';
 
-export function ComicsList(props) {
+export default function ComicsList(props) {
     const allComics = props.allComics.map((comic, index) => (
         <li key={index}>
             <form class="comics-form">
-                <a href="#">
+                <a href="#comic-searched">
                     <img 
                         src="https://i.pinimg.com/originals/65/9c/b5/659cb5c324b48b5b80cd3515e9998030.jpg" 
-                        alt="picture of comic book issue" />
+                        alt="comic book issue" />
                     <p>Comic Book Issue Title</p>
                 </a>
                 {comic}
