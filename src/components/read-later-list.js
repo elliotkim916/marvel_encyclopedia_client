@@ -8,7 +8,7 @@ export function ReadLaterList(props) {
             <form>
                 <a href="#read-later-list">
                     <img src={comic.img} alt="read later" />
-                    <p>{comic.title}</p>
+                    <p className="not-done-title">{comic.title}</p>
                 </a>
                
                 <button type="submit">Remove</button>
