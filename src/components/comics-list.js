@@ -10,13 +10,13 @@ export function ComicsList(props) {
                     <img 
                         src={comic.img} 
                         alt="comic book issue" />
-                    <p>{comic.title}</p>
+                    <p className="comic-title">{comic.title}</p>
                 </a>
                 
                 <input type="radio" id="already-read" name="comic" />
                 <label for="already-read"><span>Already Read</span></label>
                 <input type="radio" id="bookmark" name="comic" />
-                <label for="bookmark"><span>Bookmark</span></label>
+                <label for="bookmark"><span>Read Later</span></label>
             </form>
         </li>
     ));

@@ -8,7 +8,7 @@ export function AlreadyReadList(props) {
             <form>
                 <a href="#already-read-list">
                 <img src ={comic.img} alt="comic book" />
-                <p>{comic.title}</p>
+                <p className="done-comic-title">{comic.title}</p>
                 </a>
                 <button type="submit">Remove</button>
             </form>
