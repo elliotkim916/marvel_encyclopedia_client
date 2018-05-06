@@ -1,22 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-// import SignUp from './components/sign-up';
-// 
-import Homepage from './components/homepage';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App from './components/App';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 
 const initialState = {
     notes: [
         {
-            title: 'note 1',
+            title: 'Note 1',
             content: 'Integer fermentum libero ac neque tempor, ut varius ligula convallis. Aliquam ac sapien nisi. Nunc lacinia condimentum sodales. Curabitur aliquet purus et tincidunt ullamcorper. Vivamus ante odio, tempus at placerat eget, placerat et sapien. In id lectus sit amet ligula consequat hendrerit ut nec ipsum. Donec quis lectus fringilla, congue augue eget, malesuada velit'    
         },
         {
-            title: 'note 2',
+            title: 'Note 2',
             content: 'Integer fermentum libero ac neque tempor, ut varius ligula convallis. Aliquam ac sapien nisi. Nunc lacinia condimentum sodales. Curabitur aliquet purus et tincidunt ullamcorper. Vivamus ante odio, tempus at placerat eget, placerat et sapien. In id lectus sit amet ligula consequat hendrerit ut nec ipsum. Donec quis lectus fringilla, congue augue eget, malesuada velit'
         }
     ],
@@ -36,29 +32,29 @@ const initialState = {
     ],
     readComics: [
         {
-            img: '//:0',
+            img: 'https://readcomics.io/images/manga/avengers-disassembled-thor/1/1.jpg',
             title: 'thor issue 4'
         },
         {
-            img: '//:0',
+            img: 'http://www.openlettersmonthly.com/stevereads/wp-content/uploads/2010/09/thor-615.jpg',
             title: 'thor issue 5'
         },
         {
-            img: '//:0',
+            img: 'https://fsmedia.imgix.net/d7/df/8b/b3/1fb1/4b69/8cc8/46c45b84f333/thor-112-featuring-thor-battling-the-hulk.jpeg',
             title: 'thor issue 6'
         }
     ],
     unreadComics: [
         {
-            img: '//:0',
+            img: 'https://static.comicvine.com/uploads/scale_medium/11/117763/2466955-ironman001.jpg',
             title: 'iron man 1'
         },
         {
-            img: '//:0',
+            img: 'https://static.comicvine.com/uploads/scale_small/0/4/41288-6504-46598-1-iron-man.jpg',
             title: 'iron man 2'
         },
         {
-            img: '//:0',
+            img: 'https://d1466nnw0ex81e.cloudfront.net/n_iv/600/1330017.jpg',
             title: 'iron man 3'
         }
     ]
@@ -68,7 +64,7 @@ const store = createStore(state => state, initialState);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Homepage />
+        <App />
     </Provider>, 
     document.getElementById('root')
 );
