@@ -4,14 +4,14 @@ import './info-section.css';
 export default function InfoSection(props) {
     return (
         <section>
-            <div class="title">
+            <div className="info title">
             <header>
                 <h1>Marvel Encyclopedia</h1>
                 <h2>Your source for all things Marvel.</h2>
             </header>
             </div>
 
-            <div>
+            <div className="info">
                 <header>
                     <h3>Search and learn more about any Marvel character</h3>
                 </header>
@@ -19,7 +19,7 @@ export default function InfoSection(props) {
                 <p>New to the Marvel Cinematic Universe?  Saw a new Marvel show and have no idea who that character is?  Marvel Encyclopedia allows you to go deep and learn about any Marvel Comics character with biographies, pictures, & issues of comic books the character was in.</p>
             </div>
       
-            <div>
+            <div className="info">
                 <header>
                     <h3>Go deep & take in only what you want</h3>
                 </header>
@@ -27,7 +27,7 @@ export default function InfoSection(props) {
                 <p>Every Marvel character has a rich history and is involved in many stories created by numerous authors.  If there are certain details you want to take away from your search, you can take notes, save that information, and look back at what you want to remember.</p>
             </div>
       
-            <div>
+            <div className="info">
                 <header>
                     <h3>Keep track of the issues you've read & want to read later</h3>
                 </header>
