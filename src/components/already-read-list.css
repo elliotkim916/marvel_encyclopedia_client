@@ -1,11 +1,15 @@
-/* header {
+header {
     padding: 45px 15px;
-} */
+}
 
 img + p {
     margin-top: 25px;
 }
 
+img {
+    height: 350px;
+    width: 200px;
+}
 button {
     margin-bottom: 25px;
 }
@@ -13,10 +17,13 @@ button {
 .already-read-section {
     background-color: #ddd;
     padding-bottom: 15px;
-    min-height: 200px;
-}
+} 
 
 .done-list {
     padding-right: 40px;
     list-style-type: none;
+}
+
+.done-comic-title {
+    color: black;
 }

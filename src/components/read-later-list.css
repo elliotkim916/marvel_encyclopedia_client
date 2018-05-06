@@ -3,13 +3,12 @@
     padding-right: 40px;
 }
 
-img {
-    height: 350px;
-    width: 200px;
-}
-
 .read-later-section {
     background-color: #bbb;
     padding-bottom: 15px;
     min-height: 200px;
+}
+
+.not-done-title {
+    color: black;
 }

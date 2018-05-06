@@ -1,8 +1,4 @@
-img {
-    height: 350px;
-    width: 200px;
-}
-  
+ 
 .searched-img {
     height: 350px;
     width: 300px;
@@ -11,7 +7,6 @@ img {
 .character-info-section {
     background-color: #ddd;
     padding: 30px 15px;
-    min-height: 200px;
 }
 
 p {

@@ -2,12 +2,12 @@ header {
     padding: 45px 15px;
 }
   
-div {
+.info {
     background-color: #bbb;
-    min-height: 200px;
+    padding: 0px 20px 45px 20px;
 }
 
-div:nth-child(even) {
+.info:nth-child(even) {
     background-color: #ddd;
 } 
   

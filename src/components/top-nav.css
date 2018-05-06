@@ -1,16 +1,16 @@
-nav {
+.top-nav {
     background-color: #aaa;
 }
 
 ul {
   list-style-type: none;
 }
-
-li {
+ 
+.nav-list-item {
   float: right;
   margin-right: 15px;
   text-decoration: none;
-}
+} 
 
 a:link {
   text-decoration: none;

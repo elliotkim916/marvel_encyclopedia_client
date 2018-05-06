@@ -1,8 +1,5 @@
-header {
-    padding: 45px 15px;
-}
-
 #sign-up {
+    margin-top: 300px;
     background-color: #bbb;
     padding: 30px 15px;
     min-height: 200px;

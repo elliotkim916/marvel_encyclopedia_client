@@ -3,10 +3,14 @@ header {
 }
 
 .search-input {
-    max-width: 250px;
+    width: 250px;
+    height: 35px;
 }
   
-button {
+.search-btn {
+    position: relative;
+    bottom: 1px;
+    height: 35px;
     margin-bottom: 25px;
     margin-left: 10px;
 }
