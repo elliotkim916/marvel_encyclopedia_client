@@ -1,7 +1,10 @@
-import {MARVEL_API_BASE_URL} from '../config';
-import {MARVEL_CHARACTERS_ENDPOINT} from '../config';
-import {PUBLIC_KEY} from '../config';
-// import {PRIVATE_KEY} from '../config';
+import {
+    MARVEL_API_BASE_URL, 
+    MARVEL_CHARACTERS_ENDPOINT,
+    PUBLIC_KEY,
+    TS,
+    HASH
+} from '../config';
 
 export const SEARCH_CHARACTER_REQUEST = 'SEARCH_CHARACTER_REQUEST';
 export const searchCharacterRequest = () => ({
@@ -21,13 +24,13 @@ export const searchCharacterError = error => ({
 });
 
 function search(name) {
-    return fetch(`${MARVEL_API_BASE_URL}${MARVEL_CHARACTERS_ENDPOINT}?name=${name}&apikey=${PUBLIC_KEY}`)
+    return fetch(`${MARVEL_API_BASE_URL}${MARVEL_CHARACTERS_ENDPOINT}?ts=${TS}&name=${name}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
     .then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
         }
         return res.json();
-    }).then(data => console.log(data));
+    }).then(data => data.data.results[0]);
 }
 
 export const searchCharacter = name => dispatch => {
