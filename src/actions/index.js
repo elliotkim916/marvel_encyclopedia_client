@@ -1,4 +1,3 @@
-import React from 'react';
 import {MARVEL_API_BASE_URL} from '../config';
 import {MARVEL_CHARACTERS_ENDPOINT} from '../config';
 import {PUBLIC_KEY} from '../config';
