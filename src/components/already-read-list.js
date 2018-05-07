@@ -29,7 +29,7 @@ export function AlreadyReadList(props) {
 }
 
 const mapStateToProps = state => ({
-    readComics: state.readComics
+    readComics: state.search.readComics
 });
 
 export default connect(mapStateToProps)(AlreadyReadList);

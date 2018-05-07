@@ -35,7 +35,7 @@ export function ComicsList(props) {
 }
 
 const mapStateToProps = state => ({
-    allComics: state.allComics
+    allComics: state.search.allComics
 });
 
 export default connect(mapStateToProps)(ComicsList);

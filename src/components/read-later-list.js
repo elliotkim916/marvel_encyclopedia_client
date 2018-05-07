@@ -30,7 +30,7 @@ export function ReadLaterList(props) {
 }
 
 const mapStateToProps = state => ({
-    unreadComics: state.unreadComics
+    unreadComics: state.search.unreadComics
 });
 
 export default connect(mapStateToProps)(ReadLaterList);
