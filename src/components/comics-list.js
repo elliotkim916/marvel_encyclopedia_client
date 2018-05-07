@@ -5,7 +5,7 @@ import './comics-list.css';
 export function ComicsList(props) {
     const allComics = props.allComics.map((comic, index) => (
         <li key={index}>
-            <form class="comics-form">
+            <form className="comics-form">
                 <a href="#comic-searched">
                     <img 
                         src={comic.img} 
@@ -14,15 +14,15 @@ export function ComicsList(props) {
                 </a>
                 
                 <input type="radio" id="already-read" name="comic" />
-                <label for="already-read"><span>Already Read</span></label>
+                <label htmlFor="already-read"><span>Already Read</span></label>
                 <input type="radio" id="bookmark" name="comic" />
-                <label for="bookmark"><span>Read Later</span></label>
+                <label htmlFor="bookmark"><span>Read Later</span></label>
             </form>
         </li>
     ));
 
     return (
-        <section class="comics-list-section">
+        <section className="comics-list-section">
             <header>
                 <h3>Comics List</h3>
             </header>
