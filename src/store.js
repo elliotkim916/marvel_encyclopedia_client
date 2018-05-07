@@ -67,6 +67,8 @@ export default createStore(
     applyMiddleware(thunk)
 );
 
+// createStore adds characterReducer to our store, and uses applyMiddleware to add Redux Thunk to our store too 
+
 // Redux Thunk allows action creators to return functions to be run
 // The functions can run asynchronous code like our AJAX request
 
