@@ -1,15 +1,25 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './character-info.css';
 
-export default function CharacterInfo(props) {
+export function CharacterInfo(props) {
+    // console.log(props.characterInfo.character.thumbnail);
+    const imgUrl = props.characterInfo.character.thumbnail;
+    console.log(imgUrl);
     return (
-        <section class="character-info-section">
+        <section className="character-info-section">
             <img 
-                src="http://i.annihil.us/u/prod/marvel/i/mg/d/d0/5269657a74350.jpg" 
+                src={imgUrl}
                 alt="searched character" 
-                class="searched-img" />
-            <h3>Thor</h3>
-            <p>Praesent sagittis a mi sit amet dictum. Donec orci nibh, dignissim in leo et, congue semper mauris. Donec elit lacus, dictum et placerat eget, rhoncus sodales erat. Curabitur sit amet placerat neque, a tempus mi. Suspendisse a tempus dolor. Nullam porttitor nisi sed justo dictum consequat. Etiam sed congue felis.</p>
+                className="searched-img" />
+            <h2>{props.characterInfo.character.name}</h2>
+            <p>{props.characterInfo.character.description}</p>
         </section>
     )
 }
+
+const mapStateToProps = state => ({
+    characterInfo: state.character
+});
+
+export default connect(mapStateToProps)(CharacterInfo);

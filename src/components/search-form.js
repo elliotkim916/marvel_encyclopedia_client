@@ -8,6 +8,7 @@ export class SearchForm extends React.Component {
         e.preventDefault();
         this.input.value.trim();
         this.props.dispatch(searchCharacter(this.input.value));
+        this.input.value = '';
     }
 
     render() {
