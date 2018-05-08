@@ -1,7 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './search-form.css';
 import {searchCharacter} from '../actions';
-import {connect} from 'react-redux';
+
 
 export class SearchForm extends React.Component {
     onSubmit(e) {
