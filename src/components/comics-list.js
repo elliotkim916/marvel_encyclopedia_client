@@ -28,7 +28,7 @@ export default function ComicsList(props) {
     return (
         <section className="comics-list-section">
             <header>
-                <h3>Comics List</h3>
+                <h2>Comics List</h2>
             </header>
             {props.character.comics ? <h2>Issues Available: {props.character.comics.available}</h2> : ''}
             
