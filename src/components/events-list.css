@@ -1,0 +1,17 @@
+ul {
+    list-style-type: none;
+}
+
+.events-list-section {
+    background-color: #ddd;
+    padding-bottom: 15px;
+    min-height: 200px;
+}
+
+.events-container {
+    padding-right: 40px;
+}
+
+.event-name {
+    margin-bottom: 15px;
+}
