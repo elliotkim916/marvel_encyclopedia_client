@@ -11,7 +11,7 @@ export default function AdditionalLinks(props) {
     return (
         <section className="additional-links-section">
             <header>
-                <h3>Additional Links</h3>
+                <h2>Additional Resources</h2>
             </header>
          
             <a 
@@ -19,21 +19,21 @@ export default function AdditionalLinks(props) {
                 target="_blank"
                 className="new-link"
                 rel="noopener noreferrer">
-                Detail
+                Character Detail
             </a>
             <a 
                 href={urls[1]}
                 target="_blank"
                 className="new-link"
                 rel="noopener noreferrer">
-                Wiki
+                Marvel Universe Wiki
             </a>
             <a 
                 href={urls[2]}
                 target="_blank"
                 className="new-link"
                 rel="noopener noreferrer">
-                Comics Link
+                Comics
             </a> 
         </section>
     );
