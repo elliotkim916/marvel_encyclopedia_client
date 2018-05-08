@@ -14,7 +14,7 @@ export class SearchForm extends React.Component {
 
     render() {
         return (
-            <section>
+            <section className="search-form-section">
                 <header>
                     <h1>Marvel Encyclopedia</h1>
                 </header>
