@@ -3,18 +3,18 @@ import {connect} from 'react-redux';
 import './read-later-list.css';
 
 export function ReadLaterList(props) {
-    const unreadComics = props.unreadComics.map((comic, index) => (
-        <li key={index}>
-            <form>
-                <a href="#read-later-list">
-                    <img src={comic.img} alt="read later" />
-                    <p className="not-done-title">{comic.title}</p>
-                </a>
+    // const unreadComics = props.unreadComics.map((comic, index) => (
+    //     <li key={index}>
+    //         <form>
+    //             <a href="#read-later-list">
+    //                 <img src={comic.img} alt="read later" />
+    //                 <p className="not-done-title">{comic.title}</p>
+    //             </a>
                
-                <button type="submit">Remove</button>
-            </form>
-        </li>
-    ));
+    //             <button type="submit">Remove</button>
+    //         </form>
+    //     </li>
+    // ));
 
     return (
         <section className="read-later-section">
@@ -23,14 +23,14 @@ export function ReadLaterList(props) {
             </header>
 
             <ul className="not-done-list">
-                {unreadComics}
+                {/* {unreadComics} */}
             </ul>
         </section>
     );
 }
 
 const mapStateToProps = state => ({
-    unreadComics: state.search.unreadComics
+    unreadComics: state.character
 });
 
 export default connect(mapStateToProps)(ReadLaterList);
