@@ -10,7 +10,7 @@ export default class CharacterInfo extends React.Component {
     render() {
         let imgUrl = '';
         if (this.props.character.thumbnail) {
-            imgUrl = this.props.character.thumbnail.path + '/portrait_fantastic' + '.' + this.props.character.thumbnail.extension;
+            imgUrl = this.props.character.thumbnail.path + '/portrait_fantastic.' + this.props.character.thumbnail.extension;
         }
         
         return (
