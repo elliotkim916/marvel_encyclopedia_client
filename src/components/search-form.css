@@ -2,6 +2,10 @@ header {
     padding: 25px 15px;
 }
 
+.search-form-section {
+    padding-bottom: 45px;
+}
+
 .search-input {
     width: 250px;
     height: 35px;
