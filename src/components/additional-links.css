@@ -1,6 +1,7 @@
 .additional-links-section {
-    background-color: #ddd;
+    background-color: #eee;
     min-height: 200px;
+    padding-bottom: 45px;
 }
 
 .new-link {
