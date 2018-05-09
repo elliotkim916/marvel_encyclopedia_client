@@ -2,11 +2,6 @@ import React from 'react';
 import './character-info.css';
 
 export default class CharacterInfo extends React.Component {
-    constructor(props) {
-        super(props);
-        console.log(props);
-    }
-
     render() {
         let imgUrl = '';
         if (this.props.character.thumbnail) {
