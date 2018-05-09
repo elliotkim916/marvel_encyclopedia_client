@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import './search-form.css';
 import {searchCharacter} from '../actions';
 
-
 export class SearchForm extends React.Component {
     onSubmit(e) {
         e.preventDefault();

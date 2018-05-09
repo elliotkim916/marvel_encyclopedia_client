@@ -2,7 +2,6 @@ import React from 'react';
 import './additional-links.css';
 
 export default function AdditionalLinks(props) {
-    console.log(props.character.urls);
     let urls = '';
     if (props.character.urls) { 
         urls = props.character.urls.map((link) => link.url);

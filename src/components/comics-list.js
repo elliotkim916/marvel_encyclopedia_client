@@ -2,12 +2,9 @@ import React from 'react';
 import './comics-list.css';
 
 export default function ComicsList(props) {
-    console.log(props.character.comics);
     let comicTitles = '';
     if (props.character.comics) {
-        console.log(props.character.comics.available);
         comicTitles = props.character.comics.items.map((comic, index) => (
-            
             <li key={index}>
                 <form className="comics-form">
                     <a href="#comic-searched">
@@ -23,8 +20,6 @@ export default function ComicsList(props) {
         ));
     }
     
-    
-
     return (
         <section className="comics-list-section">
             <header>
