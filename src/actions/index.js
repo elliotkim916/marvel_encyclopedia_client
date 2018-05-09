@@ -5,6 +5,7 @@ import {
     TS,
     HASH
 } from '../config';
+import history from '../history';
 
 export const SEARCH_CHARACTER_REQUEST = 'SEARCH_CHARACTER_REQUEST';
 export const searchCharacterRequest = () => ({
@@ -37,6 +38,9 @@ export const searchCharacter = name => dispatch => {
     dispatch(searchCharacterRequest());
     search(name)
         .then(character => dispatch(searchCharacterSuccess(character)))
+        .then(response => {
+            history.push('/search-results')
+        })
         .catch(error => dispatch(searchCharacterError(error)));
 };
 
