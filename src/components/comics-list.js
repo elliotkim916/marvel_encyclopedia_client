@@ -1,13 +1,16 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './comics-list.css';
+import {findComic} from '../actions';
 
-export default function ComicsList(props) {
+export class ComicsList extends React.Component {
+    render() {
     let comicTitles = '';
-    if (props.character.comics) {
-        comicTitles = props.character.comics.items.map((comic, index) => (
+    if (this.props.character.comics) {
+        comicTitles = this.props.character.comics.items.map((comic, index) => (
             <li key={index}>
                 <form className="comics-form">
-                    <a href="#comic-searched">
+                    <a href="#comic-searched" onClick={this.props.dispatch(findComic(comic.resourceURI))}>
                         <p className="comic-title">{comic.name}</p>
                     </a>
                     
@@ -25,7 +28,7 @@ export default function ComicsList(props) {
             <header>
                 <h2>Comics</h2>
             </header>
-            {props.character.comics ? <h2>Issues Available: {props.character.comics.available}</h2> : ''}
+            {this.props.character.comics ? <h2>Issues Available: {this.props.character.comics.available}</h2> : ''}
             
             <ul>
                 {comicTitles}
@@ -33,3 +36,10 @@ export default function ComicsList(props) {
         </section>
     );
 }
+}
+
+const mapStateToProps = state => ({
+    comicData: state.comic.data
+});
+
+export default connect(mapStateToProps)(ComicsList);
