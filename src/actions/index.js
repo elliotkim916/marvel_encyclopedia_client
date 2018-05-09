@@ -38,6 +38,9 @@ export const findComic = URI => dispatch => {
     dispatch(findComicRequest());
     searchComic(URI)
         .then(comic => dispatch(findComicSuccess(comic)))
+        .then(response => {
+            history.push('/comic')
+        })
         .catch(error => dispatch(findComicError(error)));
 };
 
