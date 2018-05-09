@@ -7,15 +7,14 @@ import ComicsList from './comics-list';
 import EventsList from './events-list';
 import AdditionalLinks from './additional-links';
 
-
 export function SearchResults(props) {
-    console.log(props.searchResult);
+    // console.log(props.searchResult);
 
     return (
         <section aria-label="search results">
             <SearchForm />
             {/* <NewNote /> */}
-            { props.searchResult.loading ? '' : <CharacterInfo character={props.searchResult}/> }
+            { props.searchResult.loading ? '' : <CharacterInfo character={props.searchResult} /> }
             { props.searchResult.loading ? '' : <ComicsList character={props.searchResult}/> }
             { props.searchResult.loading ? '' : <EventsList character={props.searchResult}/> }
             { props.searchResult.loading ? '' : <AdditionalLinks character={props.searchResult}/> }  
