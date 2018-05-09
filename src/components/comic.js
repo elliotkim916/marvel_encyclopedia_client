@@ -34,7 +34,7 @@ export default function Comic(props) {
     return (
         <section className="comic-section">
             <header>
-                <img src={imgUrl} />
+                <img src={imgUrl} alt="Comic book cover"/>
                 <h2>{this.props.comic.title}</h2>
                 <h3>{this.props.comic.issueNumber}</h3>
                 <h3>{this.props.pageCount}</h3>
