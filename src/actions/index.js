@@ -7,6 +7,40 @@ import {
 } from '../config';
 import history from '../history';
 
+export const FIND_COMIC_REQUEST = 'FIND_COMIC_REQUEST';
+export const findComicRequest = () => ({
+    type: FIND_COMIC_REQUEST
+});
+
+export const FIND_COMIC_SUCCESS = 'FIND_COMIC_SUCCESS';
+export const findComicSuccess = comic => ({
+    type: FIND_COMIC_SUCCESS,
+    comic
+});
+
+export const FIND_COMIC_ERROR = 'SEARCH_COMIC_ERROR';
+export const findComicError = error => ({
+    type: FIND_COMIC_ERROR,
+    error
+});
+
+function searchComic(URI) {
+    return fetch(`${URI}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results[0]);
+}
+
+export const findComic = URI => dispatch => {
+    dispatch(findComicRequest());
+    searchComic(URI)
+        .then(comic => dispatch(findComicSuccess(comic)))
+        .catch(error => dispatch(findComicError(error)));
+};
+
 export const SEARCH_CHARACTER_REQUEST = 'SEARCH_CHARACTER_REQUEST';
 export const searchCharacterRequest = () => ({
     type: SEARCH_CHARACTER_REQUEST
