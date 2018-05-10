@@ -7,6 +7,44 @@ import {
 } from '../config';
 import history from '../history';
 
+export const FIND_EVENT_REQUEST = 'FIND_EVENT_REQUEST';
+export const findEventRequest = () => ({
+    type: FIND_EVENT_REQUEST
+});
+
+export const FIND_EVENT_SUCCESS = 'FIND_EVENT_SUCCESS';
+export const findEventSuccess = event => ({
+    type: FIND_EVENT_SUCCESS,
+    event
+});
+
+export const FIND_EVENT_ERROR = 'FIND_EVENT_ERROR';
+export const findEventError = error => ({
+    type: FIND_EVENT_ERROR,
+    error
+});
+
+function searchEvent(URI) {
+    return fetch(`${URI}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results[0]);
+}
+
+export const findEvent = URI => dispatch => {
+    dispatch(findEventRequest());
+    searchEvent(URI)
+        .then(event => {
+            dispatch(findEventSuccess(event))
+            history.push('/event')
+            console.log(event)
+        })
+        .catch(error => dispatch(findEventError(error)));
+};
+
 export const FIND_COMIC_REQUEST = 'FIND_COMIC_REQUEST';
 export const findComicRequest = () => ({
     type: FIND_COMIC_REQUEST
