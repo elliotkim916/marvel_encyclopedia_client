@@ -1,57 +1,74 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './comic.css';
 
-export default function Comic(props) {  
+export function Comic(props) {
+    let title = '';
+    let issueNumber = '';
+    let pageCount = '';
+    let description = '';
     let imgUrl = '';
-    if (props.comic.thumbnail) {
-        imgUrl = props.comic.thumbnail.path + '/portrait_fantastic.' + props.comic.thumbnail.extension;
-    }
-    
     let urls = '';
-    if (props.comic.urls) { 
-        urls = props.comic.urls.map((link, index) => link.url);
-    }
-
     let character = '';
-    if (props.comic.characters) {
-        character = props.comic.characters.map((name, index) => 
-            <li key={index}>
-                {name.name}
-            </li>
-        );
-    }
-
     let creator = '';
-    if (props.comic.creators) {
-        creator = props.comic.creators.map((person, role, index) => 
-            <li key={index}>
-                {person.name}
-                <span>Role: {role.role}</span>
-            </li>
-        );
-    }
 
+    if (props.comicResult) {
+        console.log(props.comicResult);
+        title = props.comicResult.title;
+        issueNumber = props.comicResult.issueNumber;
+        pageCount = props.comicResult.pageCount;
+        description = props.comicResult.description;
+       
+        if (props.comicResult.thumbnail) {
+            imgUrl = props.comicResult.thumbnail.path + '/portrait_uncanny.' + props.comicResult.thumbnail.extension;
+        }
+       
+        if (props.comicResult.urls) { 
+            urls = props.comicResult.urls.map((link, index) => link.url);
+        }
+
+        if (props.comicResult.characters) {
+            character = props.comicResult.characters.items.map((name, index) => 
+                <li key={index}>
+                    {name.name}
+                </li>
+            );
+        }
+
+        if (props.comicResult.creators) {
+            creator = props.comicResult.creators.items.map((person, index) => 
+                <li key={index}>
+                    <span>{person.name}, {person.role.charAt(0).toUpperCase() + person.role.slice(1)}</span>
+                </li>
+            );
+        }
+    }
+      
     return (
         <section className="comic-section">
             <header>
                 <img src={imgUrl} alt="Comic book cover"/>
-                <h2>{this.props.comic.title}</h2>
-                <h3>{this.props.comic.issueNumber}</h3>
-                <h3>{this.props.pageCount}</h3>
+                <h2>{title}</h2>
+                <h3>Issue Number: {issueNumber}</h3>
+                <h3>Total Pages: {pageCount}</h3>
             </header>
 
             <div className="comic-description">
-                <p>{this.props.comic.description}</p>
+                <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
 
-                <h3>Characters</h3>
-                <ul>
-                    {character}
-                </ul>
+                <div className="character-container">
+                    <h3 className="container-header">Characters</h3>
+                        <ul>
+                            {character}
+                        </ul>
+                </div>
 
-                <h3>Creators</h3>
-                <ul>
-                    {creator}
-                </ul>
+                <div className="creator-container">
+                    <h3 className="container-header">Creators</h3>
+                        <ul>
+                            {creator}
+                        </ul>
+                </div>
             </div>
 
             <div className="comic-links">
@@ -60,30 +77,16 @@ export default function Comic(props) {
                     target="_blank"
                     className="new-comic-link"
                     rel="noopener noreferrer">
-                    Comic Detail
+                    Purchase Comic
                 </a>
-                <a 
-                    href={urls[1]}
-                    target="_blank"
-                    className="new-comic-link"
-                    rel="noopener noreferrer">
-                    Purchase
-                </a>
-                <a 
-                    href={urls[2]}
-                    target="_blank"
-                    className="new-comic-link"
-                    rel="noopener noreferrer">
-                    Reader
-                </a>
-                <a 
-                    href={urls[3]}
-                    target="_blank"
-                    className="new-comic-link"
-                    rel="noopener noreferrer">
-                    In-App
-                </a>  
-            </div>        
+            </div>         
         </section>
     );
 }
+
+const mapStateToProps = state => ({
+    comicResult: state.comic.comic 
+});
+
+export default connect(mapStateToProps)(Comic);
+
