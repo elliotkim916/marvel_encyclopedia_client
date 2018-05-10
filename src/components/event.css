@@ -1,0 +1,28 @@
+.event-section {
+    background-color: #eee;
+    padding: 45px 15px;
+    color: black;
+}
+
+.event-character-list, .event-comic-list, .event-creators-list {
+    padding-right: 40px;
+}
+
+.event-links {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.new-event-link {
+    margin-right: 20px;
+    font-weight: bolder;
+}
+
+.event-description {
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.event-character-container, .event-creator-container, .event-comic-container {
+    margin-top: 35px;
+}
