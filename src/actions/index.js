@@ -40,7 +40,6 @@ export const findEvent = URI => dispatch => {
         .then(event => {
             dispatch(findEventSuccess(event))
             history.push('/event')
-            console.log(event)
         })
         .catch(error => dispatch(findEventError(error)));
 };
