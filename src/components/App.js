@@ -6,6 +6,7 @@ import SignUp from './sign-up';
 import SearchResults from './search-results';
 import Homepage from './homepage';
 import Comic from './comic';
+import Event from './event';
 
 export default function App(props) {
     return (
@@ -17,7 +18,8 @@ export default function App(props) {
               <Route exact path="/sign-up" component={SignUp} />
               <Route exact path="/homepage" component={Homepage} />
               <Route exact path="/search-results" component={SearchResults} />
-              <Route exact path="/comic" component={Comic} />     
+              <Route exact path="/event" component={Event} />  
+              <Route exact path="/comic" component={Comic} />   
             </Switch> 
           </main>
         </div>
