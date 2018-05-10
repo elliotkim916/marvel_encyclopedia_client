@@ -1,11 +1,11 @@
 import React from 'react';
-import './character-info.css';
+import './character-info.css'
 
 export default class CharacterInfo extends React.Component {
     render() {
         let imgUrl = '';
         if (this.props.character.thumbnail) {
-            imgUrl = this.props.character.thumbnail.path + '/portrait_fantastic.' + this.props.character.thumbnail.extension;
+            imgUrl = this.props.character.thumbnail.path + '/portrait_uncanny.' + this.props.character.thumbnail.extension;
         }
         
         return (
