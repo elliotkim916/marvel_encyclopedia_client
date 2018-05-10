@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './comic.css';
+import {searchCharacter} from '../actions';
 
 export function Comic(props) {
     let title = '';
@@ -11,7 +12,7 @@ export function Comic(props) {
     let urls = '';
     let character = '';
     let creator = '';
-
+    
     if (props.comicResult) {
         console.log(props.comicResult);
         title = props.comicResult.title;
@@ -29,7 +30,7 @@ export function Comic(props) {
 
         if (props.comicResult.characters) {
             character = props.comicResult.characters.items.map((name, index) => 
-                <li key={index}>
+                <li key={index} onClick={() => props.dispatch(searchCharacter(name.name))}>
                     {name.name}
                 </li>
             );
