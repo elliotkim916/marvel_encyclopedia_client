@@ -5,4 +5,28 @@ ul {
 .comic-section {
     background-color: #eee;
     padding: 45px 15px;
+    color: black;
+}
+
+.new-comic-link {
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+.character-container, .creator-container {
+    margin-top: 35px;
+    padding-right: 40px;
+}
+
+.container-header {
+    margin-left: 40px;
+}
+
+.comic-links {
+    margin-top: 35px;
+}
+
+.description-container {
+    max-width: 350px;
+    margin: 0 auto;
 }
