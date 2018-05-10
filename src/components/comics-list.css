@@ -20,3 +20,15 @@ ul {
 .comic-title {
     color: black;
 }
+
+.already-read-input, .read-later-input {
+    margin-right: 7px;
+}
+
+.already-read-label {
+    margin-right: 25px;
+}
+
+.already-read-label, .read-later-label {
+    color: black;
+}
