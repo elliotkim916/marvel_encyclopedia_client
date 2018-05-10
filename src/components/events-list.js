@@ -5,7 +5,7 @@ export default function EventsList(props) {
     let eventTitles = '';
     if (props.character.events) {
         eventTitles = props.character.events.items.map((event, index) => (
-            <li key={index} className="event-name">
+            <li key={`event-${index}`} className="event-name">
                 <p className="event-title">{event.name}</p>
             </li>
         ))
@@ -23,6 +23,5 @@ export default function EventsList(props) {
                 </ul>
             </div>    
         </section>
-
-    )
+    );
 }
