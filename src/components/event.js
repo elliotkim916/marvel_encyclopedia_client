@@ -97,7 +97,7 @@ export function Event(props) {
 }
 
 const mapStateToProps = state => ({
-    eventResult: state.event.event
+    eventResult: state.eventReducer.clickedEvent
 });
 
 export default connect(mapStateToProps)(Event);

@@ -14,7 +14,6 @@ export function Comic(props) {
     let creator = '';
     
     if (props.comicResult) {
-        console.log(props.comicResult);
         title = props.comicResult.title;
         issueNumber = props.comicResult.issueNumber;
         pageCount = props.comicResult.pageCount;
@@ -56,10 +55,10 @@ export function Comic(props) {
 
             <div className="comic-description">
                 <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
-
+                {/* <div className="description-container">{description}</div> */}
                 <div className="character-container">
                     <h3 className="container-header">Characters</h3>
-                        <ul>
+                        <ul className="character-list">
                             {character}
                         </ul>
                 </div>
@@ -86,7 +85,7 @@ export function Comic(props) {
 }
 
 const mapStateToProps = state => ({
-    comicResult: state.comic.comic 
+    comicResult: state.comicReducer.clickedComic 
 });
 
 export default connect(mapStateToProps)(Comic);
