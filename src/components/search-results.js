@@ -31,7 +31,7 @@ export function SearchResults(props) {
 }
 
 const mapStateToProps = state => ({
-    searchResult: state.character.character
+    searchResult: state.characterReducer.searchedCharacter
 });
 
 export default connect(mapStateToProps)(SearchResults);
