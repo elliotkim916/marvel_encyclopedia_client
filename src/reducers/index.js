@@ -11,9 +11,9 @@ import {
 } from '../actions';
 
 const initialState = {
-    character: {},
-    comic: {},
-    event: {},
+    searchedCharacter: {},
+    clickedComic: {},
+    clickedEvent: {},
     loading: false,
     error: null
 };
@@ -26,7 +26,7 @@ export function characterReducer(state=initialState, action) {
         });
     } else if (action.type === SEARCH_CHARACTER_SUCCESS) {
         return Object.assign({}, state, {
-            character: action.character,
+            searchedCharacter: action.character,
             loading: false,
             error: null
         });
@@ -47,7 +47,7 @@ export function comicReducer(state=initialState, action) {
         });
     } else if (action.type === FIND_COMIC_SUCCESS) {
         return Object.assign({}, state, {
-            comic: action.comic,
+            clickedComic: action.comic,
             loading: false,
             error: null
         });
@@ -68,7 +68,7 @@ export function eventReducer(state=initialState, action) {
         });
     } else if (action.type === FIND_EVENT_SUCCESS) {
         return Object.assign({}, state, {
-            event: action.event,
+            clickedEvent: action.event,
             loading: false,
             error: null
         });
