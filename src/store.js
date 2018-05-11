@@ -5,9 +5,9 @@ import {characterReducer, comicReducer, eventReducer} from './reducers';
 
 export default createStore(
     combineReducers({
-        character: characterReducer,
-        comic: comicReducer,
-        event: eventReducer
+        characterReducer: characterReducer,
+        comicReducer: comicReducer,
+        eventReducer: eventReducer
     }),
     applyMiddleware(thunk)
 );
