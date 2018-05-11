@@ -9,7 +9,11 @@ export class EventsList extends React.Component {
         if (this.props.character.events) {
             console.log(this.props.character.events);
             eventTitles = this.props.character.events.items.map((event, index) => (
-                <li key={`event-${index}`} className="event-name" onClick={() => this.props.dispatch(findEvent(event.resourceURI))}>
+                <li 
+                    key={`event-${index}`} 
+                    className="event-name" 
+                    onClick={() => this.props.dispatch(findEvent(event.resourceURI))}
+                >
                     <p className="event-title">{event.name}</p>
                 </li>
             ))
@@ -31,8 +35,4 @@ export class EventsList extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    eventData: state.event.event
-});
-
-export default connect(mapStateToProps)(EventsList);
+export default connect()(EventsList);

@@ -10,7 +10,13 @@ export class ComicsList extends React.Component {
             comicTitles = this.props.character.comics.items.map((comic, index) => (
                 <li key={`comic-${index}`}>
                     <form className="comics-form">
-                        <h3 className="comic-title" onClick={() => this.props.dispatch(findComic(comic.resourceURI))}>{comic.name}</h3>
+                        <h3 
+                            className="comic-title" 
+                            onClick={() => this.props.dispatch(findComic(comic.resourceURI))}
+                        >
+                        {comic.name}
+                        </h3>
+
                         <input 
                             type="radio" 
                             id={`already-read-${index}`} 
@@ -23,6 +29,7 @@ export class ComicsList extends React.Component {
                         >
                             <span>Already Read</span>
                         </label>
+
                         <input 
                             type="radio" 
                             id={`bookmark-${index}`} 
@@ -55,8 +62,4 @@ export class ComicsList extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    comicData: state.comic.comic
-});
-
-export default connect(mapStateToProps)(ComicsList);
+export default connect()(ComicsList);
