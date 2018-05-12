@@ -31,3 +31,8 @@ ul {
     max-width: 350px;
     margin: 0 auto;
 }
+
+.character-name {
+    cursor: pointer;
+    font-weight: bolder;
+}

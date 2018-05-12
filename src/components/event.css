@@ -26,3 +26,8 @@
 .event-character-container, .event-creator-container, .event-comic-container {
     margin-top: 35px;
 }
+
+.event-character-name, .event-comic-name {
+    font-weight: bolder;
+    cursor: pointer;
+}
