@@ -29,7 +29,7 @@ export function Comic(props) {
 
         if (props.comicResult.characters) {
             character = props.comicResult.characters.items.map((name, index) => 
-                <li key={index} onClick={() => props.dispatch(searchCharacter(name.name))}>
+                <li key={index} onClick={() => props.dispatch(searchCharacter(name.name))} className="character-name">
                     {name.name}
                 </li>
             );
@@ -57,14 +57,14 @@ export function Comic(props) {
                 <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
                 {/* <div className="description-container">{description}</div> */}
                 <div className="character-container">
-                    <h3 className="container-header">Characters</h3>
+                    <h2 className="container-header">Characters</h2>
                         <ul className="character-list">
                             {character}
                         </ul>
                 </div>
 
                 <div className="creator-container">
-                    <h3 className="container-header">Creators</h3>
+                    <h2 className="container-header">Creators</h2>
                         <ul>
                             {creator}
                         </ul>

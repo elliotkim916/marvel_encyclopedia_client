@@ -22,7 +22,11 @@ export function Event(props) {
 
     if (props.eventResult.characters) {
         character = props.eventResult.characters.items.map((name, index) => 
-            <li key={index} onClick={() => props.dispatch(searchCharacter(name.name))}>
+            <li 
+                key={index} 
+                onClick={() => props.dispatch(searchCharacter(name.name))}
+                className="event-character-name"
+            >
                 {name.name}
             </li>
         );
@@ -30,7 +34,11 @@ export function Event(props) {
 
     if (props.eventResult.comics) {
         comic = props.eventResult.comics.items.map((comic, index) => 
-            <li key={index} onClick={() => props.dispatch(findComic(comic.resourceURI))}>
+            <li 
+                key={index} 
+                onClick={() => props.dispatch(findComic(comic.resourceURI))}
+                className="event-comic-name"    
+            >
                 {comic.name}
             </li>
         );
@@ -56,21 +64,21 @@ export function Event(props) {
             </div>
 
             <div className="event-character-container">
-                <h3 className="event-container-header">Characters</h3>
+                <h2 className="event-container-header">Characters</h2>
                     <ul className="event-character-list">
                         {character}
                     </ul>
             </div>
 
             <div className="event-comic-container">
-                <h3 className="event-container-header">Comics</h3>
+                <h2 className="event-container-header">Comics</h2>
                     <ul className="event-comic-list">
                         {comic}
                     </ul>
             </div>
 
              <div className="event-creator-container">
-                    <h3 className="event-container-header">Creators</h3>
+                    <h2 className="event-container-header">Creators</h2>
                         <ul className="event-creators-list">
                             {creator}
                         </ul>
