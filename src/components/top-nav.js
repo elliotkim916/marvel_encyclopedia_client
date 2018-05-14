@@ -26,7 +26,7 @@ export default function TopNav(props) {
                     </li>
                     <li className="nav-list-item">
                         <a
-                            href="#log-in"
+                            href="log-in"
                             className="log-in"
                             aria-label="Log in with existing account"
                         >
