@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './sign-up.css';
 
 export default function SignUp(props) {
     return (
         <section id="sign-up">
             <header>
-                <h2>Marvel Encyclopedia</h2>
+                <h2><Link to="/">Marvel Encyclopedia</Link></h2>
             </header>
 
             <form className="signup-form">

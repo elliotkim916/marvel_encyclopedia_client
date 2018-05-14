@@ -1,11 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './log-in.css';
 
 export default function LogIn(props) {
     return (
         <section id="log-in">
             <header>
-                <h2>Marvel Encyclopedia</h2>
+                <h2><Link to="/">Marvel Encyclopedia</Link></h2>
             </header>
 
             <form className="login-form">
