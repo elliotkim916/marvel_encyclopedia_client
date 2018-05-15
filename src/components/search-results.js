@@ -6,32 +6,47 @@ import CharacterInfo from './character-info';
 import ComicsList from './comics-list';
 import EventsList from './events-list';
 import AdditionalLinks from './additional-links';
+// import {findEvent} from '../actions';
 
-export function SearchResults(props) {
+export class SearchResults extends React.Component {
+// static getDerivedStateFromProps(nextProps, prevState) {
+//     console.log(prevState, nextProps);
+// }
+
+render() {    
     let searchResult;
-     if (props.searchResult){
-         searchResult = (
+    console.log(this.props);
+     if (this.props.searchResult){
+        searchResult = (
             <React.Fragment>
-                <CharacterInfo character={props.searchResult} />
-                <ComicsList character={props.searchResult} />
-                <EventsList character={props.searchResult} />
-                <AdditionalLinks character={props.searchResult} />
+                <CharacterInfo character={this.props.searchResult} />
+                <ComicsList character={this.props.searchResult} comic={this.props.searchCharacterComic} />
+                <EventsList character={this.props.searchResult}  />
+                <AdditionalLinks character={this.props.searchResult} />
             </React.Fragment>
          );
     }
 
     return (
         <section aria-label="search results">
+            <a 
+                href="log-in"
+                className="log-out"
+            >
+            Log Out
+            </a>
             <SearchForm />
             {/* <NewNote /> */}
-            {Object.keys(props.searchResult).length > 0 && searchResult}
+            {Object.keys(this.props.searchResult).length > 0 && searchResult}
         </section>
         );
 
+    }
 }
-
 const mapStateToProps = state => ({
-    searchResult: state.characterReducer.searchedCharacter
+    searchResult: state.characterReducer.searchedCharacter,
+    searchCharacterComic: state.characterComicReducer.searchedCharacterComic,
+    searchCharacterEvent: state.characterEventReducer.searchedCharacterEvent
 });
 
 export default connect(mapStateToProps)(SearchResults);
