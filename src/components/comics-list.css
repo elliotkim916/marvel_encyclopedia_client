@@ -1,5 +1,5 @@
 .comics-form {
-    margin-bottom: 25px;
+    margin-bottom: 80px;
     padding-right: 40px;
 }
 
@@ -13,7 +13,7 @@ ul {
 
 .comics-list-section {
     background-color: #ccc;
-    padding-bottom: 15px;
+    padding-bottom: 35px;
     min-height: 200px;
 }
 
@@ -32,4 +32,17 @@ ul {
 
 .already-read-label, .read-later-label {
     color: black;
+}
+
+.comic-cover-img {
+    cursor: pointer;
+}
+
+.radio-btns {
+    margin-top: -15px;
+}
+
+.comics-new-link {
+    font-weight: bolder;
+    
 }
