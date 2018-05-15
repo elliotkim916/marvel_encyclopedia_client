@@ -6,4 +6,11 @@
 p {
     max-width: 450px;
     margin: 0 auto;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.info-new-link {
+    font-weight: bold;
+    text-align: left;
 }
