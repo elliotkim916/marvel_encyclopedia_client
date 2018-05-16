@@ -5,16 +5,21 @@ import {findEvent} from '../actions';
 
 export class EventsList extends React.Component {
     render() {
+        console.log(this.props.event);
         let eventTitles = '';
-        if (this.props.character.events) {
-            console.log(this.props.character.events);
-            eventTitles = this.props.character.events.items.map((event, index) => (
+        if (this.props.event) {
+            eventTitles = this.props.event.map((event, index) => (
                 <li 
                     key={`event-${index}`} 
                     className="event-name" 
                     onClick={() => this.props.dispatch(findEvent(event.resourceURI))}
                 >
-                    <p className="event-title">{event.name}</p>
+                    <img 
+                        src={`${event.thumbnail.path}/portrait_fantastic.${event.thumbnail.extension}`} 
+                        alt="Event cover"
+                        className="event-cover-img"
+                    />
+                    <p className="event-title">{event.title}</p>
                 </li>
             ))
         }
