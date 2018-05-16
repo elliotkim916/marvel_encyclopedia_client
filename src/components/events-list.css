@@ -13,7 +13,15 @@ ul {
 }
 
 .event-name {
-    margin-bottom: 15px;
+    margin-bottom: 75px;
     font-weight: bolder;
     cursor: pointer;
+}
+
+.event-title {
+    text-align: center;
+}
+
+.event-cover-img {
+    margin-bottom: 10px;
 }
