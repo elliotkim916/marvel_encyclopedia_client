@@ -112,12 +112,87 @@ export const searchCharacter = name => dispatch => {
     dispatch(searchCharacterRequest());
     search(name)
         .then(character => dispatch(searchCharacterSuccess(character)))
+        .then(character => {
+            dispatch(findCharacterComic(character.character.id))
+            dispatch(findCharacterEvent(character.character.id))
+        })
         .then(response => {
             history.push('/search-results')
         })
         .catch(error => dispatch(searchCharacterError(error)));
 };
 
+// these actions are dispatched within the async searchCharacter action
+export const SEARCH_CHARACTER_COMIC_REQUEST = 'SEARCH_CHARACTER_COMIC_REQUEST';
+export const searchCharacterComicRequest = () => ({
+    type: SEARCH_CHARACTER_COMIC_REQUEST
+});
+
+export const SEARCH_CHARACTER_COMIC_SUCCESS = 'SEARCH_CHARACTER_COMIC_SUCCESS';
+export const searchCharacterComicSuccess = characterComic => ({
+    type: SEARCH_CHARACTER_COMIC_SUCCESS,
+    characterComic
+});
+
+export const SEARCH_CHARACTER_COMIC_ERROR = 'SEARCH_CHARACTER_COMIC_ERROR';
+export const searchCharacterComicError = error => ({
+    type: SEARCH_CHARACTER_COMIC_ERROR,
+    error
+});
+
+function searchCharacterComic(id) {
+    return fetch(`${MARVEL_API_BASE_URL}${MARVEL_CHARACTERS_ENDPOINT}/${id}/comics?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results);
+}
+
+export const findCharacterComic = id => dispatch => {
+    dispatch(searchCharacterComicRequest());
+    searchCharacterComic(id)
+        .then(characterId => dispatch(searchCharacterComicSuccess(characterId)))
+        .catch(error => dispatch(searchCharacterComicError(error)));
+};
+
+export const SEARCH_CHARACTER_EVENT_REQUEST = 'SEARCH_CHARACTER_EVENT_REQUEST';
+export const searchCharacterEventRequest = () => ({
+    type: SEARCH_CHARACTER_EVENT_REQUEST
+});
+
+export const SEARCH_CHARACTER_EVENT_SUCCESS = 'SEARCH_CHARACTER_EVENT_SUCCESS';
+export const searchCharacterEventSuccess = characterEvent => ({
+    type: SEARCH_CHARACTER_EVENT_SUCCESS,
+    characterEvent
+});
+
+export const SEARCH_CHARACTER_EVENT_ERROR = 'SEARCH_CHARACTER_EVENT_ERROR';
+export const searchCharacterEventError = error => ({
+    type: SEARCH_CHARACTER_EVENT_ERROR,
+    error
+});
+
+function searchCharacterEvent(id) {
+    return fetch(`${MARVEL_API_BASE_URL}${MARVEL_CHARACTERS_ENDPOINT}/${id}/events?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results);
+}
+
+export const findCharacterEvent = id => dispatch => {
+    dispatch(searchCharacterEventRequest());
+    searchCharacterEvent(id)
+        .then(characterId => dispatch(searchCharacterEventSuccess(characterId)))
+        .catch(error => dispatch(searchCharacterEventError(error)));
+};
+
 // Because this is an async action, rather than return an object from the action creator,
 // we return a callback function.  When the action is dispatched, this function will be called by Redux Thunk,
 // which passes in the dispatch method
+
+//fetch in action to server-side
