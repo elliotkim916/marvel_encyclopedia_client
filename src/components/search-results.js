@@ -5,7 +5,7 @@ import SearchForm from './search-form';
 import CharacterInfo from './character-info';
 import ComicsList from './comics-list';
 import EventsList from './events-list';
-import AdditionalLinks from './additional-links';
+// import AdditionalLinks from './additional-links';
 // import {findEvent} from '../actions';
 
 export class SearchResults extends React.Component {
@@ -15,14 +15,14 @@ export class SearchResults extends React.Component {
 
 render() {    
     let searchResult;
-    console.log(this.props);
+    // console.log(this.props);
      if (this.props.searchResult){
         searchResult = (
             <React.Fragment>
                 <CharacterInfo character={this.props.searchResult} />
                 <ComicsList character={this.props.searchResult} comic={this.props.searchCharacterComic} />
-                <EventsList character={this.props.searchResult}  />
-                <AdditionalLinks character={this.props.searchResult} />
+                <EventsList character={this.props.searchResult} event={this.props.searchCharacterEvent} />
+                {/* <AdditionalLinks character={this.props.searchResult} /> */}
             </React.Fragment>
          );
     }
