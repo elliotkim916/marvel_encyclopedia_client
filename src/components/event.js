@@ -5,7 +5,6 @@ import {findComic} from '../actions';
 import './event.css';
 
 export function Event(props) {
-    console.log(props.eventCharacter);
     let imgUrl = '';
     let urls = '';
     let character = '';
@@ -29,21 +28,25 @@ export function Event(props) {
             >
                 <img 
                     src={`${character.thumbnail.path}/portrait_fantastic.${character.thumbnail.extension}`} 
-                    alt="character cover"
+                    alt="Character cover"
                 /><br />
                 {character.name}
             </li>
         );
     }
 
-    if (props.eventResult.comics) {
-        comic = props.eventResult.comics.items.map((comic, index) => 
+    if (props.eventComic) {
+        comic = props.eventComic.map((comic, index) => 
             <li 
                 key={index} 
                 onClick={() => props.dispatch(findComic(comic.resourceURI))}
                 className="event-comic-name"    
             >
-                {comic.name}
+                <img
+                    src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`}
+                    alt="Comic cover"
+                /><br />
+                {comic.title}
             </li>
         );
     }
@@ -64,21 +67,35 @@ export function Event(props) {
             </header>
 
             <div className="event-description">
-                {props.eventResult.description}
+                <p>{props.eventResult.description}</p><br />
+                <a 
+                    href={urls[1]} 
+                    target="_blank"
+                    className="new-event-link"
+                    rel="noopener noreferrer">
+                    Read More >>
+                </a>
             </div>
 
             <div className="event-character-container">
-                <h2 className="event-container-header">Characters Involved</h2>
+                <h2 className="event-container-header">Characters In This Event</h2>
                     <ul className="event-character-list">
                         {character}
                     </ul>
             </div>
 
             <div className="event-comic-container">
-                <h2 className="event-container-header">Comics</h2>
+                <h2 className="event-container-header">{props.eventResult.title} Core Issues & Tie-In Issues</h2>
                     <ul className="event-comic-list">
                         {comic}
                     </ul>
+                    <a 
+                        href={urls[0]} 
+                        target="_blank"
+                        className="new-event-link"
+                        rel="noopener noreferrer">
+                        See More >>
+                    </a>
             </div>
 
              <div className="event-creator-container">
@@ -87,30 +104,14 @@ export function Event(props) {
                             {creator}
                         </ul>
             </div>
-
-            <div className="event-links">
-                <a 
-                    href={urls[0]} 
-                    target="_blank"
-                    className="new-event-link"
-                    rel="noopener noreferrer">
-                    Detail
-                </a>
-                <a 
-                    href={urls[1]} 
-                    target="_blank"
-                    className="new-event-link"
-                    rel="noopener noreferrer">
-                    Marvel Universe Wiki
-                </a>
-            </div>  
         </section>
     );
 }
 
 const mapStateToProps = state => ({
     eventResult: state.eventReducer.clickedEvent,
-    eventCharacter: state.eventCharacterReducer.eventCharacter
+    eventCharacter: state.eventCharacterReducer.eventCharacter,
+    eventComic: state.eventComicReducer.eventComic
 });
 
 export default connect(mapStateToProps)(Event);
