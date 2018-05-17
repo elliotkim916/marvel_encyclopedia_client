@@ -13,7 +13,13 @@ import {
     SEARCH_CHARACTER_COMIC_ERROR,
     SEARCH_CHARACTER_EVENT_REQUEST,
     SEARCH_CHARACTER_EVENT_SUCCESS,
-    SEARCH_CHARACTER_EVENT_ERROR
+    SEARCH_CHARACTER_EVENT_ERROR,
+    FIND_COMIC_CHARACTER_REQUEST,
+    FIND_COMIC_CHARACTER_SUCCESS,
+    FIND_COMIC_CHARACTER_ERROR,
+    SEARCH_EVENT_CHARACTER_REQUEST,
+    SEARCH_EVENT_CHARACTER_SUCCESS,
+    SEARCH_EVENT_CHARACTER_ERROR
 } from '../actions';
 
 const initialState = {
@@ -21,10 +27,33 @@ const initialState = {
     searchedCharacterComic: [],
     searchedCharacterEvent: [],
     clickedComic: {},
+    comicCharacter: [],
+    eventCharacter: [],
     clickedEvent: {},
     loading: false,
     error: null
 };
+
+export function eventCharacterReducer(state=initialState, action) {
+    if (action.type === SEARCH_EVENT_CHARACTER_REQUEST) {
+        return Object.assign({}, state, {
+            loading: true,
+            error: null
+        });
+    } else if (action.type === SEARCH_EVENT_CHARACTER_SUCCESS) {
+        return Object.assign({}, state, {
+            eventCharacter: action.eventCharacter,
+            loading: false,
+            error: null
+        });
+    } else if (action.type === SEARCH_EVENT_CHARACTER_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error,
+            loading: false
+        });
+    }
+    return state;
+}
 
 export function characterEventReducer(state=initialState, action) {
     if (action.type === SEARCH_CHARACTER_EVENT_REQUEST) {
@@ -39,6 +68,27 @@ export function characterEventReducer(state=initialState, action) {
             error: null
         });
     } else if (action.type === SEARCH_CHARACTER_EVENT_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error,
+            loading: false
+        });
+    }
+    return state;
+}
+
+export function comicCharacterReducer(state=initialState, action) {
+    if (action.type === FIND_COMIC_CHARACTER_REQUEST) {
+        return Object.assign({}, state, {
+            loading: true,
+            error: null
+        });
+    } else if (action.type === FIND_COMIC_CHARACTER_SUCCESS) {
+        return Object.assign({}, state, {
+            comicCharacter: action.comicCharacter,
+            loading: false,
+            error: null
+        });
+    } else if (action.type === FIND_COMIC_CHARACTER_ERROR) {
         return Object.assign({}, state, {
             error: action.error,
             loading: false
