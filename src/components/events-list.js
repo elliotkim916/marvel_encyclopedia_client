@@ -5,7 +5,6 @@ import {findEvent} from '../actions';
 
 export class EventsList extends React.Component {
     render() {
-        console.log(this.props.event);
         let eventTitles = '';
         if (this.props.event) {
             eventTitles = this.props.event.map((event, index) => (
