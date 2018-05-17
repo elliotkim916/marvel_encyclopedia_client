@@ -5,7 +5,7 @@ import {findComic} from '../actions';
 import './event.css';
 
 export function Event(props) {
-    console.log(props.eventResult);
+    console.log(props.eventCharacter);
     let imgUrl = '';
     let urls = '';
     let character = '';
@@ -20,14 +20,18 @@ export function Event(props) {
         urls = props.eventResult.urls.map((link, index) => link.url);
     }
 
-    if (props.eventResult.characters) {
-        character = props.eventResult.characters.items.map((name, index) => 
+    if (props.eventCharacter) {
+        character = props.eventCharacter.map((character, index) => 
             <li 
                 key={index} 
-                onClick={() => props.dispatch(searchCharacter(name.name))}
+                onClick={() => props.dispatch(searchCharacter(character.name))}
                 className="event-character-name"
             >
-                {name.name}
+                <img 
+                    src={`${character.thumbnail.path}/portrait_fantastic.${character.thumbnail.extension}`} 
+                    alt="character cover"
+                /><br />
+                {character.name}
             </li>
         );
     }
@@ -64,7 +68,7 @@ export function Event(props) {
             </div>
 
             <div className="event-character-container">
-                <h2 className="event-container-header">Characters</h2>
+                <h2 className="event-container-header">Characters Involved</h2>
                     <ul className="event-character-list">
                         {character}
                     </ul>
@@ -105,7 +109,8 @@ export function Event(props) {
 }
 
 const mapStateToProps = state => ({
-    eventResult: state.eventReducer.clickedEvent
+    eventResult: state.eventReducer.clickedEvent,
+    eventCharacter: state.eventCharacterReducer.eventCharacter
 });
 
 export default connect(mapStateToProps)(Event);
