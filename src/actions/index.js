@@ -40,6 +40,7 @@ export const findEvent = URI => dispatch => {
         .then(event => {
             dispatch(findEventSuccess(event))
             dispatch(findEventCharacter(event.id))
+            dispatch(findEventComic(event.id))
         })
         .then(response => {
             history.push('/event')
@@ -275,6 +276,40 @@ export const findEventCharacter = id => dispatch => {
     searchEventCharacter(id)
         .then(eventId => dispatch(searchEventCharacterSuccess(eventId)))
         .catch(error => dispatch(searchEventCharacter(error)));
+};
+
+export const SEARCH_EVENT_COMIC_REQUEST = 'SEARCH_EVENT_COMIC_REQUEST';
+export const searchEventComicRequest = () => ({
+    type: SEARCH_EVENT_COMIC_REQUEST
+});
+
+export const SEARCH_EVENT_COMIC_SUCCESS = 'SEARCH_EVENT_COMIC_SUCCESS';
+export const searchEventComicSuccess = eventComic => ({
+    type: SEARCH_EVENT_COMIC_SUCCESS,
+    eventComic
+});
+
+export const SEARCH_EVENT_COMIC_ERROR = 'SEARCH_EVENT_COMIC_ERROR';
+export const searchEventComicError = error => ({
+    type: SEARCH_EVENT_COMIC_ERROR,
+    error
+});
+
+function searchEventComic(id) {
+    return fetch(`${MARVEL_API_BASE_URL}/public/events/${id}/comics?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results);
+}
+
+export const findEventComic = id => dispatch => {
+    dispatch(searchEventComicRequest())
+    searchEventComic(id)
+        .then(comicId => dispatch(searchEventComicSuccess(comicId)))
+        .catch(error => dispatch(searchEventComicError(error)));
 };
 
 // Because this is an async action, rather than return an object from the action creator,
