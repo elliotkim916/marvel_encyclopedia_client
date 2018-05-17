@@ -84,7 +84,7 @@ export function Comic(props) {
                     target="_blank"
                     className="new-comic-link"
                     rel="noopener noreferrer">
-                    Purchase Comic
+                    Purchase Comic >>
                 </a>
             </div>         
         </section>
