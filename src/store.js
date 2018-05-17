@@ -8,7 +8,8 @@ import {
     comicReducer,
     comicCharacterReducer, 
     eventReducer,
-    eventCharacterReducer
+    eventCharacterReducer,
+    eventComicReducer
 } from './reducers';
 
 export default createStore(
@@ -19,7 +20,8 @@ export default createStore(
         comicReducer: comicReducer,
         comicCharacterReducer: comicCharacterReducer,
         eventReducer: eventReducer,
-        eventCharacterReducer: eventCharacterReducer
+        eventCharacterReducer: eventCharacterReducer,
+        eventComicReducer: eventComicReducer
     }),
     applyMiddleware(thunk)
 );
