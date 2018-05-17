@@ -31,3 +31,7 @@
     font-weight: bolder;
     cursor: pointer;
 }
+
+.event-character-name {
+    margin-bottom: 45px;
+}
