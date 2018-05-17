@@ -19,7 +19,10 @@ import {
     FIND_COMIC_CHARACTER_ERROR,
     SEARCH_EVENT_CHARACTER_REQUEST,
     SEARCH_EVENT_CHARACTER_SUCCESS,
-    SEARCH_EVENT_CHARACTER_ERROR
+    SEARCH_EVENT_CHARACTER_ERROR,
+    SEARCH_EVENT_COMIC_REQUEST,
+    SEARCH_EVENT_COMIC_SUCCESS,
+    SEARCH_EVENT_COMIC_ERROR
 } from '../actions';
 
 const initialState = {
@@ -29,10 +32,32 @@ const initialState = {
     clickedComic: {},
     comicCharacter: [],
     eventCharacter: [],
+    eventComic: [],
     clickedEvent: {},
     loading: false,
     error: null
 };
+
+export function eventComicReducer(state=initialState, action) {
+    if (action.type === SEARCH_EVENT_COMIC_REQUEST) {
+        return Object.assign({}, state, {
+            loading: true,
+            error: null
+        });
+    } else if (action.type === SEARCH_EVENT_COMIC_SUCCESS) {
+        return Object.assign({}, state, {
+            eventComic: action.eventComic,
+            loading: false,
+            error: null
+        });
+    } else if (action.type === SEARCH_EVENT_COMIC_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error,
+            loading: false
+        });
+    }
+    return state;
+}
 
 export function eventCharacterReducer(state=initialState, action) {
     if (action.type === SEARCH_EVENT_CHARACTER_REQUEST) {
