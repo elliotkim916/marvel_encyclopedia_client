@@ -69,7 +69,7 @@ export class ComicsList extends React.Component {
                 <header>
                     <h2>Comic Book Appearances</h2>
                 </header>
-                {this.props.character.comics ? <h2>Issues Available: {this.props.character.comics.available}</h2> : ''}
+                {this.props.character.comics ? <h2>{this.props.character.comics.available} Issues Available</h2> : ''}
                 
                 <ul>
                     {comicTitles}
