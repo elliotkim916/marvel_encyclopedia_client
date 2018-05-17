@@ -11,6 +11,7 @@ ul {
 .new-comic-link {
     margin-right: 10px;
     font-weight: bolder;
+    color: black;
 }
 
 .character-container, .creator-container {
