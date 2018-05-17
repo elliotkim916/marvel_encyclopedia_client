@@ -12,7 +12,7 @@ export function Comic(props) {
     let urls = '';
     let character = '';
     let creator = '';
-    
+
     if (props.comicResult) {
         title = props.comicResult.title;
         issueNumber = props.comicResult.issueNumber;
@@ -27,10 +27,18 @@ export function Comic(props) {
             urls = props.comicResult.urls.map((link, index) => link.url);
         }
 
-        if (props.comicResult.characters) {
-            character = props.comicResult.characters.items.map((name, index) => 
-                <li key={index} onClick={() => props.dispatch(searchCharacter(name.name))} className="character-name">
-                    {name.name}
+        if (props.comicCharacter) {
+            character = props.comicCharacter.map((character, index) => 
+                <li 
+                    key={index} 
+                    onClick={() => props.dispatch(searchCharacter(character.name))} 
+                    className="character-name"
+                >
+                    <img 
+                        src={`${character.thumbnail.path}/portrait_fantastic.${character.thumbnail.extension}`} 
+                        alt="character cover"
+                    /><br/>    
+                    {character.name}
                 </li>
             );
         }
@@ -49,15 +57,14 @@ export function Comic(props) {
             <header>
                 <img src={imgUrl} alt="Comic book cover"/>
                 <h2>{title}</h2>
-                <h3>Issue Number: {issueNumber}</h3>
-                <h3>Total Pages: {pageCount}</h3>
+                <h3><span className="issue-number">Issue Number: {issueNumber}</span><span className="total-pages">Total Pages: {pageCount}</span></h3>
             </header>
 
             <div className="comic-description">
                 <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
                 {/* <div className="description-container">{description}</div> */}
                 <div className="character-container">
-                    <h2 className="container-header">Characters</h2>
+                    <h2 className="container-header">Characters Involved</h2>
                         <ul className="character-list">
                             {character}
                         </ul>
@@ -85,7 +92,8 @@ export function Comic(props) {
 }
 
 const mapStateToProps = state => ({
-    comicResult: state.comicReducer.clickedComic 
+    comicResult: state.comicReducer.clickedComic,
+    comicCharacter: state.comicCharacterReducer.comicCharacter
 });
 
 export default connect(mapStateToProps)(Comic);
