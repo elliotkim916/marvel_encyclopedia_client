@@ -35,4 +35,9 @@ ul {
 .character-name {
     cursor: pointer;
     font-weight: bolder;
+    margin-bottom: 45px;
+}
+
+.issue-number {
+    margin-right: 20px;
 }
