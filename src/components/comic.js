@@ -64,7 +64,7 @@ export function Comic(props) {
                 <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
                 {/* <div className="description-container">{description}</div> */}
                 <div className="character-container">
-                    <h2 className="container-header">Characters Involved</h2>
+                    <h2 className="container-header">Characters In This Issue</h2>
                         <ul className="character-list">
                             {character}
                         </ul>
