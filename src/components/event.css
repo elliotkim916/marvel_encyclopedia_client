@@ -15,6 +15,7 @@
 
 .new-event-link {
     margin-right: 20px;
+    margin-top: -30px;
     font-weight: bolder;
 }
 
@@ -33,5 +34,9 @@
 }
 
 .event-character-name {
+    margin-bottom: 45px;
+}
+
+.event-comic-name {
     margin-bottom: 45px;
 }
