@@ -1,7 +1,15 @@
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import {combineReducers} from 'redux';
-import {characterReducer, characterComicReducer, characterEventReducer, comicReducer, eventReducer} from './reducers';
+import {
+    characterReducer, 
+    characterComicReducer, 
+    characterEventReducer, 
+    comicReducer,
+    comicCharacterReducer, 
+    eventReducer,
+    eventCharacterReducer
+} from './reducers';
 
 export default createStore(
     combineReducers({
@@ -9,7 +17,9 @@ export default createStore(
         characterComicReducer: characterComicReducer,
         characterEventReducer: characterEventReducer,
         comicReducer: comicReducer,
-        eventReducer: eventReducer
+        comicCharacterReducer: comicCharacterReducer,
+        eventReducer: eventReducer,
+        eventCharacterReducer: eventCharacterReducer
     }),
     applyMiddleware(thunk)
 );
