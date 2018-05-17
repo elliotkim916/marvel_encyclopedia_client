@@ -39,6 +39,9 @@ export const findEvent = URI => dispatch => {
     searchEvent(URI)
         .then(event => {
             dispatch(findEventSuccess(event))
+            dispatch(findEventCharacter(event.id))
+        })
+        .then(response => {
             history.push('/event')
         })
         .catch(error => dispatch(findEventError(error)));
@@ -76,10 +79,50 @@ export const findComic = URI => dispatch => {
     searchComic(URI)
         .then(comic => {
             dispatch(findComicSuccess(comic))
+            dispatch(findComicCharacter(comic.id))
+        })
+        .then(response => {
             history.push('/comic')
         })
         .catch(error => dispatch(findComicError(error)));
 };
+
+export const FIND_COMIC_CHARACTER_REQUEST = 'FIND_COMIC_CHARACTER_REQUEST';
+export const findComicCharacterRequest = () => ({
+    type: FIND_COMIC_CHARACTER_REQUEST
+});
+
+export const FIND_COMIC_CHARACTER_SUCCESS = 'FIND_COMIC_CHARACTER_SUCCESS';
+export const findComicCharacterSuccess = comicCharacter => ({
+    type: FIND_COMIC_CHARACTER_SUCCESS,
+    comicCharacter
+});
+
+export const FIND_COMIC_CHARACTER_ERROR = 'FIND_COMIC_CHARACTER_ERROR';
+export const findComicCharacterError = error => ({
+    type: FIND_COMIC_CHARACTER_ERROR,
+    error
+});
+
+function searchComicCharacter(id) {
+    return fetch(`${MARVEL_API_BASE_URL}public/comics/${id}/characters?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results)
+}
+
+export const findComicCharacter = id => dispatch => {
+    dispatch(findComicCharacterRequest());
+    searchComicCharacter(id)
+        .then(comicId => {
+            console.log(comicId);
+            dispatch(findComicCharacterSuccess(comicId))
+        })
+        .catch(error => dispatch(findComicCharacterError(error)));
+}
 
 export const SEARCH_CHARACTER_REQUEST = 'SEARCH_CHARACTER_REQUEST';
 export const searchCharacterRequest = () => ({
@@ -105,7 +148,15 @@ function search(name) {
             return Promise.reject(res.statusText);
         }
         return res.json();
-    }).then(data => data.data.results[0]);
+    }).then(data => data.data.results[0])
+    // .then(dataTwo => {
+    //     return fetch(`${MARVEL_API_BASE_URL}${MARVEL_CHARACTERS_ENDPOINT}/${dataTwo.id}/comics?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    // }).then(res => {
+    //     if (!res.ok) {
+    //         return Promise.reject(res.statusText);
+    //     }
+    //     return res.json();
+    // }).then(dataTwo => dataTwo.data.results)      
 }
 
 export const searchCharacter = name => dispatch => {
@@ -189,6 +240,41 @@ export const findCharacterEvent = id => dispatch => {
     searchCharacterEvent(id)
         .then(characterId => dispatch(searchCharacterEventSuccess(characterId)))
         .catch(error => dispatch(searchCharacterEventError(error)));
+};
+
+// finding character through clicking on event from event list
+export const SEARCH_EVENT_CHARACTER_REQUEST = 'SEARCH_EVENT_CHARACTER_REQUEST';
+export const searchEventCharacterRequest = () => ({
+    type: SEARCH_EVENT_CHARACTER_REQUEST
+});
+
+export const SEARCH_EVENT_CHARACTER_SUCCESS = 'SEARCH_EVENT_CHARACTER_SUCCESS';
+export const searchEventCharacterSuccess = eventCharacter => ({
+    type: SEARCH_EVENT_CHARACTER_SUCCESS,
+    eventCharacter
+});
+
+export const SEARCH_EVENT_CHARACTER_ERROR = 'SEARCH_EVENT_CHARACTER_ERROR';
+export const searchEventCharacterError = error => ({
+    type: SEARCH_EVENT_CHARACTER_ERROR,
+    error
+});
+
+function searchEventCharacter(id) {
+    return fetch(`${MARVEL_API_BASE_URL}/public/events/${id}/characters?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    .then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(data => data.data.results);
+}
+
+export const findEventCharacter = id => dispatch => {
+    dispatch(searchEventCharacterRequest());
+    searchEventCharacter(id)
+        .then(eventId => dispatch(searchEventCharacterSuccess(eventId)))
+        .catch(error => dispatch(searchEventCharacter(error)));
 };
 
 // Because this is an async action, rather than return an object from the action creator,
