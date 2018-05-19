@@ -8,7 +8,7 @@ export default function TopNav(props) {
                 <ul>
                     <li className="nav-list-item">
                         <a 
-                            href="homepage"
+                            href="search-results"
                             className="demo"
                             aria-label="Demo of application"
                         >
@@ -17,7 +17,7 @@ export default function TopNav(props) {
                     </li>
                     <li className="nav-list-item">
                         <a
-                            href="sign-up"
+                            href="register"
                             className="sign-up"
                             aria-label="Create a new account"
                         >
@@ -26,7 +26,7 @@ export default function TopNav(props) {
                     </li>
                     <li className="nav-list-item">
                         <a
-                            href="log-in"
+                            href="login"
                             className="log-in"
                             aria-label="Log in with existing account"
                         >
