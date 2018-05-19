@@ -21,7 +21,7 @@ export class SearchResults extends React.Component {
     return (
         <section aria-label="search results">
             <a 
-                href="log-in"
+                href="login"
                 className="log-out"
             >
             Log Out
