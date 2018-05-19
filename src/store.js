@@ -1,6 +1,10 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
-import {combineReducers} from 'redux';
+import {reducer as formReducer} from 'redux-form';
+import authReducer from './reducers/auth';
+import protectedDataReducer from './reducers/protected-data';
+import {loadAuthToken} from './local-storage';
+import {setAuthToken, refreshAuthToken} from './actions/auth';
 import {
     characterReducer, 
     characterComicReducer, 
@@ -10,9 +14,9 @@ import {
     eventReducer,
     eventCharacterReducer,
     eventComicReducer
-} from './reducers';
+} from './reducers/index';
 
-export default createStore(
+const store = createStore(
     combineReducers({
         characterReducer: characterReducer,
         characterComicReducer: characterComicReducer,
@@ -21,10 +25,28 @@ export default createStore(
         comicCharacterReducer: comicCharacterReducer,
         eventReducer: eventReducer,
         eventCharacterReducer: eventCharacterReducer,
-        eventComicReducer: eventComicReducer
+        eventComicReducer: eventComicReducer,
+        form: formReducer,
+        auth: authReducer,
+        protectedData: protectedDataReducer
     }),
     applyMiddleware(thunk)
 );
+
+const authToken = loadAuthToken();
+if (authToken) {
+    const token = authToken;
+    store.dispatch(setAuthToken(token));
+    store.dispatch(refreshAuthToken());
+}
+
+// store.dispatch(setAuthToken(token)) - lets React Application know you the user are authorized to use application
+// store.dispatch(refreshAuthToken()) - gives user new auth token NOW while the refreshAuthToken function in App.js gives user new authToken every hour
+// store is the first thing thats loaded
+export default store;
+
+// formReducer keeps the values of our form fields updated within the state & keeps track of
+// information like whether we've submitted the form & if the contents of the form are valid
 
 // createStore adds characterReducer to our store, and uses applyMiddleware to add Redux Thunk to our store too 
 
