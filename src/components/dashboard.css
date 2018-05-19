@@ -1,0 +1,25 @@
+.log-out {
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.dashboard-username {
+    font-weight: bold;
+    margin: 0 auto;
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+
+.dashboard-protected-data {
+    margin-top: -5px;
+}
+
+.protected-data-header {
+    font-weight: bolder;
+}
+
+.read-history {
+    margin-bottom: 15px;
+}
