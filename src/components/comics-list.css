@@ -19,7 +19,6 @@ ul {
 
 .comic-title {
     color: black;
-    cursor: pointer;
 }
 
 .already-read-input, .read-later-input {
@@ -34,10 +33,6 @@ ul {
     color: black;
 }
 
-.comic-cover-img {
-    cursor: pointer;
-}
-
 .radio-btns {
     margin-top: -15px;
 }
@@ -45,4 +40,8 @@ ul {
 .comics-new-link {
     font-weight: bolder;
     color: black;
+}
+
+.comic-container {
+    cursor: pointer;
 }
