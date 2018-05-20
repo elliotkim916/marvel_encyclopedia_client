@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {searchCharacter} from '../actions';
 import {findComic} from '../actions';
 import './event.css';
+import {addData} from '../actions/protected-data';
 
 export function Event(props) {
     let imgUrl = '';
@@ -39,14 +40,62 @@ export function Event(props) {
         comic = props.eventComic.map((comic, index) => 
             <li 
                 key={index} 
-                onClick={() => props.dispatch(findComic(comic.resourceURI))}
                 className="event-comic-name"    
             >
-                <img
-                    src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`}
-                    alt="Comic cover"
-                /><br />
-                {comic.title}
+                <form className="event-comics-form">
+                    <div
+                        className="comic-container" 
+                        onClick={() => props.dispatch(findComic(comic.resourceURI))}
+                    >
+                        <img 
+                            src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`} 
+                            alt="Comic book cover"
+                            className="comic-cover-img"
+                        />
+                        <h3 className="comic-title">
+                        {comic.title}
+                        </h3>
+                    </div>
+                    <div className="radio-btns">
+                        <input 
+                            type="radio" 
+                            id={`already-read-${index}`} 
+                            name={`comic-${index}`}
+                            className="already-read-input"
+                            value={comic.title} 
+                            onChange ={() => props.dispatch(addData(
+                                comic.title, 
+                                'Already Read', 
+                                comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension
+                            ))}
+                        />
+                        <label 
+                            htmlFor={`already-read-${index}`}
+                            className="already-read-label"
+                        >
+                            <span>Already Read</span>
+                        </label>
+
+                        <input 
+                            type="radio" 
+                            id={`bookmark-${index}`} 
+                            name={`comic-${index}`}
+                            className="read-later-input"
+                            value={comic.title} 
+                            onChange ={() => props.dispatch(addData(
+                                comic.title, 
+                                'Read Later', 
+                                comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension
+                            ))} 
+                        />
+                        <label 
+                            htmlFor={`bookmark-${index}`}
+                            className="read-later-label"
+                        >
+                            <span>Read Later</span>
+                        </label>
+                    </div>
+                </form>
             </li>
         );
     }
