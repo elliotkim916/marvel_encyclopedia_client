@@ -17,18 +17,19 @@ export class ComicsList extends React.Component {
             comicTitles = this.props.comic.map((comic, index) => (
                 <li key={`comic-${index}`}>
                     <form className="comics-form">
-                        <img 
-                            src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`} 
-                            alt="Comic book cover"
-                            className="comic-cover-img"
-                            onClick={() => this.props.dispatch(findComic(comic.resourceURI))} 
-                        />
-                        <h3 
-                            className="comic-title" 
+                        <div
+                            className="comic-container" 
                             onClick={() => this.props.dispatch(findComic(comic.resourceURI))}
                         >
-                        {comic.title}
-                        </h3>
+                            <img 
+                                src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`} 
+                                alt="Comic book cover"
+                                className="comic-cover-img"
+                            />
+                            <h3 className="comic-title">
+                            {comic.title}
+                            </h3>
+                        </div>
                         <div className="radio-btns">
                             <input 
                                 type="radio" 
