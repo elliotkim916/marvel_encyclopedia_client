@@ -13,13 +13,21 @@ export const fetchProtectedDataError = error => ({
     error
 });
 
+export const ADD_PROTECTED_DATA_SUCCESS = 'ADD_PROTECTED_DATA_SUCCESS';
+export const addProtectedDataSuccess = addComicData => ({
+    type: ADD_PROTECTED_DATA_SUCCESS,
+    addComicData
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    const headers =  {
+        Authorization: `Bearer ${authToken}`
+    }
+    
     return fetch(`${API_BASE_URL}/marvel`, {
-        method: 'GET',
-        headers: {
-            Authorization: `Bearer ${authToken}`
-        }
+        headers,
+        method: 'GET'
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
@@ -27,4 +35,29 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
         });
+};
+
+export const addData = (title, read, imgUrl) => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const data = JSON.stringify({
+        title: title,
+        read: read,
+        imgUrl: imgUrl
+    });
+    const headers = {
+        Authorization: `Bearer ${authToken}`,
+        'Content-Type': `application/json`
+    };
+
+    return fetch(`${API_BASE_URL}/marvel`, {
+        headers,
+        method: 'POST',
+        body: data
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((data) => dispatch(addProtectedDataSuccess(data)))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+    });
 };
