@@ -41,7 +41,8 @@ export class ComicsList extends React.Component {
                                 onChange ={() => this.props.dispatch(addData(
                                     comic.title, 
                                     'Already Read', 
-                                    comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension
+                                    comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
+                                    comic.resourceURI
                                 ))}
                             />
                             <label 
@@ -60,7 +61,8 @@ export class ComicsList extends React.Component {
                                 onChange ={() => this.props.dispatch(addData(
                                     comic.title, 
                                     'Read Later', 
-                                    comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension
+                                    comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
+                                    comic.resourceURI
                                 ))} 
                             />
                             <label 
