@@ -24,7 +24,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     const headers =  {
         Authorization: `Bearer ${authToken}`
     }
-    
+
     return fetch(`${API_BASE_URL}/marvel`, {
         headers,
         method: 'GET'
@@ -37,12 +37,13 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         });
 };
 
-export const addData = (title, read, imgUrl) => (dispatch, getState) => {
+export const addData = (title, read, imgUrl, resourceURI) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const data = JSON.stringify({
         title: title,
         read: read,
-        imgUrl: imgUrl
+        imgUrl: imgUrl,
+        resourceURI: resourceURI
     });
     const headers = {
         Authorization: `Bearer ${authToken}`,
