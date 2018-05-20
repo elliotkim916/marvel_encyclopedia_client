@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import './comics-list.css';
 import {findComic} from '../actions';
+import {addData} from '../actions/protected-data';
 
 export class ComicsList extends React.Component {
     render() {
@@ -37,7 +38,11 @@ export class ComicsList extends React.Component {
                                 name={`comic-${index}`}
                                 className="already-read-input"
                                 value={comic.title} 
-                                // onChange ={() =>}
+                                onChange ={() => this.props.dispatch(addData(
+                                    comic.title, 
+                                    'Already Read', 
+                                    comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension
+                                ))}
                             />
                             <label 
                                 htmlFor={`already-read-${index}`}
@@ -51,7 +56,12 @@ export class ComicsList extends React.Component {
                                 id={`bookmark-${index}`} 
                                 name={`comic-${index}`}
                                 className="read-later-input"
-                                value={comic.title}  
+                                value={comic.title} 
+                                onChange ={() => this.props.dispatch(addData(
+                                    comic.title, 
+                                    'Read Later', 
+                                    comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension
+                                ))} 
                             />
                             <label 
                                 htmlFor={`bookmark-${index}`}
