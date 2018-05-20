@@ -16,10 +16,10 @@
     margin-top: -5px;
 }
 
-.protected-data-header {
+.protected-data-header, .title {
     font-weight: bolder;
 }
 
 .read-history {
-    margin-bottom: 15px;
+    margin-bottom: 45px;
 }
