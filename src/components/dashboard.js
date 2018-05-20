@@ -18,11 +18,18 @@ export class Dashboard extends React.Component {
     }
 
     render() {
-        console.log(this.props.protectedData);
+        console.log(this.props.protectedData.data);
         let results = '';
         if (this.props.protectedData.data) {
         results = this.props.protectedData.data.map(item => {
-            return  <div key={item._id} className="read-history">
+            return  <div 
+                        key={item._id} 
+                        className="read-history"
+                    >
+                        <img 
+                            src={item.imgUrl} 
+                            alt="Comic book cover" 
+                        /><br />
                         <span className="title">{item.title}</span><br />
                         <span className="read">{item.read}</span>
                     </div>
