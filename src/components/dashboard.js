@@ -5,6 +5,7 @@ import requiresLogin from './requires-login';
 import SearchForm from './search-form';
 import {clearAuthToken} from '../local-storage';
 import {clearAuth} from '../actions/auth';
+import {findComic} from '../actions';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -25,6 +26,7 @@ export class Dashboard extends React.Component {
             return  <div 
                         key={item._id} 
                         className="read-history"
+                        onClick={() => this.props.dispatch(findComic(item.resourceURI))}
                     >
                         <img 
                             src={item.imgUrl} 
