@@ -41,10 +41,13 @@ export class LoginForm extends React.Component {
                         label="Enter password"
                         validate={[required, nonEmpty]}
                     />
-                    <button disabled={this.props.pristine || this.props.submitting}>
+                    <button
+                        type="submit"
+                        disabled={this.props.pristine || this.props.submitting}
+                        className="register-btn"
+                    >
                         Log in
                     </button><br/>
-                    <span>Don't have an account? <a href="/register">Sign up here</a></span>
                 </form>
         );
     }
