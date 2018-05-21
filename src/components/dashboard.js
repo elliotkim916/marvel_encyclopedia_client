@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchProtectedData} from '../actions/protected-data';
+import {deleteData} from '../actions/protected-data';
 import requiresLogin from './requires-login';
 import SearchForm from './search-form';
 import {clearAuthToken} from '../local-storage';
@@ -18,22 +19,36 @@ export class Dashboard extends React.Component {
         clearAuthToken();
     }
 
+    // onDelete(event) {
+    //     const _id = this.props.protectedData.data[0];
+    //     const data = _id;
+    //     this.props.dispatch(deleteData(data));
+    //     window.location.reload();
+    // }
+
     render() {
-        console.log(this.props.protectedData.data);
+        // console.log(this.props.protectedData.data);
         let results = '';
         if (this.props.protectedData.data) {
         results = this.props.protectedData.data.map(item => {
-            return  <div 
+            return  <div
                         key={item._id} 
                         className="read-history"
-                        onClick={() => this.props.dispatch(findComic(item.resourceURI))}
                     >
-                        <img 
-                            src={item.imgUrl} 
-                            alt="Comic book cover" 
-                        /><br />
-                        <span className="title">{item.title}</span><br />
-                        <span className="read">{item.read}</span>
+                        <div onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
+                            <img 
+                                src={item.imgUrl} 
+                                alt="Comic book cover" 
+                            /><br />
+                            <span className="title">{item.title}</span><br />
+                            <span className="read">{item.read}</span>
+                        </div>
+                        <button 
+                            onClick={() => this.props.dispatch(deleteData(item._id))}
+                            className="remove-comic-btn"
+                        >
+                        <span className="x-icon">X</span>
+                        </button>
                     </div>
         });
     }
