@@ -28,3 +28,18 @@
 .protected-data-header {
     margin-bottom: 35px;
 }
+
+.remove-comic-btn {
+    border-radius: 40px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    position: relative;
+    bottom: 320px;
+    left: 80px;
+}
+
+.x-icon {
+    font-weight: bold;
+    margin-left: -2px;
+}
