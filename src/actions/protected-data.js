@@ -19,6 +19,12 @@ export const addProtectedDataSuccess = addComicData => ({
     addComicData
 });
 
+export const DELETE_PROTECTED_DATA_SUCCESS = 'DELETE_PROTECTED_DATA_SUCCESS';
+export const deleteProtectedDataSuccess = error => ({
+    type: DELETE_PROTECTED_DATA_SUCCESS,
+    error
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const headers =  {
@@ -60,5 +66,25 @@ export const addData = (title, read, imgUrl, resourceURI) => (dispatch, getState
         .then((data) => dispatch(addProtectedDataSuccess(data)))
         .catch(err => {
             dispatch(fetchProtectedDataError(err));
+    });
+};
+
+export const deleteData = _id => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const url = `${API_BASE_URL}/marvel/` + _id;
+    const headers = {
+        Authorization: `Bearer ${authToken}`,
+        'Content-Type': `application/json`
+    };
+    return fetch(`${url}`, {
+        headers,
+        method: 'DELETE'
+    })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then((data) => dispatch(deleteProtectedDataSuccess(data)))
+    .then(window.location.reload())
+    .catch(err => {
+        dispatch(fetchProtectedDataError(err))
     });
 };
