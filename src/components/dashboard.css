@@ -37,6 +37,7 @@
     position: relative;
     bottom: 320px;
     left: 80px;
+    cursor: pointer;
 }
 
 .x-icon {
