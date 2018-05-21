@@ -6,6 +6,7 @@ import {addData} from '../actions/protected-data';
 
 export class ComicsList extends React.Component {
     render() {
+        console.log(this.props.loggedIn.username);
         let urls = '';
 
         if (this.props.character.urls) { 
@@ -15,6 +16,7 @@ export class ComicsList extends React.Component {
         let comicTitles = '';
 
         if (this.props.comic) {
+            console.log(this.props.comic);
             comicTitles = this.props.comic.map((comic, index) => (
                 <li key={`comic-${index}`}>
                     <form className="comics-form">
@@ -42,7 +44,8 @@ export class ComicsList extends React.Component {
                                     comic.title, 
                                     'Already Read', 
                                     comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
-                                    comic.resourceURI
+                                    comic.resourceURI,
+                                    this.props.loggedIn.username
                                 ))}
                             />
                             <label 
@@ -62,7 +65,8 @@ export class ComicsList extends React.Component {
                                     comic.title, 
                                     'Read Later', 
                                     comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
-                                    comic.resourceURI
+                                    comic.resourceURI,
+                                    this.props.loggedIn.username
                                 ))} 
                             />
                             <label 
@@ -99,4 +103,8 @@ export class ComicsList extends React.Component {
     }
 }
 
-export default connect()(ComicsList);
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser
+});
+
+export default connect(mapStateToProps)(ComicsList);
