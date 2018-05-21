@@ -29,3 +29,12 @@
 .marvel-header {
     color: black;
 }
+
+.demo-username, .demo-password {
+    text-align: center;
+    margin-top: -20px;
+}
+
+.demo-container {
+    margin-top: 45px;
+}
