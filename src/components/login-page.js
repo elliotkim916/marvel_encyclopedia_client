@@ -13,9 +13,12 @@ export function LoginPage(props) {
     return (
         <div className="login-page">
             <header>
-                <h2><Link to="/">Marvel Encyclopedia</Link></h2>
+                <h2>
+                    <Link to="/" className="marvel-header">Marvel Encyclopedia</Link>
+                </h2>
             </header>
             <LoginForm />
+            <span className="register-redirect">Don't have an account? <a href="/register">Sign up here</a></span>
         </div>
     )
 }
