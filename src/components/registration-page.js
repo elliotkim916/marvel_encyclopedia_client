@@ -13,7 +13,9 @@ export function RegistrationPage(props) {
     return (
         <div className="login-page">
             <header>
-                <h2><Link to="/">Marvel Encyclopedia</Link></h2>
+                <h2 className="marvel-header">
+                    <Link to="/" className="marvel-header">Marvel Encyclopedia</Link>
+                </h2>
             </header>
             <h3>Begin your Marvel journey now!</h3>
             <RegistrationForm /><br/>
