@@ -1,7 +1,8 @@
 import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR,
-    ADD_PROTECTED_DATA_SUCCESS
+    ADD_PROTECTED_DATA_SUCCESS,
+    DELETE_PROTECTED_DATA_SUCCESS
 } from '../actions/protected-data';
 
 const initialState = {
@@ -16,10 +17,14 @@ export default function protectedDataReducer(state=initialState, action) {
             data: action.protected,
             error: null
         });
-    } else if  (action.type === ADD_PROTECTED_DATA_SUCCESS) {
+    } else if (action.type === ADD_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
             addComicData: action.addComicdata,
             error: null
+        });
+    } else if (action.type === DELETE_PROTECTED_DATA_SUCCESS) {
+        return Object.assign({}, state, {
+            error: action.error
         });
     } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
         return Object.assign({}, state, {
