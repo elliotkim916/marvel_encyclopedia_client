@@ -27,11 +27,12 @@ export const deleteProtectedDataSuccess = error => ({
 
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    const username = getState().auth.currentUser.username;
     const headers =  {
         Authorization: `Bearer ${authToken}`
     }
 
-    return fetch(`${API_BASE_URL}/marvel`, {
+    return fetch(`${API_BASE_URL}/marvel/${username}`, {
         headers,
         method: 'GET'
     })
@@ -43,20 +44,22 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         });
 };
 
-export const addData = (title, read, imgUrl, resourceURI) => (dispatch, getState) => {
+export const addData = (title, read, imgUrl, resourceURI, username) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    const username = getState().auth.currentUser.username;
     const data = JSON.stringify({
         title: title,
         read: read,
         imgUrl: imgUrl,
-        resourceURI: resourceURI
+        resourceURI: resourceURI,
+        username: username
     });
     const headers = {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': `application/json`
     };
 
-    return fetch(`${API_BASE_URL}/marvel`, {
+    return fetch(`${API_BASE_URL}/marvel/${username}`, {
         headers,
         method: 'POST',
         body: data
