@@ -1,3 +1,31 @@
 .login-page {
     margin-top: 275px;
 }
+
+.user-input {
+   border-style: none;
+   border-bottom: 1px solid black;
+   margin-top: 10px;
+   font-style: italic;
+}
+
+.user-input:focus {
+    outline: none;
+}
+
+.register-redirect {
+    position: relative;
+    top: 20px;
+}
+
+.register-btn {
+    margin-top: 15px;
+    width: 130px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.marvel-header {
+    color: black;
+}
