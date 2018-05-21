@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
 import RegistrationForm from './registration-form';
+import './registration-page.css';
 
 export function RegistrationPage(props) {
     if (props.loggedIn) {
@@ -10,7 +11,7 @@ export function RegistrationPage(props) {
     }
 
     return (
-        <div className="home">
+        <div className="login-page">
             <header>
                 <h2><Link to="/">Marvel Encyclopedia</Link></h2>
             </header>
