@@ -8,7 +8,7 @@ export default function TopNav(props) {
                 <ul>
                     <li className="nav-list-item">
                         <a 
-                            href="search-results"
+                            href="demo"
                             className="demo"
                             aria-label="Demo of application"
                         >
