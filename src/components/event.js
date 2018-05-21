@@ -67,7 +67,8 @@ export function Event(props) {
                                 comic.title, 
                                 'Already Read', 
                                 comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
-                                comic.resourceURI
+                                comic.resourceURI,
+                                props.loggedIn.username
                             ))}
                         />
                         <label 
@@ -87,7 +88,8 @@ export function Event(props) {
                                 comic.title, 
                                 'Read Later', 
                                 comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
-                                comic.resourceURI
+                                comic.resourceURI,
+                                props.loggedIn.username
                             ))} 
                         />
                         <label 
@@ -162,7 +164,8 @@ export function Event(props) {
 const mapStateToProps = state => ({
     eventResult: state.eventReducer.clickedEvent,
     eventCharacter: state.eventCharacterReducer.eventCharacter,
-    eventComic: state.eventComicReducer.eventComic
+    eventComic: state.eventComicReducer.eventComic,
+    loggedIn: state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(Event);
