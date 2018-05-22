@@ -25,7 +25,7 @@ export class ComicsList extends React.Component {
                             onClick={() => this.props.dispatch(findComic(comic.resourceURI))}
                         >
                             <img 
-                                src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`} 
+                                src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
                                 alt="Comic book cover"
                                 className="comic-cover-img"
                             />
