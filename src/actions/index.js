@@ -25,7 +25,7 @@ export const findEventError = error => ({
 });
 
 function searchEvent(URI) {
-    return fetch(`${URI}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    return fetch(`${URI.slice(5)}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
     .then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
@@ -66,7 +66,7 @@ export const findComicError = error => ({
 });
 
 function searchComic(URI) {
-    return fetch(`${URI}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
+    return fetch(`${URI.slice(5)}?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
     .then(res => {
         if (!res.ok) {
             return Promise.reject(res.statusText);
