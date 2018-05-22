@@ -149,15 +149,7 @@ function search(name) {
             return Promise.reject(res.statusText);
         }
         return res.json();
-    }).then(data => data.data.results[0])
-    // .then(dataTwo => {
-    //     return fetch(`${MARVEL_API_BASE_URL}${MARVEL_CHARACTERS_ENDPOINT}/${dataTwo.id}/comics?ts=${TS}&apikey=${PUBLIC_KEY}&hash=${HASH}`)
-    // }).then(res => {
-    //     if (!res.ok) {
-    //         return Promise.reject(res.statusText);
-    //     }
-    //     return res.json();
-    // }).then(dataTwo => dataTwo.data.results)      
+    }).then(data => data.data.results[0])   
 }
 
 export const searchCharacter = name => dispatch => {
