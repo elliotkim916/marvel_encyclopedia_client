@@ -13,7 +13,7 @@ export function Event(props) {
     let creator = '';
 
     if (props.eventResult.thumbnail) {
-        imgUrl = props.eventResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + props.eventResult.thumbnail.extension;
+        imgUrl = props.eventResult.thumbnail.path + '/portrait_uncanny.' + props.eventResult.thumbnail.extension;
     }
 
     if (props.eventResult.urls) {
@@ -28,7 +28,7 @@ export function Event(props) {
                 className="event-character-name"
             >
                 <img 
-                    src={`${character.thumbnail.path.slice(5)}/portrait_fantastic.${character.thumbnail.extension}`} 
+                    src={`${character.thumbnail.path}/portrait_fantastic.${character.thumbnail.extension}`} 
                     alt="Character cover"
                 /><br />
                 {character.name}
@@ -48,7 +48,7 @@ export function Event(props) {
                         onClick={() => props.dispatch(findComic(comic.resourceURI))}
                     >
                         <img 
-                            src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
+                            src={`${comic.thumbnail.path}/portrait_fantastic.${comic.thumbnail.extension}`} 
                             alt="Comic book cover"
                             className="comic-cover-img"
                         />
@@ -66,7 +66,7 @@ export function Event(props) {
                             onChange ={() => props.dispatch(addData(
                                 comic.title, 
                                 'Already Read', 
-                                comic.thumbnail.path.slice(5) + '/portrait_fantastic.' + comic.thumbnail.extension,
+                                comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
                                 comic.resourceURI,
                                 props.loggedIn.username
                             ))}
@@ -87,7 +87,7 @@ export function Event(props) {
                             onChange ={() => props.dispatch(addData(
                                 comic.title, 
                                 'Read Later', 
-                                comic.thumbnail.path.slice(5) + '/portrait_fantastic.' + comic.thumbnail.extension,
+                                comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
                                 comic.resourceURI,
                                 props.loggedIn.username
                             ))} 

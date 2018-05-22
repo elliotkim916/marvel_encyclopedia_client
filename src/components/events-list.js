@@ -14,7 +14,7 @@ export class EventsList extends React.Component {
                     onClick={() => this.props.dispatch(findEvent(event.resourceURI))}
                 >
                     <img 
-                        src={`${event.thumbnail.path.slice(5)}/portrait_fantastic.${event.thumbnail.extension}`} 
+                        src={`${event.thumbnail.path}/portrait_fantastic.${event.thumbnail.extension}`} 
                         alt="Event cover"
                         className="event-cover-img"
                     />
