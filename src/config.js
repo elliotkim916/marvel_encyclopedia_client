@@ -6,6 +6,6 @@ export const HASH = "06629b5ece79a47a43298a7ebc99af21";
 
 // server-side
 export const API_BASE_URL = 
-    process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api'
+    process.env.REACT_APP_API_BASE_URL || 'https://polar-waters-95107.herokuapp.com/';
 
    
