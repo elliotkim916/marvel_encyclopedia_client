@@ -20,7 +20,7 @@ export function Comic(props) {
         description = props.comicResult.description;
        
         if (props.comicResult.thumbnail) {
-            imgUrl = props.comicResult.thumbnail.path + '/portrait_uncanny.' + props.comicResult.thumbnail.extension;
+            imgUrl = props.comicResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + props.comicResult.thumbnail.extension;
         }
        
         if (props.comicResult.urls) { 
@@ -35,7 +35,7 @@ export function Comic(props) {
                     className="character-name"
                 >
                     <img 
-                        src={`${character.thumbnail.path}/portrait_fantastic.${character.thumbnail.extension}`} 
+                        src={`${character.thumbnail.path.slice(5)}/portrait_fantastic.${character.thumbnail.extension}`} 
                         alt="character cover"
                     /><br/>    
                     {character.name}
