@@ -43,3 +43,17 @@ ul {
 .issue-number {
     margin-right: 20px;
 }
+
+.log-out-from-comic {
+    float: right;
+    margin-right: 5px;
+    margin-top: -35px;
+    font-weight: bold;
+}
+
+.back-home-from-comic {
+    float: left;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: -35px;
+}
