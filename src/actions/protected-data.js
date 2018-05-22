@@ -32,7 +32,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         Authorization: `Bearer ${authToken}`
     }
 
-    return fetch(`${API_BASE_URL}/marvel/${username}`, {
+    return fetch(`${window.api_url}/marvel/${username}`, {
         headers,
         method: 'GET'
     })
@@ -59,7 +59,7 @@ export const addData = (title, read, imgUrl, resourceURI, username) => (dispatch
         'Content-Type': `application/json`
     };
 
-    return fetch(`${API_BASE_URL}/marvel/${username}`, {
+    return fetch(`${window.api_url}/marvel/${username}`, {
         headers,
         method: 'POST',
         body: data
