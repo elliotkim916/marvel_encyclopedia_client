@@ -1,5 +1,6 @@
 import {
     SET_AUTH_TOKEN,
+    CLEAR_AUTH,
     AUTH_REQUEST,
     AUTH_SUCCESS,
     AUTH_ERROR
@@ -17,6 +18,11 @@ export default function authReducer(state=initialState, action) {
         return Object.assign({}, state, {
             authToken: action.authToken
         });
+    } else if (action.type === CLEAR_AUTH) {
+        return Object.assign({}, state, {
+            authToken: null,
+            currentUser: null
+        });
     } else if (action.type === AUTH_REQUEST) {
         return Object.assign({}, state, {
             loading: true,
@@ -25,7 +31,6 @@ export default function authReducer(state=initialState, action) {
     } else if (action.type === AUTH_SUCCESS) {
         return Object.assign({}, state, {
             loading: false,
-            error: null,
             currentUser: action.currentUser
         });
     } else if (action.type === AUTH_ERROR) {
