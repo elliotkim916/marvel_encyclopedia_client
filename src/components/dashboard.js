@@ -30,6 +30,7 @@ export class Dashboard extends React.Component {
         // console.log(this.props.protectedData.data);
         let results = '';
         if (this.props.protectedData.data) {
+            // console.log(this.props.protectedData.data[0].imgUrl.slice(5));
         results = this.props.protectedData.data.map(item => {
             return  <div
                         key={item._id} 
@@ -37,7 +38,7 @@ export class Dashboard extends React.Component {
                     >
                         <div onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
                             <img 
-                                src={item.imgUrl.slice(5)} 
+                                src={item.imgUrl} 
                                 alt="Comic book cover" 
                             /><br />
                             <span className="title">{item.title}</span><br />
