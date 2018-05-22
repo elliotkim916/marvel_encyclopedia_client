@@ -27,10 +27,8 @@ export class Dashboard extends React.Component {
     // }
 
     render() {
-        // console.log(this.props.protectedData.data);
         let results = '';
         if (this.props.protectedData.data) {
-            // console.log(this.props.protectedData.data[0].imgUrl.slice(5));
         results = this.props.protectedData.data.map(item => {
             return  <div
                         key={item._id} 
