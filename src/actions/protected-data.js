@@ -1,4 +1,4 @@
-// import {API_BASE_URL} from '../config';
+import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const FETCH_PROTECTED_DATA_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
@@ -32,7 +32,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
         Authorization: `Bearer ${authToken}`
     }
 
-    return fetch(`${window.api_url}/marvel/${username}`, {
+    return fetch(`${API_BASE_URL}/marvel/${username}`, {
         headers,
         method: 'GET'
     })
@@ -59,7 +59,7 @@ export const addData = (title, read, imgUrl, resourceURI, username) => (dispatch
         'Content-Type': `application/json`
     };
 
-    return fetch(`${window.api_url}/marvel/${username}`, {
+    return fetch(`${API_BASE_URL}/marvel/${username}`, {
         headers,
         method: 'POST',
         body: data
@@ -74,7 +74,7 @@ export const addData = (title, read, imgUrl, resourceURI, username) => (dispatch
 
 export const deleteData = _id => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    const url = `${window.api_url}/marvel/` + _id;
+    const url = `${API_BASE_URL}/marvel/` + _id;
     const headers = {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': `application/json`
