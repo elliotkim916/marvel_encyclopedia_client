@@ -13,7 +13,7 @@ export const setAuthToken = authToken => ({
 
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
-    type: clearAuth
+    type: CLEAR_AUTH
 });
 
 export const AUTH_REQUEST = 'AUTH_REQUEST';
