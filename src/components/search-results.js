@@ -8,6 +8,7 @@ import EventsList from './events-list';
 import requiresLogin from './requires-login';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
+import './search-results.css';
 
 export class SearchResults extends React.Component {
     logOut() {
@@ -29,6 +30,12 @@ export class SearchResults extends React.Component {
 
     return (
         <section aria-label="search results">
+            <a 
+                href="dashboard"
+                className="back-home"
+            >
+            Home
+            </a>
             <a 
                 href="login"
                 className="log-out"
