@@ -4,8 +4,17 @@ import SearchForm from './search-form';
 import CharacterInfo from './character-info';
 import ComicsList from './comics-list';
 import EventsList from './events-list';
+// import HeaderBar from './header-bar';
+import requiresLogin from './requires-login';
+import {clearAuth} from '../actions/auth';
+import {clearAuthToken} from '../local-storage';
 
 export class SearchResults extends React.Component {
+    logOut() {
+        this.props.dispatch(clearAuth());
+        clearAuthToken();
+    }
+
     render() {  
         let searchResult;
         if (this.props.searchResult){
@@ -23,9 +32,11 @@ export class SearchResults extends React.Component {
             <a 
                 href="login"
                 className="log-out"
+                onClick={() => this.logOut}
             >
             Log Out
             </a>
+            {/* <HeaderBar /> */}
             <SearchForm />
             {Object.keys(this.props.searchResult).length > 0 && searchResult}
         </section>
@@ -37,7 +48,8 @@ export class SearchResults extends React.Component {
 const mapStateToProps = state => ({
     searchResult: state.characterReducer.searchedCharacter,
     searchCharacterComic: state.characterComicReducer.searchedCharacterComic,
-    searchCharacterEvent: state.characterEventReducer.searchedCharacterEvent
+    searchCharacterEvent: state.characterEventReducer.searchedCharacterEvent,
+    authToken: state.auth.authToken
 });
 
-export default connect(mapStateToProps)(SearchResults);
+export default requiresLogin()(connect(mapStateToProps)(SearchResults));
