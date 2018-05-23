@@ -31,9 +31,18 @@
     bottom: 320px;
     left: 80px;
     cursor: pointer;
+    z-index: 1;
 }
 
 .x-icon {
     font-weight: bold;
     margin-left: -2px;
+}
+
+.notes-btn {
+    font-weight: bold;
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    cursor: pointer;
 }
