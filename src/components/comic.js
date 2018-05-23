@@ -4,11 +4,17 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {searchCharacter} from '../actions';
 import './comic.css';
+import NotesDrawer from './notes-drawer';
 
 export class Comic extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
+    }
+
+    openNav() {
+        document.getElementById("mySidenav").style.width = "150px";
+        document.getElementById("user-notes").style.marginLeft = "150px";
     }
 
     render() {
@@ -61,7 +67,7 @@ export class Comic extends React.Component {
         }
         
         return (
-            <section className="comic-section">
+            <section className="comic-section" id="user-notes">
                 <a 
                     href="dashboard"
                     className="back-home-from-comic"
@@ -83,7 +89,13 @@ export class Comic extends React.Component {
 
                 <div className="comic-description">
                     <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
-                    {/* <div className="description-container">{description}</div> */}
+                    <NotesDrawer />
+                    <a 
+                        onClick={() => this.openNav()}
+                        className="comic-notes-btn"    
+                    >
+                    Take Notes &#62;&#62;
+                    </a><br/> 
                     <div className="character-container">
                         <h2 className="container-header">Characters In This Issue</h2>
                             <ul className="character-list">
