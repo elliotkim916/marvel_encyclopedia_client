@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {fetchProtectedData} from '../actions/protected-data';
+import {getNotesData} from '../actions/notes';
+import {deleteNotesData} from '../actions/notes';
 import {deleteData} from '../actions/protected-data';
 import requiresLogin from './requires-login';
 import SearchForm from './search-form';
@@ -13,6 +15,7 @@ import NotesDrawer from './notes-drawer';
 export class Dashboard extends React.Component {
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+        this.props.dispatch(getNotesData());
     }
 
     logOut() {
@@ -26,6 +29,26 @@ export class Dashboard extends React.Component {
     }
 
     render() {
+        console.log(this.props.notes);
+        let notesResults = '';
+        if (this.props.notes) {
+        notesResults = this.props.notes.map(note => {
+            return <div
+                        key={note._id}
+                        className="notes-history"
+                    >
+                        <span className="note-title">{note.title}</span>
+                        <span className="note-text">{note.note}</span>
+                        <button
+                            className="remove-note-btn"
+                            onClick={() => this.props.dispatch(deleteNotesData(note._id))}
+                        >
+                        Delete
+                        </button>
+                    </div>
+        })
+        }
+
         let results = '';
         if (this.props.protectedData.data) {
         results = this.props.protectedData.data.map(item => {
@@ -68,8 +91,13 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Welcome {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!
                 </div>
+
+                <h3 className="notes-header">Your Notes</h3>
+                <div className="notes-data">
+                    {notesResults}
+                </div>
+
                 <h3 className="protected-data-header">Your Read & Unread Comics</h3>
-   
                 <div className="dashboard-protected-data">
                     {results}
                 </div>
@@ -82,7 +110,8 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
+        notes: state.notes.notes.data
     };
 };
 
