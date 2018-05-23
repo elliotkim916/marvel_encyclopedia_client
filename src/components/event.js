@@ -6,11 +6,17 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {addData} from '../actions/protected-data';
 import './event.css';
+import NotesDrawer from './notes-drawer';
 
 export class Event extends React.Component {
     logOut() {
         this.props.dispatch(clearAuth());
         clearAuthToken();
+    }
+
+    openNav() {
+        document.getElementById("mySidenav").style.width = "150px";
+        document.getElementById("user-notes").style.marginLeft = "150px";
     }
 
     render() {
@@ -121,7 +127,7 @@ export class Event extends React.Component {
         }
 
         return (
-            <section className="event-section">
+            <section className="event-section" id="user-notes">
                 <a 
                     href="dashboard"
                     className="back-home-from-comic"
@@ -142,6 +148,12 @@ export class Event extends React.Component {
 
                 <div className="event-description">
                     <p>{this.props.eventResult.description}</p><br />
+                    <span 
+                        onClick={() => this.openNav()}
+                        className="event-notes-btn"    
+                    >
+                    Take Notes &#62;&#62;
+                    </span> 
                     <a 
                         href={urls[1]} 
                         target="_blank"
@@ -150,7 +162,6 @@ export class Event extends React.Component {
                         Read More >>
                     </a>
                 </div>
-
                 <div className="event-character-container">
                     <h2 className="event-container-header">Characters In This Event</h2>
                         <ul className="event-character-list">
@@ -178,6 +189,7 @@ export class Event extends React.Component {
                                 {creator}
                             </ul>
                 </div>
+                <NotesDrawer />
             </section>
         );
     }
