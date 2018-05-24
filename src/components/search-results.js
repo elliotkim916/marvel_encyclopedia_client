@@ -4,11 +4,11 @@ import SearchForm from './search-form';
 import CharacterInfo from './character-info';
 import ComicsList from './comics-list';
 import EventsList from './events-list';
+// import HeaderBar from './header-bar';
 import requiresLogin from './requires-login';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import './search-results.css';
-import NotesDrawer from './notes-drawer';
 
 export class SearchResults extends React.Component {
     logOut() {
@@ -29,7 +29,7 @@ export class SearchResults extends React.Component {
         }
 
     return (
-        <section aria-label="search results" id="user-notes">
+        <section aria-label="search results">
             <a 
                 href="dashboard"
                 className="back-home"
@@ -37,14 +37,14 @@ export class SearchResults extends React.Component {
             Home
             </a>
             <a 
-                // href="login"
+                href="login"
                 className="log-out"
-                onClick={() => this.logOut()}
+                onClick={() => this.logOut}
             >
             Log Out
             </a>
+            {/* <HeaderBar /> */}
             <SearchForm />
-            <NotesDrawer />
             {Object.keys(this.props.searchResult).length > 0 && searchResult}
         </section>
         );
