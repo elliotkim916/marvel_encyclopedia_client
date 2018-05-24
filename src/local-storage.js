@@ -11,6 +11,5 @@ export const saveAuthToken = authToken => {
 export const clearAuthToken = () => {
     try {
         localStorage.removeItem('authToken');
-        window.location.href='/login';
     } catch (e) {}
 };
