@@ -3,10 +3,10 @@ import './info-section.css';
 
 export default function InfoSection(props) {
     return (
-        <section className="info-section">
+        <section>
             <div className="info title">
             <header>
-                <h1><img src="http://www.g33k-hq.com/wp-content/uploads/2013/10/thumbnail-marvel-character-logo-620x250.jpg" alt="marvel logo" className="marvel-logo"/> Encyclopedia</h1>
+                <h1>Marvel Encyclopedia</h1>
                 <h2>Your source for all things Marvel.</h2>
             </header>
             </div>
