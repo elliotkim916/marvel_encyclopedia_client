@@ -1,16 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchProtectedData} from '../actions/protected-data';
-import {getNotesData} from '../actions/notes';
-import {deleteNotesData} from '../actions/notes';
-import {deleteData} from '../actions/protected-data';
-import requiresLogin from './requires-login';
-import SearchForm from './search-form';
 import {clearAuthToken} from '../local-storage';
 import {clearAuth} from '../actions/auth';
+import requiresLogin from './requires-login';
+
+import {fetchProtectedData} from '../actions/protected-data';
+import {deleteData} from '../actions/protected-data';
+
 import {findComic} from '../actions';
-import './dashboard.css';
+import {getNotesData} from '../actions/notes';
+import {updateNotesData} from '../actions/notes';
+import {deleteNotesData} from '../actions/notes';
 import NotesDrawer from './notes-drawer';
+
+import SearchForm from './search-form';
+import './dashboard.css';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -28,26 +32,124 @@ export class Dashboard extends React.Component {
         document.getElementById("user-notes").style.marginLeft = "150px";
     }
 
+    onEditNote(_id, title, note, event) {
+        event.preventDefault();
+        Object.assign(this.props.notes, {isEditing: true});
+        console.log(this.props.notes);
+        this.props.dispatch(updateNotesData(_id, title, note))
+    }
+
+    // onCancel(event) {
+    //     event.preventDefault();
+    //     Object.assign(this.props.updateNotes, {isEditing: false});
+    // }
+
+    onDeleteNote(_id, event) {
+        event.preventDefault();
+        const result = window.confirm('Are you sure?')
+        if (result) {
+            this.props.dispatch(deleteNotesData(_id))
+            .then(data => window.location.reload());
+        }
+    }
+
+    onDeleteComic(_id, event) {
+        event.preventDefault();
+        const result = window.confirm('Are you sure?')
+        if (result) {
+            this.props.dispatch(deleteData(_id))
+            .then(data => window.location.reload());
+        }
+    }
+   
     render() {
         console.log(this.props.notes);
         let notesResults = '';
+        // let editNote = '';
+        // if (this.props.updateNotes.isEditing === true) {
+        //     editNote = this.props.notes.map(note => {
+        //         return (
+        //             <form>
+        //                 <input 
+        //                     type="text" 
+        //                     placeholder={note.title}
+        //                     name="updateNoteTitle"
+        //                 />
+        //                 <input 
+        //                     type="text" 
+        //                     placeholder={note.note}
+        //                     name="updateNoteContent"
+        //                 />
+        //                 <button 
+        //                     type="submit"
+        //                     className="update-btn"
+        //                     onSubmit={() => this.onEditNote(note._id, 'dang', 'again', note.event)}
+        //                 >
+        //                 Update
+        //                 </button>
+        //                 <button
+        //                     className="cancel-btn"
+        //                     onClick={() => Object.assign(this.props.updateNotes, {isEditing: false})}
+        //                 >
+        //                 Cancel
+        //                 </button>
+        //             </form>
+        //         )
+        //         })
+        // } else 
         if (this.props.notes) {
-        notesResults = this.props.notes.map(note => {
-            return <div
-                        key={note._id}
-                        className="notes-history"
-                    >
-                        <span className="note-title">{note.title}</span>
-                        <span className="note-text">{note.note}</span>
-                        <button
-                            className="remove-note-btn"
-                            onClick={() => this.props.dispatch(deleteNotesData(note._id))}
-                        >
-                        Delete
-                        </button>
-                    </div>
-        })
-        }
+            notesResults = this.props.notes.map(note => {
+                // console.log(note.isEditing);
+                if (note.isEditing === true) {
+                    return <form>
+                                <input 
+                                    type="text" 
+                                    placeholder={note.title}
+                                    name="updateNoteTitle"
+                                />
+                                <input 
+                                    type="text" 
+                                    placeholder={note.note}
+                                    name="updateNoteContent"
+                                />
+                                <button 
+                                    type="button"
+                                    className="update-btn"
+                                    onClick={() => this.onEditNote(note._id, 'dang', 'again', note.event)}
+                                >
+                                Update
+                                </button>
+                                <button
+                                    className="cancel-btn"
+                                    onClick={() => Object.assign(this.props.updateNotes, {isEditing: false})}
+                                >
+                                Cancel
+                                </button>
+                            </form>           
+                } else {
+                    return <div
+                                key={note._id}
+                                className="notes-history"
+                            >
+                            <span className="note-title">{note.title}</span><br />
+                            <span className="note-text">{note.note}</span><br />
+                            <button
+                                className="edit-note-btn"
+                                onClick={(event) => this.onEditNote(note._id, note.title, note.note, event)}
+                                // onClick={() => console.log('clicks')}
+                            >
+                            Edit
+                            </button>
+                            <button
+                                className="remove-note-btn"
+                                onClick={(event) => this.onDeleteNote(note._id, event)}
+                            >
+                            Delete
+                            </button>
+                        </div>
+                    }
+                });
+            }
 
         let results = '';
         if (this.props.protectedData.data) {
@@ -65,7 +167,7 @@ export class Dashboard extends React.Component {
                             <span className="read">{item.read}</span>
                         </div>
                         <button 
-                            onClick={() => this.props.dispatch(deleteData(item._id))}
+                            onClick={(event) => this.onDeleteComic(item._id, event)}
                             className="remove-comic-btn"
                         >
                         <span className="x-icon">X</span>
@@ -95,6 +197,7 @@ export class Dashboard extends React.Component {
                 <h3 className="notes-header">Your Notes</h3>
                 <div className="notes-data">
                     {notesResults}
+                    {/* {editNote} */}
                 </div>
 
                 <h3 className="protected-data-header">Your Read & Unread Comics</h3>
@@ -111,7 +214,8 @@ const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
         protectedData: state.protectedData.data,
-        notes: state.notes.notes.data
+        notes: state.notes.notes.data,
+        updateNotes: state.notes
     };
 };
 
