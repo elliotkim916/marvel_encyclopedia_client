@@ -76,32 +76,6 @@ export const addNotesData = (title, note, username) => (dispatch, getState) => {
         });
 };
 
-export const updateNotesData = (_id, title, note) => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    // const username = getState().auth.currentUser.username;
-    const data = JSON.stringify({
-        title: title,
-        note: note
-    });
-    const url = `${API_BASE_URL}/notes/` + _id;
-    const headers = {
-        Authorization: `Bearer ${authToken}`,
-        'Content-Type': `application/json`
-    }
-
-    return fetch(`${url}`, {
-        headers,
-        method: 'PUT',
-        body: data
-    })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then((data) => dispatch(updateNotesSuccess(data)))
-        .catch(err => {
-            dispatch(getNotesError(err));
-    });
-};
-
 export const deleteNotesData = _id => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const url = `${API_BASE_URL}/notes/` + _id;
@@ -113,11 +87,11 @@ export const deleteNotesData = _id => (dispatch, getState) => {
         headers,
         method: 'DELETE'
     })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then((data) => dispatch(deleteNotesSuccess(data)))
-        .then(window.location.reload())
-        .catch(err => {
-            dispatch(getNotesError(err))
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then((data) => dispatch(deleteNotesSuccess(data)))
+    .then(window.location.reload())
+    .catch(err => {
+        dispatch(getNotesError(err))
     });
 };
