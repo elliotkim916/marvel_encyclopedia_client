@@ -24,3 +24,12 @@ p + p {
 .title {
     background-color: white;
 }
+
+.marvel-logo {
+    width: 250px;
+    height: 100px;
+}
+
+.info-title {
+    background-color: red;
+}
