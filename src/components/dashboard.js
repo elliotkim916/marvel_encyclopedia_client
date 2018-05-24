@@ -8,7 +8,6 @@ import {clearAuthToken} from '../local-storage';
 import {clearAuth} from '../actions/auth';
 import {findComic} from '../actions';
 import './dashboard.css';
-import NotesDrawer from './notes-drawer';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -17,13 +16,15 @@ export class Dashboard extends React.Component {
 
     logOut() {
         this.props.dispatch(clearAuth());
-        clearAuthToken(); 
+        clearAuthToken();
     }
 
-    openNav() {
-        document.getElementById("mySidenav").style.width = "150px";
-        document.getElementById("user-notes").style.marginLeft = "150px";
-    }
+    // onDelete(event) {
+    //     const _id = this.props.protectedData.data[0];
+    //     const data = _id;
+    //     this.props.dispatch(deleteData(data));
+    //     window.location.reload();
+    // }
 
     render() {
         let results = '';
@@ -51,14 +52,9 @@ export class Dashboard extends React.Component {
         });
     }
         return (
-            <div className="dashboard" id="user-notes">
-                <span 
-                    onClick={() => this.openNav()}
-                    className="notes-btn"    
-                >
-                &#9776; Take Notes
-                </span> 
+            <div className="dashboard">
                 <a 
+                    href="login"
                     className="log-out"
                     onClick={() => this.logOut()}
                 >
@@ -68,12 +64,11 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Welcome {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!
                 </div>
-                <h3 className="protected-data-header">Your Read & Unread Comics</h3>
-   
+
+                <h3 className="protected-data-header">Your Read & Unread Comics</h3>   
                 <div className="dashboard-protected-data">
                     {results}
                 </div>
-                <NotesDrawer />
             </div>
         );
     }
