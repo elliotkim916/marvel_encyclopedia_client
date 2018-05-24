@@ -13,12 +13,4 @@ p {
 .info-new-link {
     font-weight: bold;
     text-align: left;
-    color: black;
-    cursor: pointer;
-}
-
-.character-notes-btn {
-    font-weight: bold;
-    margin-right: 35px;
-    cursor: pointer
 }
