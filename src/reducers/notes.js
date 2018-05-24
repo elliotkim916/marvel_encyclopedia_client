@@ -10,7 +10,6 @@ const initialState = {
     notes: '',
     addNewNotes: '',
     updateNotes: '',
-    isEditing: false,
     error: null
 }
 
@@ -23,8 +22,7 @@ export default function notesReducer(state=initialState, action) {
     } else if (action.type === UPDATE_NOTES_SUCCESS) {
         return Object.assign({}, state, {
             updateNotes: action.updateNotes,
-            isEditing: action.isEditing,
-            error: action.error
+            error: null
         })
     } else if (action.type === ADD_NEW_NOTES_SUCCESS) {
         return Object.assign({}, state, {
