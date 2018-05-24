@@ -2,11 +2,6 @@ import React from 'react';
 import './character-info.css'
 
 export default class CharacterInfo extends React.Component {
-    openNav() {
-        document.getElementById("mySidenav").style.width = "150px";
-        document.getElementById("user-notes").style.marginLeft = "150px";
-    }
-    
     render() {
         let imgUrl = '';
         if (this.props.character.thumbnail) {
@@ -27,12 +22,6 @@ export default class CharacterInfo extends React.Component {
                     className="searched-img" />
                 <h2>{this.props.character.name}</h2>
                 <p>{this.props.character.description}</p>
-                <span 
-                    onClick={() => this.openNav()}
-                    className="character-notes-btn"    
-                >
-                &#9776; Take Notes
-                </span> 
                 <a 
                     href={urls[1]}
                     target="_blank"
