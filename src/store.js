@@ -3,7 +3,6 @@ import thunk from 'redux-thunk';
 import {reducer as formReducer} from 'redux-form';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
-import notesReducer from './reducers/notes';
 import {loadAuthToken} from './local-storage';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 import {
@@ -29,8 +28,7 @@ const store = createStore(
         eventComicReducer: eventComicReducer,
         form: formReducer,
         auth: authReducer,
-        protectedData: protectedDataReducer,
-        notes: notesReducer
+        protectedData: protectedDataReducer
     }),
     applyMiddleware(thunk)
 );
