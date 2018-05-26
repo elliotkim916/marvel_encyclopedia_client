@@ -46,7 +46,7 @@ export class LoginForm extends React.Component {
                         disabled={this.props.pristine || this.props.submitting}
                         className="register-btn"
                     >
-                        Log in
+                        LOG IN
                     </button><br/>
                 </form>
         );
