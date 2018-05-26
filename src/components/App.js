@@ -9,7 +9,6 @@ import LoginPage from './login-page';
 import SearchResults from './search-results';
 import Comic from './comic';
 import Event from './event';
-import DemoLoginPage from './demo-login-page';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
@@ -48,7 +47,6 @@ export class App extends React.Component {
               <Route exact path="/" component={LandingPage} />
               <Route exact path="/register" component={RegistrationPage} />
               <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/demo" component={DemoLoginPage} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/search-results" component={SearchResults} />
               <Route exact path="/event" component={Event} />  
