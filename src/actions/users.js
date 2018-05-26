@@ -17,11 +17,14 @@ export const registerUser = user => dispatch => {
             const {reason, message, location} = err;
 // when user tries to register with a username that is already taken
             if (reason === 'ValidationError') {
-                return Promise.reject(
+                throw Promise.reject(
                     new SubmissionError({
                         [location]: message
                     })
-                )
+                );
             }
-        })
+            throw new SubmissionError({
+                [location]: message
+            });
+        });
 }
