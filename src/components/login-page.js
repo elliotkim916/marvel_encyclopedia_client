@@ -14,11 +14,21 @@ export function LoginPage(props) {
         <div className="login-page">
             <header>
                 <h2>
-                    <Link to="/" className="marvel-header">Marvel Encyclopedia</Link>
+                    <Link to="/" className="marvel-header">    
+                    <img 
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/2000px-MarvelLogo.svg.png"
+                        alt="Marvel Encyclopedia"
+                        className="register-logo"
+                        /> <span className="second-word">ENCYCLOPEDIA</span></Link>
                 </h2>
             </header>
             <LoginForm />
-            <span className="register-redirect">Don't have an account? <a href="/register">Sign up here</a></span>
+            <span className="register-redirect">Don't have an account? <Link to="/register" className="click-here">Sign up here</Link></span>
+            <div className="demo-container">
+                <h3>Demo Account</h3>
+                <p className="demo-username">Username: demouser</p>
+                <p className="demo-password">Password: demopassword</p>
+            </div>
         </div>
     )
 }
