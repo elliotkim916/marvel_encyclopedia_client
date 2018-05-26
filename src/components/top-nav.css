@@ -1,18 +1,23 @@
 .top-nav {
-    background-color: #aaa;
-}
-
-ul {
-  list-style-type: none;
+   margin: 0;
 }
  
 .nav-list-item {
   float: right;
-  margin-right: 15px;
+  margin-top: 15px;
+  margin-right: 20px;
   text-decoration: none;
 } 
 
-a:link {
+.demo:link, .sign-up:link, .log-in:link {
   text-decoration: none;
   color: #aaa;
+}
+
+.demo, .sign-up, .log-in {
+  color: gainsboro;
+}
+
+.demo:hover, .sign-up:hover, .log-in:hover {
+  text-decoration: underline;
 }
