@@ -1,37 +1,38 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './top-nav.css';
 
 export default function TopNav(props) {
     return (
-        <section className="top-nav">
+        <section>
             <nav>
-                <ul>
+                <ul className="top-nav">
                     <li className="nav-list-item">
-                        <a 
-                            href="demo"
+                        <Link 
+                            to="/demo" 
                             className="demo"
                             aria-label="Demo of application"
                         >
                         Demo
-                        </a>
+                        </Link>
                     </li>
                     <li className="nav-list-item">
-                        <a
-                            href="register"
+                        <Link
+                            to="/register"
                             className="sign-up"
                             aria-label="Create a new account"
                         >
                         Sign up
-                        </a>    
+                        </Link>    
                     </li>
                     <li className="nav-list-item">
-                        <a
-                            href="login"
+                        <Link
+                            to="/login"
                             className="log-in"
                             aria-label="Log in with existing account"
                         >
                         Log in
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
