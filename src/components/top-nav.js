@@ -8,15 +8,6 @@ export default function TopNav(props) {
             <nav>
                 <ul className="top-nav">
                     <li className="nav-list-item">
-                        <Link 
-                            to="/demo" 
-                            className="demo"
-                            aria-label="Demo of application"
-                        >
-                        Demo
-                        </Link>
-                    </li>
-                    <li className="nav-list-item">
                         <Link
                             to="/register"
                             className="sign-up"
