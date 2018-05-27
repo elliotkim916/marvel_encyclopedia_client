@@ -11,18 +11,6 @@
     border-bottom: 1px solid black;
 }
 
-.search-input {
-    height: 35px;
-    border-style: none;
-    background-color: black;
-    border-bottom: 1px solid white;
-    color: white;
-}
-
-.search-input:focus {
-    outline: none;
-}
-
 .search-input[type="text"]::placeholder {
     color: white;
 }
@@ -53,6 +41,19 @@ h1 {
 
 .header-text {
     color: gainsboro;
+}
+
+.search-input {
+    height: 35px;
+    border-style: none;
+    background-color: black;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.search-input:focus {
+    outline: none;
+    border-bottom: 2px solid #3399FF;
 }
 
 @media only screen and (max-width: 701px) {
