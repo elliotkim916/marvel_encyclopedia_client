@@ -4,18 +4,29 @@ import './search-form.css';
 import {searchCharacter} from '../actions';
 
 export class SearchForm extends React.Component {
+    componentDidMount() {
+        this.input.focus();
+    }
+
     onSubmit(e) {
         e.preventDefault();
         this.input.value.trim();
         this.props.dispatch(searchCharacter(this.input.value));
         this.input.value = '';
     }
-
+    
     render() {
         return (
             <section className="search-form-section">
-                <header>
-                    <h1>Marvel Encyclopedia</h1>
+                <header className="search-form-header">
+                    <h1 className="form-header-text">
+                        <img 
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/2000px-MarvelLogo.svg.png" 
+                            alt="Marvel Encyclopedia"
+                            className="marvel-logo"
+                        /> 
+                        <div className="header-text">ENCYCLOPEDIA</div>
+                    </h1>
                 </header>
 
                 <form 
@@ -27,13 +38,14 @@ export class SearchForm extends React.Component {
                         placeholder="e.g. Thor" 
                         name="search-character" 
                         className="search-input" 
-                        ref={input => this.input = input} 
+                        ref={input => this.input = input}
+                        required 
                     />
                     <button 
                         type="submit" 
                         className="search-btn"
                     >
-                    Search
+                    <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
                 </form>
         </section>
