@@ -26,7 +26,7 @@ export class SearchResults extends React.Component {
                     <EventsList character={this.props.searchResult} event={this.props.searchCharacterEvent} />
                 </React.Fragment>
             );
-        }
+        } 
 
     return (
         <section aria-label="search results">
