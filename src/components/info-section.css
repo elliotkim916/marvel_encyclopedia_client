@@ -72,12 +72,8 @@
     transition-duration: 0.4s;
 }
 
-.sign-up-button:hover {
+.sign-up-button:hover, .sign-up-button:focus {
     background-color: #5c1010;
-}
-
-.sign-up-button:focus {
-    outline: none;
 }
 
 .explain {
