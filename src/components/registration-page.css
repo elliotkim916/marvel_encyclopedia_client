@@ -16,7 +16,7 @@
 
 .user-input:focus {
     outline: none;
-    border-bottom-color: skyblue;
+    border-bottom-color: #338bd5;
 }
 
 .register-redirect {
