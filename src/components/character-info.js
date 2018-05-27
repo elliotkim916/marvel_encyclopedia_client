@@ -18,17 +18,22 @@ export default class CharacterInfo extends React.Component {
             <div>
                 <img 
                     src={imgUrl}
-                    alt="searched character" 
-                    className="searched-img" />
-                <h2>{this.props.character.name}</h2>
-                <p>{this.props.character.description}</p>
-                <a 
-                    href={urls[1]}
-                    target="_blank"
-                    className="info-new-link"
-                    rel="noopener noreferrer">
-                    Read More >>
-                </a>
+                    alt="" 
+                    className="searched-img" 
+                />
+                <div className="character-description">
+                    <h2 className="character-name">{this.props.character.name.toUpperCase()}</h2>
+                    <p className="character-text">{this.props.character.description}</p>
+                    <div className="info-new-link">
+                        <a 
+                            href={urls[1]}
+                            target="_blank"
+                            className="new-link"
+                            rel="noopener noreferrer">
+                            Read More<span className="character-arrows"> >></span>
+                        </a>
+                    </div>
+                </div>
             </div>
             </section>
         );
