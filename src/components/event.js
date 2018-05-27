@@ -13,12 +13,19 @@ export class Event extends React.Component {
         clearAuthToken();
     }
 
+    onAdd(e, title, read, imgUrl, uri, username) {
+        e.preventDefault();
+        const result = window.confirm(`To add this comic book to your homepage as ${read}, continue by clicking OK.  Otherwise, click Cancel.`);
+        if (result) {
+            this.props.dispatch(addData(title, read, imgUrl, uri, username))
+        }
+    }
+
     render() {
         let imgUrl = '';
         let urls = '';
         let character = '';
         let comic = '';
-        let creator = '';
 
         if (this.props.eventResult.thumbnail) {
             imgUrl = this.props.eventResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + this.props.eventResult.thumbnail.extension;
@@ -30,25 +37,28 @@ export class Event extends React.Component {
 
         if (this.props.eventCharacter) {
             character = this.props.eventCharacter.map((character, index) => 
-                <li 
+                <div 
                     key={index} 
                     onClick={() => this.props.dispatch(searchCharacter(character.name))}
-                    className="event-character-name"
+                    className="eventCharactersName"
                 >
                     <img 
                         src={`${character.thumbnail.path.slice(5)}/portrait_fantastic.${character.thumbnail.extension}`} 
-                        alt="Character cover"
+                        alt=""
+                        className="character-cover-img"
                     /><br />
+                    <h3 className="event-person-name">
                     {character.name}
-                </li>
+                    </h3>
+                </div>
             );
         }
 
         if (this.props.eventComic) {
             comic = this.props.eventComic.map((comic, index) => 
-                <li 
+                <div 
                     key={index} 
-                    className="event-comic-name"    
+                    className="eventComicsName"    
                 >
                     <form className="event-comics-form">
                         <div
@@ -57,131 +67,118 @@ export class Event extends React.Component {
                         >
                             <img 
                                 src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
-                                alt="Comic book cover"
+                                alt=""
                                 className="comic-cover-img"
                             />
-                            <h3 className="comic-title">
+                        </div>
+                        <div className="event-btns">
+                            <h3 className="event-comic-title">
                             {comic.title}
                             </h3>
-                        </div>
-                        <div className="radio-btns">
-                            <input 
-                                type="radio" 
+                            <button 
+                                type="submit" 
                                 id={`already-read-${index}`} 
                                 name={`comic-${index}`}
                                 className="already-read-input"
                                 value={comic.title} 
-                                onChange ={() => this.props.dispatch(addData(
+                                onClick ={(e) => this.onAdd(
+                                    e,
                                     comic.title, 
-                                    'Already Read', 
+                                    'ALREADY READ', 
                                     comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
                                     comic.resourceURI,
                                     this.props.loggedIn.username
-                                ))}
-                            />
-                            <label 
-                                htmlFor={`already-read-${index}`}
-                                className="already-read-label"
+                                )}
                             >
-                                <span>Already Read</span>
-                            </label>
-
-                            <input 
-                                type="radio" 
+                            ALREADY READ
+                            </button>
+                            
+                            <button 
+                                type="submit" 
                                 id={`bookmark-${index}`} 
                                 name={`comic-${index}`}
                                 className="read-later-input"
                                 value={comic.title} 
-                                onChange ={() => this.props.dispatch(addData(
+                                onClick ={(e) => this.onAdd(
+                                    e,
                                     comic.title, 
                                     'Read Later', 
                                     comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
                                     comic.resourceURI,
                                     this.props.loggedIn.username
-                                ))} 
-                            />
-                            <label 
-                                htmlFor={`bookmark-${index}`}
-                                className="read-later-label"
+                                )} 
                             >
-                                <span>Read Later</span>
-                            </label>
+                            READ LATER
+                            </button>
                         </div>
                     </form>
-                </li>
-            );
-        }
-
-        if (this.props.eventResult.creators) {
-            creator = this.props.eventResult.creators.items.map((creator, index) => 
-                <li key={index}>
-                    <span>{creator.name}, {creator.role.charAt(0).toUpperCase() + creator.role.slice(1)}</span>
-                </li>
+                </div>
             );
         }
 
         return (
             <section className="event-section">
-                <a 
-                    href="dashboard"
-                    className="back-home-from-comic"
-                >
-                Home
-                </a>
-                <a 
-                    href="login"
-                    className="log-out-from-comic"
-                    onClick={() => this.logOut}
-                >
-                Log Out
-                </a>
-                <header>
-                    <img src={imgUrl} alt="Event cover" />
-                    <h2>{this.props.eventResult.title}</h2>
-                </header>
-
                 <div className="event-description">
-                    <p>{this.props.eventResult.description}</p><br />
                     <a 
-                        href={urls[1]} 
-                        target="_blank"
-                        className="new-event-link"
-                        rel="noopener noreferrer">
-                        Read More >>
+                        href="dashboard"
+                        className="back-home-from-comic"
+                    >
+                    Home
                     </a>
+                    <a 
+                        href="/"
+                        className="log-out-from-comic"
+                        onClick={() => this.logOut()}
+                    >
+                    Log Out
+                    </a>
+                    <img 
+                        src={imgUrl} 
+                        alt="" 
+                        className="eventCoversPicture"
+                    />
+                    <div className="eventsInformation">
+                        <h2 className="eventsTitle">{this.props.eventResult.title}</h2>
+                        <p className="eventsText">{this.props.eventResult.description}</p>
+                        <div className="readMoreLink">
+                            <a 
+                                href={urls[1]} 
+                                target="_blank"
+                                className="new-link"
+                                rel="noopener noreferrer">
+                                Read More<span className="arrows"> >></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="event-character-container">
-                    <h2 className="event-container-header">Characters In This Event</h2>
+                    <h2 className="event-container-header">CHARACTERS IN THIS EVENT</h2>
                         <ul className="event-character-list">
                             {character}
                         </ul>
                 </div>
 
                 <div className="event-comic-container">
-                    <h2 className="event-container-header">{this.props.eventResult.title} Core Issues & Tie-In Issues</h2>
+                    <h2 className="event-container-header">{this.props.eventResult.title} CORE ISSUES & TIE-IN ISSUES</h2>
                         <ul className="event-comic-list">
                             {comic}
                         </ul>
-                        <a 
-                            href={urls[0]} 
-                            target="_blank"
-                            className="new-event-link"
-                            rel="noopener noreferrer">
-                            See More >>
-                        </a>
-                </div>
-
-                <div className="event-creator-container">
-                        <h2 className="event-container-header">Creators</h2>
-                            <ul className="event-creators-list">
-                                {creator}
-                            </ul>
+                        <div className="see-more-link">
+                            <a 
+                                href={urls[0]} 
+                                target="_blank"
+                                className="more-link"
+                                rel="noopener noreferrer">
+                                See More<span className="arrows"> >></span>
+                            </a>
+                        </div>
                 </div>
             </section>
         );
     }
 }
+
 const mapStateToProps = state => ({
     eventResult: state.eventReducer.clickedEvent,
     eventCharacter: state.eventCharacterReducer.eventCharacter,
