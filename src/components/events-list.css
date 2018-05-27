@@ -44,7 +44,6 @@
     width: 350px;
     transition-duration: 1s;
     margin-top: 70px;
-    /* margin-bottom: 80px; */
 }
 
 .event-history:hover {
@@ -65,21 +64,13 @@
     }   
 }
 
-@media only screen and (min-width: 515px) {
-    /* .event-title {
-        width: 250px;
-    } */
-}
-
 @media only screen and (min-width: 765px) {
     .event-history {
-        /* padding-left: 80px; */
         margin-bottom: 80px;
         width: 350px;
     }
 
     .event-title {
         width: 200px;
-        /* height: 100px; */
     }
 }
