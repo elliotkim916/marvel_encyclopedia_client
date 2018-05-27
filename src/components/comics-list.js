@@ -5,8 +5,8 @@ import {findComic} from '../actions';
 import {addData} from '../actions/protected-data';
 
 export class ComicsList extends React.Component {
-    onAdd(event, title, read, imgUrl, uri, username) {
-        event.preventDefault();
+    onAdd(e, title, read, imgUrl, uri, username) {
+        e.preventDefault();
         const result = window.confirm(`To add this comic book to your homepage as ${read}, continue by clicking OK.  Otherwise, click Cancel.`);
         if (result) {
             this.props.dispatch(addData(title, read, imgUrl, uri, username))
@@ -33,18 +33,18 @@ export class ComicsList extends React.Component {
                                 alt=""
                                 className="comic-cover-img"
                             />
-                        </div>
-                        <div className="radio-btns">
                             <h3 className="comic-title">
                             {comic.title}
                             </h3>
+                        </div>
+                        <div className="radio-btns">
                             <button 
                                 type="submit" 
                                 id={`already-read-${index}`} 
                                 name={`comic-${index}`}
                                 className="already-read-input" 
-                                onClick={(event) => this.onAdd(
-                                    event,
+                                onClick={(e) => this.onAdd(
+                                    e,
                                     comic.title, 
                                     'ALREADY READ', 
                                     comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
@@ -60,8 +60,8 @@ export class ComicsList extends React.Component {
                                 id={`bookmark-${index}`} 
                                 name={`comic-${index}`}
                                 className="read-later-input"
-                                onClick={(event) => this.onAdd(
-                                    event,
+                                onClick={(e) => this.onAdd(
+                                    e,
                                     comic.title, 
                                     'READ LATER', 
                                     comic.thumbnail.path + '/portrait_fantastic.' + comic.thumbnail.extension,
@@ -86,13 +86,13 @@ export class ComicsList extends React.Component {
                     {comicTitles}
                 </ul>
                 <div className="more-comics-link">
-                <a 
-                    href={urls[2]}
-                    target="_blank"
-                    className="comics-new-link"
-                    rel="noopener noreferrer">
-                    See More<span className="arrows"> >></span>
-                </a>
+                    <a 
+                        href={urls[2]}
+                        target="_blank"
+                        className="comics-new-link"
+                        rel="noopener noreferrer">
+                        See More<span className="arrows"> >></span>
+                    </a>
                 </div> 
             </section>
         );
