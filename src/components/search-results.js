@@ -4,14 +4,14 @@ import SearchForm from './search-form';
 import CharacterInfo from './character-info';
 import ComicsList from './comics-list';
 import EventsList from './events-list';
-// import HeaderBar from './header-bar';
 import requiresLogin from './requires-login';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import './search-results.css';
 
 export class SearchResults extends React.Component {
-    logOut() {
+    logOut(e) {
+        e.preventDefault();
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
@@ -37,13 +37,12 @@ export class SearchResults extends React.Component {
             Home
             </a>
             <a 
-                href="login"
+                href="/"
                 className="log-out"
-                onClick={() => this.logOut}
+                onClick={(e) => this.logOut(e)}
             >
             Log Out
             </a>
-            {/* <HeaderBar /> */}
             <SearchForm />
             {Object.keys(this.props.searchResult).length > 0 && searchResult}
         </section>
