@@ -1,40 +1,87 @@
 .login-page {
     margin-top: 275px;
+    background-color: whitesmoke;
 }
 
 .user-input {
    border-style: none;
-   border-bottom: 1px solid black;
-   margin-top: 10px;
+   border-bottom: 2px solid #222;
+   margin-top: 20px;
    font-style: italic;
+   background-color: whitesmoke;
+   width: 200px;
+   font-size: 1em;
+   font-family: 'Montserrat', 'sans-serif'; 
 }
 
 .user-input:focus {
     outline: none;
+    border-bottom-color: skyblue;
 }
 
 .register-redirect {
     position: relative;
     top: 20px;
+    letter-spacing: .75px;
 }
 
 .register-btn {
-    margin-top: 15px;
-    width: 130px;
+    margin: 25px 0px 20px 0px;
+    width: 200px;
     height: 30px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 4px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    background-color: gainsboro;
+    color: #222;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.register-btn:hover, .register-btn:focus {
+    background-color: #000000;
+    color: white;
+}
+
+.click-here {
+    color: #000000;
+}
+
+.click-here:hover {
+    text-decoration: underline;
 }
 
 .marvel-header {
     color: black;
 }
 
+.register-logo {
+    width: 150px;
+}
+
+.second-word {
+    letter-spacing: 1px;
+    margin-left: 15px;
+    color: #000000;
+}
+
+.second-header {
+    color: #222;
+    letter-spacing: 1px;
+}
+
+.existing-acct {
+    color: #222;
+    letter-spacing: 1px;
+}
+
 .demo-username, .demo-password {
     text-align: center;
-    margin-top: -20px;
+    margin-top: -15px;
 }
 
 .demo-container {
-    margin-top: 45px;
+    margin-top: 50px;
+    letter-spacing: 1px;
 }
