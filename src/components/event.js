@@ -70,11 +70,11 @@ export class Event extends React.Component {
                                 alt=""
                                 className="comic-cover-img"
                             />
-                        </div>
-                        <div className="event-btns">
                             <h3 className="event-comic-title">
                             {comic.title}
                             </h3>
+                        </div>
+                        <div className="event-btns">
                             <button 
                                 type="submit" 
                                 id={`already-read-${index}`} 
