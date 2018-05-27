@@ -1,26 +1,103 @@
-header {
+.info-section-header {
     padding: 25px 15px;
 }
-  
-.info {
-    background-color: #bbb;
-    padding: 0px 20px 45px 20px;
+
+.information-section {
+    background-color: gainsboro;
+    padding-bottom: 30px;
 }
 
-.info:nth-child(even) {
-    background-color: #ddd;
-} 
-  
 .info-section-text {
-    max-width: 650px;
+    max-width: 380px;
     margin: 0 auto;
     text-align: center;
+    color: #000000;
+    letter-spacing: .6px;
+    margin-top: 25px;
+    margin-bottom: 35px;
 }
-  
-p + p {
-    margin-top: 15px;
+
+.info {
+    background-color: gainsboro;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.landing-pg-header {
+    color: whitesmoke;
+    font-size: 2em;
+    word-spacing: 3px;
+}
+
+.header-second-word {
+    color: gainsboro;
 }
 
 .title {
-    background-color: white;
+    background-color: #000000;
+}
+
+.header-one {
+    font-size: 2em;
+    letter-spacing: 1px;
+    color: #000000;
+}
+
+.comic-front-cover {
+    width: 225px;
+}
+
+.dr-strange-img {
+    width: 300px
+}
+
+.marvel-title-header {
+    margin-top: 155px;
+}
+
+.sign-up-button {
+    margin-top: 50px;
+    margin-bottom: 45px;
+    width: 140px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #BA0C2F;
+    color: white;
+    border-style: none;
+    font-size: 1em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.sign-up-button:hover {
+    background-color: #5c1010;
+}
+
+.sign-up-button:focus {
+    outline: none;
+}
+
+.explain {
+    margin-top: 80px;
+}
+
+@media only screen and (max-width: 722px) {
+    .header-second-word {
+        margin-left: -8px;
+    }
+}
+
+@media only screen and (min-width: 725px) {
+    .header-second-word {
+        margin-left: 30px;
+        display: inline-block;
+    }
+
+    .explain {
+        display: inline-block;
+        margin: 80px 45px 0px 45px;
+    }
 }
