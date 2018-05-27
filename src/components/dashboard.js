@@ -44,7 +44,7 @@ export class Dashboard extends React.Component {
                             onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
                             <img 
                                 src={item.imgUrl.slice(5)} 
-                                alt="Comic book cover"
+                                alt=""
                                 className="cover-image" 
                             />
                             <button 
