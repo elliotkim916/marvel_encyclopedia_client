@@ -8,33 +8,30 @@ export class EventsList extends React.Component {
         let eventTitles = '';
         if (this.props.event) {
             eventTitles = this.props.event.map((event, index) => (
-                <li 
+                <div 
                     key={`event-${index}`} 
-                    className="event-name" 
+                    className="event-history" 
                     onClick={() => this.props.dispatch(findEvent(event.resourceURI))}
                 >
                     <img 
                         src={`${event.thumbnail.path.slice(5)}/portrait_fantastic.${event.thumbnail.extension}`} 
-                        alt="Event cover"
+                        alt=""
                         className="event-cover-img"
                     />
                     <p className="event-title">{event.title}</p>
-                </li>
+                </div>
             ))
         }
 
         return (
-            <section className="events-list-section">
-                <header>
-                    <h2>Comic Events & Crossovers</h2>
+            <div className="events-list-section">
+                <header className="events-list-header">
+                    <h2 className="event-header">COMIC EVENTS & CROSSOVERS</h2>
                 </header>
-
-                <div className="events-container">
-                    <ul>
-                        {eventTitles}
-                    </ul>
-                </div>    
-            </section>
+                <ul className="events-list-all">
+                {eventTitles}
+                </ul>    
+            </div>
         );
     }
 }
