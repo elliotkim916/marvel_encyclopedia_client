@@ -1,39 +1,104 @@
 .dashboard-username {
     font-weight: bold;
     margin: 0 auto;
-    font-size: 1.5em;
-    margin-bottom: 50px;
+    font-size: 3em;
+    margin: 100px 0px 150px 0px;
+    font-family: 'Montserrat';
+    letter-spacing: .5px;
+}
+
+.dashboard {
+    padding-bottom: 50px;
 }
 
 .dashboard-protected-data {
     margin-top: -5px;
 }
 
-.protected-data-header, .title {
-    font-weight: bolder;
-}
-
-.read-history {
-    margin-bottom: 45px;
-    cursor: pointer;
-}
-
 .protected-data-header {
-    margin-bottom: 35px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    margin-bottom: -35px;
+    font-size: 2em;
 }
 
 .remove-comic-btn {
-    border-radius: 40px;
-    width: 20px;
-    height: 20px;
-    border: 2px solid black;
-    position: relative;
-    bottom: 320px;
-    left: 80px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    width: 170px;
+    height: 30px;
+    border-radius: 4px;
+    color: white;
+    background-color: black;
+    font-size: 0.95em;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin-top: 10px;
+}
+
+.remove-comic-btn:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+
+.comic-info {
+    transition-duration: 1s;
+}
+
+.comic-info:hover {
+    -webkit-transform: scale(1.06);
+    -ms-transform: scale(1.06);
+    transform: scale(1.06);
+}
+
+.log-out {
     cursor: pointer;
 }
 
-.x-icon {
-    font-weight: bold;
-    margin-left: -2px;
+.log-out:hover {
+    text-decoration: underline;
+}
+
+.read-history {
+    cursor: pointer;
+    margin-top: 100px;
+    display: inline-block;
+    width: 250px;
+}
+
+.item-read {
+    color: gray;
+    font-weight: bolder;
+    text-transform: uppercase;
+    position: relative;
+    top: 10px;
+}
+
+.item-title:hover {
+    text-decoration: underline;
+}
+
+.cover-image {
+    border: 1px solid black;
+    box-shadow: 5px 5px grey;
+}
+
+@media only screen and (min-width: 515px) {
+    .comic-text{
+        width: 250px;
+    }
+}
+
+@media only screen and (min-width: 765px) {
+    .read-history {
+        float: left;
+        padding-left: 120px;
+        margin-bottom: 90px;
+    }
+
+    .comic-text {
+        width: 175px;
+        height: 100px;
+    }
 }
