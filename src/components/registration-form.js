@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm, focus, SubmissionError} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './input';
@@ -11,7 +11,13 @@ export class RegistrationForm extends React.Component {
         const {username, password} = values;
         const user = {username, password};
         return this.props.dispatch(registerUser(user))
-        .then(() => this.props.dispatch(login(username, password)));
+        .then(() => { 
+            return this.props.dispatch(login(username, password))
+            }).catch((e) => {
+                if (e.name === 'SubmissionError') {
+                    throw new SubmissionError({username: 'Username already exists.'})
+                }
+        });
     }
 
     render() {
@@ -50,7 +56,7 @@ export class RegistrationForm extends React.Component {
                         }
                         className="register-btn"
                         >
-                        Register
+                        REGISTER
                     </button>
                 </form>
         )
