@@ -20,8 +20,8 @@ export class Dashboard extends React.Component {
         clearAuthToken();
     }
 
-    onDelete(event, id) {
-        event.preventDefault();
+    onDelete(e, id) {
+        e.preventDefault();
         const result = window.confirm('Are you sure you want to delete?  If so, click OK.');
         if (result) {
             this.props.dispatch(deleteData(id))
@@ -48,7 +48,7 @@ export class Dashboard extends React.Component {
                                 className="cover-image" 
                             />
                             <button 
-                                onClick={(event) => this.onDelete(event, item._id)}
+                                onClick={(e) => this.onDelete(e, item._id)}
                                 className="remove-comic-btn"
                             >
                             <i className="fa fa-trash-o" aria-hidden="true"></i> Remove Comic
@@ -61,6 +61,7 @@ export class Dashboard extends React.Component {
                     </div>
         });
     }
+    
         return (
             <div className="dashboard">
                 <a
