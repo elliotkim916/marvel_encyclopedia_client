@@ -14,17 +14,22 @@ export class Dashboard extends React.Component {
         this.props.dispatch(fetchProtectedData());
     }
 
-    logOut() {
+    logOut(e) {
+        e.preventDefault();
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
 
-    // onDelete(event) {
-    //     const _id = this.props.protectedData.data[0];
-    //     const data = _id;
-    //     this.props.dispatch(deleteData(data));
-    //     window.location.reload();
-    // }
+    onDelete(event, id) {
+        event.preventDefault();
+        const result = window.confirm('Are you sure you want to delete?  If so, click OK.');
+        if (result) {
+            this.props.dispatch(deleteData(id))
+            .then(data => window.location.reload());
+        } else {
+            window.location.reload();
+        }
+    }
 
     render() {
         let results = '';
@@ -34,29 +39,34 @@ export class Dashboard extends React.Component {
                         key={item._id} 
                         className="read-history"
                     >
-                        <div onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
+                        <div
+                            className="comic-info" 
+                            onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
                             <img 
                                 src={item.imgUrl.slice(5)} 
-                                alt="Comic book cover" 
-                            /><br />
-                            <span className="title">{item.title}</span><br />
-                            <span className="read">{item.read}</span>
+                                alt="Comic book cover"
+                                className="cover-image" 
+                            />
+                            <button 
+                                onClick={(event) => this.onDelete(event, item._id)}
+                                className="remove-comic-btn"
+                            >
+                            <i className="fa fa-trash-o" aria-hidden="true"></i> Remove Comic
+                            </button>
+                            <div className="comic-text">
+                                <strong className="item-title">{item.title}</strong><br/>
+                                <span className="item-read">{item.read}</span>
+                            </div>
                         </div>
-                        <button 
-                            onClick={() => this.props.dispatch(deleteData(item._id))}
-                            className="remove-comic-btn"
-                        >
-                        <span className="x-icon">X</span>
-                        </button>
                     </div>
         });
     }
         return (
             <div className="dashboard">
-                <a 
-                    href="login"
+                <a
+                    href="/"
                     className="log-out"
-                    onClick={() => this.logOut()}
+                    onClick={(e) => this.logOut(e)}
                 >
                     Log Out
                 </a>  
@@ -65,7 +75,7 @@ export class Dashboard extends React.Component {
                     Welcome {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!
                 </div>
 
-                <h3 className="protected-data-header">Your Read & Unread Comics</h3>   
+                <h3 className="protected-data-header">YOUR READ & UNREAD COMICS</h3>   
                 <div className="dashboard-protected-data">
                     {results}
                 </div>
@@ -77,7 +87,7 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
     };
 };
 
