@@ -23,9 +23,10 @@
     letter-spacing: 1px;
     color: gainsboro;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
-.event-title:hover {
+.event-title:hover, .event-title:focus {
     text-decoration: underline;
 }
 
@@ -42,11 +43,10 @@
     cursor: pointer;
     display: inline-block;
     width: 350px;
-    transition-duration: 1s;
     margin-top: 70px;
 }
 
-.event-history:hover {
+.event-cover-img:hover, .event-cover-img:focus {
     -webkit-transform: scale(1.06);
     -ms-transform: scale(1.06);
     transform: scale(1.06);
@@ -56,6 +56,7 @@
     border: 1px solid black;
     border: 1px solid black;
     box-shadow: 5px 5px grey;
+    transition-duration: 1s;
 }
 
 @media only screen and (max-width: 400px) {
