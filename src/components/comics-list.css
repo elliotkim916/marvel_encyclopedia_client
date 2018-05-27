@@ -21,7 +21,7 @@ ul {
     color: black;
 }
 
-.comic-title:hover {
+.comic-title:hover, .comic-title:focus {
     text-decoration: underline;
 }
 
@@ -38,21 +38,27 @@ ul {
     transition-duration: 0.4s;
 }
 
-.already-read-input:hover, .read-later-input:hover {
+.already-read-input:hover,
+.already-read-input:focus, 
+.read-later-input:hover,
+.read-later-input:focus {
     background-color: white;
     border: 1px solid black;
     color: black;
 }
 
 .comic-history {
-    transition-duration: 1s;
     cursor: pointer;
     margin-top: 70px;
     display: inline-block;
     width: 350px;
 }
 
-.comic-history:hover {
+.comic-cover-img {
+    transition-duration: 1s;
+}
+
+.comic-cover-img:hover, .comic-cover-img:focus {
     -webkit-transform: scale(1.06);
     -ms-transform: scale(1.06);
     transform: scale(1.06);
@@ -67,7 +73,7 @@ ul {
 }
 
 .radio-btns {
-    margin-top: -15px;
+    margin-top: 35px;
 }
 
 .comics-new-link {
@@ -76,7 +82,7 @@ ul {
     font-size: 25px;
 }
 
-.comics-new-link:hover {
+.comics-new-link:hover, .comics-new-link:focus {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -106,12 +112,6 @@ ul {
     }
 }
 
-@media only screen and (min-width: 515px) {
-    /* .radio-btns {
-        width: 250px;
-    } */
-}
-
 @media only screen and (min-width: 765px) {
     .comic-history {
         margin-bottom: 80px;
@@ -123,7 +123,7 @@ ul {
     }
 
     .comic-title {
-        width: 200px;
+        width: 300px;
         margin: 0 auto;
         margin-top: 25px;
         margin-bottom: 25px;
