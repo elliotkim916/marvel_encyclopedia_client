@@ -17,21 +17,21 @@ export default class Input extends React.Component {
         if (this.props.meta.touched && this.props.meta.warning) {
             warning = (<div className="form-warning">{this.props.meta.warning}</div>);
         }
-
+        
         return (
             <div className="form-input">
-                <label htmlFor={this.props.input.name}>
-                    {error}
-                    {warning}
-                </label>
                 <input
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}
                     ref={input => (this.input = input)}
                     placeholder={`${this.props.label}`}
-                    className="user-input"
+                    className="user-input"   
                 />
+                 <label htmlFor={this.props.input.name}>
+                    {error}
+                    {warning}
+                </label>
             </div>
         )
     }
