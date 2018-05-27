@@ -9,15 +9,18 @@
   text-decoration: none;
 } 
 
-.demo:link, .sign-up:link, .log-in:link {
+.sign-up:link, .log-in:link {
   text-decoration: none;
   color: #aaa;
 }
 
-.demo, .sign-up, .log-in {
+.sign-up, .log-in {
   color: gainsboro;
 }
 
-.demo:hover, .sign-up:hover, .log-in:hover {
+.sign-up:focus,
+.sign-up:hover,
+.log-in:focus, 
+.log-in:hover {
   text-decoration: underline;
 }
