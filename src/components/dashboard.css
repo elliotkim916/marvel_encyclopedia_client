@@ -36,27 +36,26 @@
     margin-top: 10px;
 }
 
-.remove-comic-btn:hover {
+.remove-comic-btn:hover, .remove-comic-btn:focus {
     background-color: white;
     border: 1px solid black;
     color: black;
 }
 
-.comic-info {
+.cover-image {
     transition-duration: 1s;
 }
 
-.comic-info:hover {
+.cover-image:hover, .cover-image:focus {
     -webkit-transform: scale(1.06);
     -ms-transform: scale(1.06);
     transform: scale(1.06);
 }
-
 .log-out {
     cursor: pointer;
 }
 
-.log-out:hover {
+.log-out:hover, .log-out:focus {
     text-decoration: underline;
 }
 
@@ -75,7 +74,7 @@
     top: 10px;
 }
 
-.item-title:hover {
+.item-title:hover, .item-title:focus {
     text-decoration: underline;
 }
 
