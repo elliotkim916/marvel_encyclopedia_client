@@ -72,7 +72,7 @@ export class Comic extends React.Component {
                     <img 
                         src={imgUrl} 
                         alt="Comic book cover"
-                        className="cover-art"    
+                        className="cover-artwork"    
                     />
                     <div className="comicIssueDetails">
                         <h2 className="comicBookTitle">{title}</h2>
