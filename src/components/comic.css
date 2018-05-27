@@ -56,7 +56,7 @@
     padding: 45px 15px 45px 15px;
 }
 
-.cover-art {
+.cover-art, .cover-artwork {
     margin-top: 40px;
 }
 
@@ -77,26 +77,31 @@
     letter-spacing: 1px;
 }
 
-.cover-art {
+.cover-art, .cover-artwork {
     border: 1px solid black;
     border: 1px solid black;
     box-shadow: 5px 5px grey;
 }
 
 .marvelComicsCharacter {
-    transition-duration: 1s;
-    cursor: pointer;
+    cursor: pointer; 
     display: inline-block;
     width: 350px;
+    margin-bottom: 45px;
 }
 
-.marvelComicsCharacter:hover {
+.cover-art {
+    transition-duration: 1s;
+    cursor: pointer;
+}
+
+.cover-art:hover, .cover-art:focus {
     -webkit-transform: scale(1.06);
     -ms-transform: scale(1.06);
     transform: scale(1.06);
 }
 
-.characterName:hover {
+.characterName:hover, .characterName:focus {
     text-decoration: underline;
 }
 
