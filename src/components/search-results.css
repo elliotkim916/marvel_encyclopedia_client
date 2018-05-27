@@ -3,6 +3,7 @@
     margin-right: 15px;
     margin-top: 15px;
     font-weight: bold;
+    color: whitesmoke;
 }
 
 .back-home {
@@ -10,4 +11,9 @@
     font-weight: bold;
     margin-left: 15px;
     margin-top: 15px;
+    color: whitesmoke;
+}
+
+.back-home:hover {
+    text-decoration: underline;
 }
