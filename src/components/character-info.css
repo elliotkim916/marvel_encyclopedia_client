@@ -1,16 +1,65 @@
  .character-info-section {
-    background-color: #eee;
+    background-color: #3e0000;
     padding: 45px 15px;
 }
 
-p {
+.character-text {
     max-width: 450px;
-    margin: 0 auto;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     text-align: left;
+    color: gray;
+}
+
+.searched-img {
+    border: 1px solid black;
+    box-shadow: 5px 5px grey;
+}
+
+.character-name {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 3em;
+    letter-spacing: 1px;
 }
 
 .info-new-link {
+    text-align: center;
     font-weight: bold;
-    text-align: left;
+    color: #ddd;
+}
+
+.info-new-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.new-link {
+    color: whitesmoke;
+}
+
+.character-arrows {
+    color: red;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 847px) {
+    .character-text, .character-name, .info-new-link {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-width: 847px) {
+    .searched-img {
+        display: inline-block;
+    }
+
+    .character-description {
+        display: inline-block;
+        margin-left: 50px;
+    }
+
+    .character-name, .info-new-link {
+        text-align: left;
+    }
 }
