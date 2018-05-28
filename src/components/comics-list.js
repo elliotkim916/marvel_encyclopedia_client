@@ -28,7 +28,7 @@ export class ComicsList extends React.Component {
         let comicTitles = '';
         if (this.props.comic) {
             comicTitles = this.props.comic.map((comic, index) => (
-                <div key={`comic-${index}`} className="comic-history">
+                <li key={`comic-${index}`} className="comic-history">
                     <form className="comics-form">
                         <div
                             className="comic-container" 
@@ -81,7 +81,7 @@ export class ComicsList extends React.Component {
                             </button>
                         </div>
                     </form>
-                </div>
+                </li>
             ));
         }
         
