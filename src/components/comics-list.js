@@ -88,7 +88,7 @@ export class ComicsList extends React.Component {
         return (
             <section className="comics-list-section">
                 <header className="comics-list-header">
-                    <h2>COMIC BOOK APPEARANCES</h2>
+                    <h2 className="h2">COMIC BOOK APPEARANCES</h2>
                 </header>
                 <ul>
                     {comicTitles}
