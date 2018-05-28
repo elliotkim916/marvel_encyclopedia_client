@@ -7,6 +7,10 @@
     padding-right: 40px;
 }
 
+.event-character-list {
+    padding-bottom: 50px;
+}
+
 .event-links {
     margin-top: 35px;
     margin-left: 20px;
@@ -39,7 +43,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 50px;
-    font-size: 3em;
+    font-size: 2.7em;
     margin: 0 auto;
 }
 
@@ -80,6 +84,10 @@
     transform: scale(1.06);
 }
 
+.character-cover-img {
+    margin-bottom: 10px;
+}
+
 .character-cover-img, 
 .comic-cover-img,
 .eventCoversPicture {
@@ -100,10 +108,12 @@
     font-size: 20px;
     color: black;
     cursor: pointer;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     margin-bottom: 40px;
 }
 
+.more-link:hover,
+.more-link:focus,
 .new-link:hover,
 .new-link:focus,
 .see-more-link:hover,
@@ -114,9 +124,22 @@
 .log-out-from-comic:focus, 
 .event-person-name:hover,
 .event-person-name:focus, 
-.event-comic-title:hover,
-.event-comic-title:focus {
+.event-comic-link:hover,
+.event-comic-link:focus {
+    outline: none;
     text-decoration: underline;
+}
+
+.comic-cover-img {
+    margin-bottom: 10px;
+}
+
+.event-btns {
+    margin-top: 25px;
+}
+
+.event-comic-link {
+    color: #000000;
 }
 
 .event-container-header {
