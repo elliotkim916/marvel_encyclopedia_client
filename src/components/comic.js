@@ -37,7 +37,7 @@ export class Comic extends React.Component {
 
             if (this.props.comicCharacter) {
                 character = this.props.comicCharacter.map((character, index) => 
-                    <div 
+                    <li 
                         key={index} 
                         onClick={() => this.props.dispatch(searchCharacter(character.name))} 
                         className="marvelComicsCharacter"
@@ -48,7 +48,7 @@ export class Comic extends React.Component {
                             className="cover-art"
                         /><br/>    
                         <Link className="character-name-link" to="/search-results">{character.name}</Link>
-                    </div>
+                    </li>
                 );
             }
         }
@@ -76,8 +76,8 @@ export class Comic extends React.Component {
                         className="cover-artwork"    
                     />
                     <div className="comicIssueDetails">
-                        <h2 className="comicBookTitle">{title}</h2>
-                        <h3 className="issueInformation"><span className="issue-number">ISSUE #{issueNumber}</span><span className="total-pages">TOTAL PAGES: {pageCount}</span></h3>
+                        <h1 className="comicBookTitle">{title}</h1>
+                        <h2 className="issueInformation"><span className="issue-number">ISSUE #{issueNumber}</span><span className="total-pages">TOTAL PAGES: {pageCount}</span></h2>
                         <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
                         <div className="new-comic-link">
                             <a 
