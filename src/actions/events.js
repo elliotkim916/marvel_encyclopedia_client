@@ -1,6 +1,5 @@
 import {
     MARVEL_API_BASE_URL, 
-    MARVEL_CHARACTERS_ENDPOINT,
     PUBLIC_KEY,
     TS,
     HASH
