@@ -5,6 +5,7 @@ import {findComic} from '../actions';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {addData} from '../actions/protected-data';
+import {Link} from 'react-router-dom';
 import './event.css';
 
 export class Event extends React.Component {
@@ -20,6 +21,10 @@ export class Event extends React.Component {
             this.props.dispatch(addData(title, read, imgUrl, uri, username))
         }
     }
+
+    // onFind(uri) {
+    //     this.props.dispatch(findComic(uri));
+    // }
 
     render() {
         let imgUrl = '';
@@ -47,9 +52,9 @@ export class Event extends React.Component {
                         alt=""
                         className="character-cover-img"
                     /><br />
-                    <h3 className="event-person-name">
+                    <Link to="/search-results" className="character-name-link">
                     {character.name}
-                    </h3>
+                    </Link>
                 </div>
             );
         }
@@ -69,10 +74,12 @@ export class Event extends React.Component {
                                 src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
                                 alt=""
                                 className="comic-cover-img"
-                            />
-                            <h3 className="event-comic-title">
-                            {comic.title}
-                            </h3>
+                            /><br/>
+                            <div className="comic-title-link">
+                                <Link className="event-comic-link" to="/comic">
+                                {comic.title}
+                                </Link>
+                            </div>
                         </div>
                         <div className="event-btns">
                             <button 
