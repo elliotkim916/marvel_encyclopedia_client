@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {searchCharacter} from '../actions';
+import {Link} from 'react-router-dom';
 import './comic.css';
 
 export class Comic extends React.Component {
@@ -46,7 +47,7 @@ export class Comic extends React.Component {
                             alt=""
                             className="cover-art"
                         /><br/>    
-                        <h3 className="characterName">{character.name}</h3>
+                        <Link className="character-name-link" to="/search-results">{character.name}</Link>
                     </div>
                 );
             }
