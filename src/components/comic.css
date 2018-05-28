@@ -72,6 +72,14 @@
     box-shadow: 5px 5px grey;
 }
 
+.cover-artwork {
+    animation: pulse 4s infinite;
+}
+
+.cover-artwork:hover {
+    animation: none;
+}
+
 .marvelComicsCharacter {
     cursor: pointer; 
     display: inline-block;
