@@ -9,6 +9,7 @@ import {clearAuth} from '../actions/auth';
 import {findComic} from '../actions';
 import {Link} from 'react-router-dom';
 import './dashboard.css';
+import ironman_icon from '../images/ironman_icon.png';
 
 export class Dashboard extends React.Component {
     componentDidMount() {
@@ -73,10 +74,14 @@ export class Dashboard extends React.Component {
                     Log Out
                 </a>  
                 <SearchForm /><br/>
+                <img 
+                    src={ironman_icon} 
+                    alt="Iron Man Icon"
+                    className="ironman-icon"
+                />
                 <div className="dashboard-username">
                     Welcome {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!
                 </div>
-                
                 <hr className="style10"/>
 
                 <p className="protected-data-header">YOUR READ & UNREAD COMICS</p>   
