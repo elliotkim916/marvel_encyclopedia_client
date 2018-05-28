@@ -79,7 +79,7 @@ export class Dashboard extends React.Component {
                 
                 <hr className="style10"/>
 
-                <h3 className="protected-data-header">YOUR READ & UNREAD COMICS</h3>   
+                <p className="protected-data-header">YOUR READ & UNREAD COMICS</p>   
                 <div className="dashboard-protected-data">
                     {results}
                 </div>
