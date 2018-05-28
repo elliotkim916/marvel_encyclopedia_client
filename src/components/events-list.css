@@ -18,18 +18,6 @@
     cursor: pointer;
 }
 
-.event-title {
-    text-align: center;
-    letter-spacing: 1px;
-    color: gainsboro;
-    margin: 0 auto;
-    margin-top: 10px;
-}
-
-.event-title:hover, .event-title:focus {
-    text-decoration: underline;
-}
-
 .event-cover-img {
     margin-bottom: 10px;
 }
@@ -59,6 +47,21 @@
     transition-duration: 1s;
 }
 
+.event-title-link {
+    color: gainsboro;
+    border: none;
+    font-size: 1em;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+.event-title-link:hover, .event-title-link:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 400px) {
     .event-history {
         padding-right: 40px;
@@ -73,5 +76,11 @@
 
     .event-title {
         width: 200px;
+    }
+
+    .event-title-button {
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 25px;
     }
 }
