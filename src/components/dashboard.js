@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import SearchForm from './search-form';
 import {clearAuthToken} from '../local-storage';
 import {clearAuth} from '../actions/auth';
-import {findComic} from '../actions';
+import {findComic} from '../actions/comics';
 import {Link} from 'react-router-dom';
 import './dashboard.css';
 import ironman_icon from '../images/ironman_icon.png';
