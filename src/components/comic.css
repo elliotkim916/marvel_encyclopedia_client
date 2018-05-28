@@ -3,12 +3,6 @@
     color: black;
 }
 
-.new-comic-link {
-    margin-right: 10px;
-    font-weight: bolder;
-    color: gainsboro;
-}
-
 .character-container, .creator-container {
     margin-top: -20px;
     padding-right: 40px;
@@ -26,11 +20,6 @@
     margin-bottom: 45px;
     color: gray;
     letter-spacing: 1px;
-}
-
-.character-name {
-    font-weight: bolder;
-    margin-bottom: 45px;
 }
 
 .issue-number {
@@ -65,9 +54,9 @@
 }
 
 .comicBookTitle {
-    font-size: 3em;
+    font-size: 2.7em;
     letter-spacing: 1px;
-    max-width: 550px;
+    max-width: 611px;
     text-transform: uppercase;
     margin-top: 35px;
 }
@@ -93,6 +82,7 @@
 .cover-art {
     transition-duration: 1s;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .cover-art:hover, .cover-art:focus {
@@ -101,18 +91,24 @@
     transform: scale(1.06);
 }
 
-.characterName:hover, .characterName:focus {
+.character-name-link {
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    font-size: 0.95em;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.character-name-link:hover, .character-name-link:focus {
+    outline: none;
     text-decoration: underline;
 }
 
 .character-container {
     background-color: gainsboro;
     padding-bottom: 50px;
-}
-
-.new-comic-link:hover {
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 @media only screen and (max-width: 400px) {
