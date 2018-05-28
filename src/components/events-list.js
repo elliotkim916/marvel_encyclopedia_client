@@ -9,7 +9,7 @@ export class EventsList extends React.Component {
         let eventTitles = '';
         if (this.props.event) {
             eventTitles = this.props.event.map((event, index) => (
-                <div 
+                <li 
                     key={`event-${index}`} 
                     className="event-history" 
                     onClick={() => this.props.dispatch(findEvent(event.resourceURI))}
@@ -20,7 +20,7 @@ export class EventsList extends React.Component {
                         className="event-cover-img"
                     /><br/>     
                     <Link className="event-title-link" to="/event">{event.title}</Link>
-                </div>
+                </li>
             ))
         }
 
