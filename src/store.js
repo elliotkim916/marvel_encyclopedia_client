@@ -1,11 +1,14 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
+import {loadAuthToken} from './local-storage';
+import {setAuthToken, refreshAuthToken} from './actions/auth';
+
 import {reducer as formReducer} from 'redux-form';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
-import {loadAuthToken} from './local-storage';
-import {setAuthToken, refreshAuthToken} from './actions/auth';
-import {characterReducer, comicReducer, eventReducer} from './reducers/index';
+import {characterReducer} from './reducers/characters';
+import {comicReducer} from './reducers/comics';
+import {eventReducer} from './reducers/events';
 
 const store = createStore(
     combineReducers({
