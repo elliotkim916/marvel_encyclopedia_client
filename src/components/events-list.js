@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import './events-list.css';
+import {Link} from 'react-router-dom';
 import {findEvent} from '../actions';
+import './events-list.css';
 
 export class EventsList extends React.Component {
     render() {
@@ -17,8 +18,8 @@ export class EventsList extends React.Component {
                         src={`${event.thumbnail.path.slice(5)}/portrait_fantastic.${event.thumbnail.extension}`} 
                         alt=""
                         className="event-cover-img"
-                    />
-                    <p className="event-title">{event.title}</p>
+                    /><br/>     
+                    <Link className="event-title-link" to="/event">{event.title}</Link>
                 </div>
             ))
         }
