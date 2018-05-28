@@ -97,6 +97,14 @@
     transition-duration: 1s;
 }
 
+.eventCoversPicture {
+    animation: pulse 4s infinite;
+}
+
+.eventCoversPicture:hover {
+    animation: none;
+}
+
 .readMoreLink {
     font-weight: bold;
     color: white;
