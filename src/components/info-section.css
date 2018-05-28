@@ -56,26 +56,6 @@
     margin-top: 155px;
 }
 
-.sign-up-button {
-    margin-top: 50px;
-    margin-bottom: 45px;
-    width: 140px;
-    height: 40px;
-    border-radius: 4px;
-    background-color: #BA0C2F;
-    color: white;
-    border-style: none;
-    font-size: 1em;
-    letter-spacing: 1px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-}
-
-.sign-up-button:hover, .sign-up-button:focus {
-    background-color: #5c1010;
-}
-
 .explain {
     margin-top: 80px;
 }
