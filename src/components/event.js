@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {searchCharacter} from '../actions';
-import {findComic} from '../actions';
+import {searchCharacter} from '../actions/characters';
+import {findComic} from '../actions/comics';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {addData} from '../actions/protected-data';
@@ -185,8 +185,8 @@ export class Event extends React.Component {
 
 const mapStateToProps = state => ({
     eventResult: state.eventReducer.clickedEvent,
-    eventCharacter: state.eventCharacterReducer.eventCharacter,
-    eventComic: state.eventComicReducer.eventComic,
+    eventCharacter: state.eventReducer.eventCharacter,
+    eventComic: state.eventReducer.eventComic,
     loggedIn: state.auth.currentUser
 });
 
