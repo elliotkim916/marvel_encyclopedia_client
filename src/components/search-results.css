@@ -14,6 +14,12 @@
     color: whitesmoke;
 }
 
-.back-home:hover {
+.back-home:hover, .back-home:focus {
+    outline: none;
     text-decoration: underline;
+}
+
+.dr-strange {
+    width: 300px;
+    margin-top: 75px;
 }
