@@ -36,7 +36,20 @@
     margin-top: 10px;
 }
 
+.title-link {
+    font-size: 1em;
+    color: #000000;
+    font-family: 'Montserrat';
+    cursor: pointer;
+}
+
+.title-link:hover, .title-link:focus {
+    outline: none;
+    text-decoration: underline;
+}
+
 .remove-comic-btn:hover, .remove-comic-btn:focus {
+    outline: none;
     background-color: white;
     border: 1px solid black;
     color: black;
@@ -56,6 +69,7 @@
 }
 
 .log-out:hover, .log-out:focus {
+    outline: none;
     text-decoration: underline;
 }
 
@@ -72,10 +86,6 @@
     text-transform: uppercase;
     position: relative;
     top: 10px;
-}
-
-.item-title:hover, .item-title:focus {
-    text-decoration: underline;
 }
 
 .cover-image {
