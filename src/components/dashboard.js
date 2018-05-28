@@ -7,6 +7,7 @@ import SearchForm from './search-form';
 import {clearAuthToken} from '../local-storage';
 import {clearAuth} from '../actions/auth';
 import {findComic} from '../actions';
+import {Link} from 'react-router-dom';
 import './dashboard.css';
 
 export class Dashboard extends React.Component {
@@ -54,7 +55,7 @@ export class Dashboard extends React.Component {
                             <i className="fa fa-trash-o" aria-hidden="true"></i> Remove Comic
                             </button>
                             <div className="comic-text">
-                                <strong className="item-title">{item.title}</strong><br/>
+                                <Link className="title-link" to="/comic">{item.title}</Link><br/>
                                 <span className="item-read">{item.read}</span>
                             </div>
                         </div>
