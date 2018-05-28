@@ -5,27 +5,13 @@ import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import {loadAuthToken} from './local-storage';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
-import {
-    characterReducer, 
-    characterComicReducer, 
-    characterEventReducer, 
-    comicReducer,
-    comicCharacterReducer, 
-    eventReducer,
-    eventCharacterReducer,
-    eventComicReducer
-} from './reducers/index';
+import {characterReducer, comicReducer, eventReducer} from './reducers/index';
 
 const store = createStore(
     combineReducers({
         characterReducer: characterReducer,
-        characterComicReducer: characterComicReducer,
-        characterEventReducer: characterEventReducer,
         comicReducer: comicReducer,
-        comicCharacterReducer: comicCharacterReducer,
         eventReducer: eventReducer,
-        eventCharacterReducer: eventCharacterReducer,
-        eventComicReducer: eventComicReducer,
         form: formReducer,
         auth: authReducer,
         protectedData: protectedDataReducer
