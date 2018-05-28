@@ -42,7 +42,7 @@ export class Event extends React.Component {
 
         if (this.props.eventCharacter) {
             character = this.props.eventCharacter.map((character, index) => 
-                <div 
+                <li 
                     key={index} 
                     onClick={() => this.props.dispatch(searchCharacter(character.name))}
                     className="eventCharactersName"
@@ -55,13 +55,13 @@ export class Event extends React.Component {
                     <Link to="/search-results" className="character-name-link">
                     {character.name}
                     </Link>
-                </div>
+                </li>
             );
         }
 
         if (this.props.eventComic) {
             comic = this.props.eventComic.map((comic, index) => 
-                <div 
+                <li 
                     key={index} 
                     className="eventComicsName"    
                 >
@@ -119,7 +119,7 @@ export class Event extends React.Component {
                             </button>
                         </div>
                     </form>
-                </div>
+                </li>
             );
         }
 
@@ -145,7 +145,7 @@ export class Event extends React.Component {
                         className="eventCoversPicture"
                     />
                     <div className="eventsInformation">
-                        <h2 className="eventsTitle">{this.props.eventResult.title}</h2>
+                        <h1 className="eventsTitle">{this.props.eventResult.title}</h1>
                         <p className="eventsText">{this.props.eventResult.description}</p>
                         <div className="readMoreLink">
                             <a 
