@@ -81,8 +81,7 @@
 }
 
 .item-read {
-    color: gray;
-    font-weight: bolder;
+    color: darkslategray;
     text-transform: uppercase;
     position: relative;
     top: 10px;
