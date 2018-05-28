@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import './comics-list.css';
+import {Link} from 'react-router-dom';
 import {findComic} from '../actions';
 import {addData} from '../actions/protected-data';
+import './comics-list.css';
 
 export class ComicsList extends React.Component {
     onAdd(e, title, read, imgUrl, uri, username) {
@@ -11,6 +12,11 @@ export class ComicsList extends React.Component {
         if (result) {
             this.props.dispatch(addData(title, read, imgUrl, uri, username))
         }
+    }
+
+    onFind(e, uri) {
+        e.preventDefault();
+        this.props.dispatch(findComic(uri));
     }
 
     render() {
@@ -26,16 +32,18 @@ export class ComicsList extends React.Component {
                     <form className="comics-form">
                         <div
                             className="comic-container" 
-                            onClick={() => this.props.dispatch(findComic(comic.resourceURI))}
+                            onClick={(e) => this.onFind(e, comic.resourceURI)}
                         >
                             <img 
                                 src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
                                 alt=""
                                 className="comic-cover-img"
-                            />
-                            <h3 className="comic-title">
-                            {comic.title}
-                            </h3>
+                            /><br/>
+                            <div className="comic-title-link">
+                                <Link className="comic-title-link" to="/comic">
+                                {comic.title}
+                                </Link>
+                            </div>
                         </div>
                         <div className="radio-btns">
                             <button 
@@ -57,7 +65,7 @@ export class ComicsList extends React.Component {
 
                             <button 
                                 type="submit" 
-                                id={`bookmark-${index}`} 
+                                id={`read-later-${index}`} 
                                 name={`comic-${index}`}
                                 className="read-later-input"
                                 onClick={(e) => this.onAdd(
