@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {findComic} from '../actions';
+import {findComic} from '../actions/comics';
 import {addData} from '../actions/protected-data';
 import './comics-list.css';
 
