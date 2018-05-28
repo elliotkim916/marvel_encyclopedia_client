@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import {findEvent} from '../actions';
+import {findEvent} from '../actions/events';
 import './events-list.css';
 
 export class EventsList extends React.Component {
