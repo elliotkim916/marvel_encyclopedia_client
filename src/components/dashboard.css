@@ -2,7 +2,7 @@
     font-weight: bold;
     margin: 0 auto;
     font-size: 3em;
-    margin: 100px 0px 150px 0px;
+    margin: 0px 0px 150px 0px;
     font-family: 'Montserrat';
     letter-spacing: .5px;
 }
@@ -18,7 +18,7 @@
 .protected-data-header {
     font-weight: bolder;
     letter-spacing: 1px;
-    margin-bottom: -35px;
+    margin-bottom: -65px;
     font-size: 2em;
 }
 
@@ -64,6 +64,7 @@
     -ms-transform: scale(1.06);
     transform: scale(1.06);
 }
+
 .log-out {
     cursor: pointer;
 }
@@ -98,6 +99,83 @@ hr.style10 {
 	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
     border: 0;
 }
+
+/* animation effect for comic & event main images */
+.pulse {
+    box-shadow: 0 0 0 lightgrey;
+    animation: pulse 2s infinite;
+  }
+
+  .pulse:hover {
+    animation: none;
+  }
+  
+  @-webkit-keyframes pulse {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 lightgrey;
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 4px lightgrey;
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 lightgrey;
+    }
+  }
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 lightgrey;
+      box-shadow: 0 0 0 0 lightgrey;
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 4px lightgrey;
+        box-shadow: 0 0 0 4px lightgrey;
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 lightgrey;
+        box-shadow: 0 0 0 0 lightgrey;
+    }
+}
+
+.ironman-icon {
+    margin-top: 145px;
+}
+
+.ironman-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    animation: pulsing 3s infinite;
+  }
+  .ironman-icon:hover {
+    animation: none;
+  }
+  
+  @-webkit-keyframes pulsing {
+    0% {
+      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 24);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
+  @keyframes pulsing {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 24);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 24);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    }
+  }
 
 @media only screen and (min-width: 515px) {
     .comic-text{
