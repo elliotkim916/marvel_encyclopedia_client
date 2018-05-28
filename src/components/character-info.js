@@ -22,7 +22,7 @@ export default class CharacterInfo extends React.Component {
                         className="searched-img" 
                     />
                     <div className="character-description">
-                        <h2 className="character-name">{this.props.character.name.toUpperCase()}</h2>
+                        <h2 className="character-name">{this.props.character.name}</h2>
                         <p className="character-text">{this.props.character.description}</p>
                         <div className="info-new-link">
                             <a 
