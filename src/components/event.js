@@ -22,10 +22,6 @@ export class Event extends React.Component {
         }
     }
 
-    // onFind(uri) {
-    //     this.props.dispatch(findComic(uri));
-    // }
-
     render() {
         let imgUrl = '';
         let urls = '';
@@ -72,7 +68,7 @@ export class Event extends React.Component {
                         >
                             <img 
                                 src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
-                                alt=""
+                                alt="Image Not Available"
                                 className="comic-cover-img"
                             /><br/>
                             <div className="comic-title-link">
