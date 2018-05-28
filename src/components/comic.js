@@ -4,6 +4,7 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {searchCharacter} from '../actions';
 import {Link} from 'react-router-dom';
+import requiresLogin from './requires-login';
 import './comic.css';
 
 export class Comic extends React.Component {
@@ -108,5 +109,5 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(Comic);
+export default requiresLogin()(connect(mapStateToProps)(Comic));
 

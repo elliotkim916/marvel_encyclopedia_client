@@ -6,6 +6,7 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import {addData} from '../actions/protected-data';
 import {Link} from 'react-router-dom';
+import requiresLogin from './requires-login';
 import './event.css';
 
 export class Event extends React.Component {
@@ -68,7 +69,7 @@ export class Event extends React.Component {
                         >
                             <img 
                                 src={`${comic.thumbnail.path.slice(5)}/portrait_fantastic.${comic.thumbnail.extension}`} 
-                                alt="Image Not Available"
+                                alt="Not Available"
                                 className="comic-cover-img"
                             /><br/>
                             <div className="comic-title-link">
@@ -189,4 +190,4 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser
 });
 
-export default connect(mapStateToProps)(Event);
+export default requiresLogin()(connect(mapStateToProps)(Event));
