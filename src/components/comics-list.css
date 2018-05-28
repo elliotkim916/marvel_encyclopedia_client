@@ -1,7 +1,3 @@
-ul {
-    list-style-type: none;
-}
-
 #bookmark {
     margin-left: 15px;
 }
@@ -17,11 +13,16 @@ ul {
     letter-spacing: 1px;
 }
 
-.comic-title {
-    color: black;
+.comic-title-link {
+    color: #222;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    cursor: pointer;
 }
 
-.comic-title:hover, .comic-title:focus {
+.comic-title-link:hover, .comic-title-link:focus {
+    outline: none;
     text-decoration: underline;
 }
 
@@ -42,6 +43,7 @@ ul {
 .already-read-input:focus, 
 .read-later-input:hover,
 .read-later-input:focus {
+    outline: none;
     background-color: white;
     border: 1px solid black;
     color: black;
@@ -73,7 +75,7 @@ ul {
 }
 
 .radio-btns {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .comics-new-link {
@@ -83,6 +85,7 @@ ul {
 }
 
 .comics-new-link:hover, .comics-new-link:focus {
+    outline:none;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -122,10 +125,8 @@ ul {
         margin-bottom: 50px;
     }
 
-    .comic-title {
+    .comic-title-link {
         width: 300px;
         margin: 0 auto;
-        margin-top: 25px;
-        margin-bottom: 25px;
     }
 }
