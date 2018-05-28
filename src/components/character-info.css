@@ -7,7 +7,7 @@
     max-width: 450px;
     margin-bottom: 40px;
     text-align: left;
-    color: gray;
+    color: lightgray;
 }
 
 .searched-img {
@@ -38,7 +38,7 @@
 }
 
 .character-arrows {
-    color: red;
+    color: orangered;
     font-size: 15px;
 }
 
