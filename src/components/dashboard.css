@@ -2,7 +2,7 @@
     font-weight: bold;
     margin: 0 auto;
     font-size: 3em;
-    margin: 0px 0px 150px 0px;
+    margin: 0px 0px 175px 0px;
     font-family: 'Montserrat';
     letter-spacing: .5px;
 }
@@ -13,13 +13,6 @@
 
 .dashboard-protected-data {
     margin-top: -5px;
-}
-
-.protected-data-header {
-    font-weight: bolder;
-    letter-spacing: 1px;
-    margin-bottom: -65px;
-    font-size: 2em;
 }
 
 .remove-comic-btn {
@@ -93,11 +86,46 @@
     box-shadow: 5px 5px grey;
 }
 
+.protected-data-header {
+    font-weight: bolder;
+    letter-spacing: 1px;
+    margin-bottom: -65px;
+    font-size: 2em;
+}
+
+.protected-data-header {
+    display: inline-block;
+    padding: 0 15px;
+    position: relative;
+}
+
+.protected-data-header:before,
+.protected-data-header:after {
+    background: #222;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+        top: 50%;
+        width: 400%;
+}
+.protected-data-header:before {
+    right: 100%
+}
+.protected-data-header:after {
+    left: 100%;
+}
+.lines {
+    overflow:hidden;
+    text-align: center;
+}
 hr.style10 {
     height: 6px;
     color: #000000;
 	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
     border: 0;
+    position: relative;
+    top: 10px;
 }
 
 /* animation effect for comic & event main images */
