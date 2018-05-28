@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import './search-form.css';
-import {searchCharacter} from '../actions';
+import {searchCharacter} from '../actions/characters';
 
 export class SearchForm extends React.Component {
     componentDidMount() {
@@ -28,7 +28,6 @@ export class SearchForm extends React.Component {
                         <div className="header-text">ENCYCLOPEDIA</div>
                     </h1>
                 </header>
-
                 <form 
                     className="search-form" 
                     onSubmit={(e) => this.onSubmit(e)}
@@ -39,11 +38,13 @@ export class SearchForm extends React.Component {
                         name="search-character" 
                         className="search-input" 
                         ref={input => this.input = input}
+                        aria-label="Search character"
                         required 
-                    />
+                    /><span className="focus-border"></span>
                     <button 
                         type="submit" 
                         className="search-btn"
+                        aria-label="Search"
                     >
                     <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
