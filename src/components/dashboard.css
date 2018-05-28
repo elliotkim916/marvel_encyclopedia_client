@@ -93,6 +93,13 @@
     box-shadow: 5px 5px grey;
 }
 
+hr.style10 {
+    height: 6px;
+    color: #000000;
+	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+}
+
 @media only screen and (min-width: 515px) {
     .comic-text{
         width: 250px;
