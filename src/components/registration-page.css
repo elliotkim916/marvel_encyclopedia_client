@@ -39,7 +39,9 @@
     transition-duration: 0.4s;
 }
 
-.register-btn:hover, .register-btn:focus {
+.register-btn:hover, 
+.register-btn:focus {
+    outline: none;
     background-color: #000000;
     color: white;
 }
@@ -48,7 +50,9 @@
     color: #000000;
 }
 
-.click-here:hover {
+.click-here:hover,
+.click-here:focus {
+    outline: none;
     text-decoration: underline;
 }
 
