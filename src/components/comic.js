@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
-import {searchCharacter} from '../actions';
+import {searchCharacter} from '../actions/characters';
 import {Link} from 'react-router-dom';
 import requiresLogin from './requires-login';
 import './comic.css';
@@ -78,7 +78,7 @@ export class Comic extends React.Component {
                     />
                     <div className="comicIssueDetails">
                         <h1 className="comicBookTitle">{title}</h1>
-                        <h2 className="issueInformation"><span className="issue-number">ISSUE #{issueNumber}</span><span className="total-pages">TOTAL PAGES: {pageCount}</span></h2>
+                        <h2 className="issueInformation"><span className="issue-number">ISSUE #{issueNumber}</span><span className="total-pages">{pageCount} PAGES</span></h2>
                         <div dangerouslySetInnerHTML={{__html:description}} className="description-container"></div>
                         <div className="new-comic-link">
                             <a 
@@ -105,7 +105,7 @@ export class Comic extends React.Component {
 
 const mapStateToProps = state => ({
     comicResult: state.comicReducer.clickedComic,
-    comicCharacter: state.comicCharacterReducer.comicCharacter,
+    comicCharacter: state.comicReducer.comicCharacter,
     loggedIn: state.auth.currentUser !== null
 });
 
