@@ -45,7 +45,10 @@ export const searchCharacter = name => dispatch => {
         .then(response => {
             history.push('/search-results')
         })
-        .catch(error => dispatch(searchCharacterError(error)));
+        .catch(error => dispatch(searchCharacterError(error)))
+        .then(response => {
+            history.push('/search-results')
+        });
 };
 
 export const SEARCH_CHARACTER_COMIC_SUCCESS = 'SEARCH_CHARACTER_COMIC_SUCCESS';
