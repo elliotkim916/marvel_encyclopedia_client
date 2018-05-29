@@ -61,8 +61,8 @@ export class Dashboard extends React.Component {
                             </div>
                         </div>
                     </div>
-        });
-    }
+            });
+        }
     
         return (
             <div className="dashboard">
@@ -96,7 +96,7 @@ export class Dashboard extends React.Component {
 const mapStateToProps = state => {
     return {
         username: state.auth.currentUser.username,
-        protectedData: state.protectedData.data,
+        protectedData: state.protectedData.data
     };
 };
 
