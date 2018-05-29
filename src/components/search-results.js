@@ -16,7 +16,7 @@ export class SearchResults extends React.Component {
         clearAuthToken();
     }
 
-    render() {  
+    render() { 
         let searchResult;
         if (this.props.searchResult){
             searchResult = (
@@ -27,6 +27,20 @@ export class SearchResults extends React.Component {
                 </React.Fragment>
             );
         } 
+
+        let error;
+        if (!this.props.searchResult) {
+                error = (
+                    <div className="error-msg">
+                        <img 
+                            src="https://i.annihil.us/u/prod/marvel/i/mg/b/40/54adba004fe21.png" 
+                            alt="Doctor Strange" 
+                            className="dr-strange"
+                        />
+                        <h3>Sorry, no results were found.  Try another search!</h3>
+                    </div>
+                );
+            }
 
     return (
         <section aria-label="search results">
@@ -44,7 +58,8 @@ export class SearchResults extends React.Component {
             Log Out
             </a>
             <SearchForm />
-            {Object.keys(this.props.searchResult).length > 0 && searchResult}
+            {(this.props.searchResult && Object.keys(this.props.searchResult).length > 0) && searchResult}
+            {error}
         </section>
         );
 
@@ -53,8 +68,8 @@ export class SearchResults extends React.Component {
 
 const mapStateToProps = state => ({
     searchResult: state.characterReducer.searchedCharacter,
-    searchCharacterComic: state.characterComicReducer.searchedCharacterComic,
-    searchCharacterEvent: state.characterEventReducer.searchedCharacterEvent,
+    searchCharacterComic: state.characterReducer.searchedCharacterComic,
+    searchCharacterEvent: state.characterReducer.searchedCharacterEvent,
     authToken: state.auth.authToken
 });
 
