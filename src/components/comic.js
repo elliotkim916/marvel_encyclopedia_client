@@ -54,7 +54,11 @@ export class Comic extends React.Component {
             }
         }
         
-        return (
+        if (!imgUrl) {
+            return null;
+        }
+        
+        return (    
             <section className="comic-section">
                 <div className="comic-book-information">
                     <a 

@@ -120,6 +120,10 @@ export class Event extends React.Component {
             );
         }
 
+        if (!imgUrl) {
+            return null;
+        }
+        
         return (
             <section className="event-section">
                 <div className="event-description">
