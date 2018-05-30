@@ -33,6 +33,14 @@ export class Dashboard extends React.Component {
         }
     }
 
+    renderResults() {
+        if (this.props.protectedData.data) {
+            if (this.props.protectedData.data.length > 0) {
+                return <p className="protected-data-header">YOUR READ & UNREAD COMICS</p>; 
+            }
+        }
+    }
+
     render() {
         let results = '';
         if (this.props.protectedData.data) {
@@ -82,9 +90,7 @@ export class Dashboard extends React.Component {
                 <div className="dashboard-username">
                     Welcome {this.props.username.charAt(0).toUpperCase() + this.props.username.slice(1)}!
                 </div>
-                {/* <hr className="style10"/> */}
-
-                <div className="lines"><p className="protected-data-header">YOUR READ & UNREAD COMICS</p></div>   
+                <div className="lines">{this.renderResults()}</div>   
                 <div className="dashboard-protected-data">
                     {results}
                 </div>
