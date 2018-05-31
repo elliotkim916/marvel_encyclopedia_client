@@ -49,7 +49,7 @@ export class SearchResults extends React.Component {
                 className="back-home"
             >
             Home
-            </a>
+            </a>    
             <a 
                 href="/"
                 className="log-out"
