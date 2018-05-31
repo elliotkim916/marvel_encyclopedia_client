@@ -1,14 +1,13 @@
 .event-section {
-    background-color: #eee;
-    color: black;
+    color: #000000;
 }
 
-.event-character-list, .event-comic-list, .event-creators-list {
-    padding-right: 40px;
+.event-character-list, .event-comic-list {
+    margin-left: -15px;
 }
 
 .event-character-list {
-    padding-bottom: 50px;
+    padding-bottom: 35px;
 }
 
 .event-links {
@@ -28,7 +27,7 @@
 .event-character-container {
     margin-top: -20px;
     padding-top: 20px;
-    background-color: gainsboro;
+    background-color: whitesmoke;
 }
 
 .event-character-name, .eventComicsName {
@@ -116,7 +115,6 @@
     font-size: 20px;
     color: black;
     cursor: pointer;
-    /* margin-top: 80px; */
     margin-bottom: 40px;
 }
 
@@ -150,8 +148,12 @@
     color: #000000;
 }
 
-.event-container-header {
+.event-container-header, 
+.event-character-header,
+.event-header,
+.container-header {
     letter-spacing: 1px;
+    font-size: 30px;
 }
 
 .arrows {
