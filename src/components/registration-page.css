@@ -60,6 +60,11 @@
     color: black;
 }
 
+.marvel-header:focus {
+    outline: none;
+    border-bottom: 1px solid #338bd5;
+}
+
 .register-logo {
     width: 150px;
 }
