@@ -1,12 +1,12 @@
 .search-form-header {
     padding-top: 5px;
-    padding-bottom: 55px;
+    padding-bottom: 75px;
     background-color: black;
 }
 
 .search-form {
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 70px;
     background-color: black;
     border-bottom: 1px solid black;
 }
@@ -53,7 +53,7 @@ h1 {
 
 .search-input:focus {
     outline: none;
-    border-bottom: 2px solid #3399FF;
+    border-bottom: 2px solid #338bd5;
 }
 
 @media only screen and (max-width: 701px) {
