@@ -65,6 +65,8 @@
 }
 
 .second-word {
+    position: relative;
+    bottom: 2px;
     letter-spacing: 1px;
     margin-left: 15px;
     color: #000000;
