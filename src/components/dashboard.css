@@ -119,14 +119,6 @@
     overflow:hidden;
     text-align: center;
 }
-hr.style10 {
-    height: 6px;
-    color: #000000;
-	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
-    border: 0;
-    position: relative;
-    top: 10px;
-}
 
 /* animation effect for comic & event main images */
 .pulse {
@@ -175,6 +167,7 @@ hr.style10 {
     border-radius: 50%;
     animation: pulsing 3s infinite;
   }
+
   .ironman-icon:hover {
     animation: none;
   }
@@ -204,6 +197,16 @@ hr.style10 {
         box-shadow: 0 0 0 0 rgba(204,169,44, 0);
     }
   }
+
+@media only screen and (max-width: 698px) {
+    .search-form-header {
+        padding-bottom: 1px;
+    }
+
+    .ironman-icon {
+        margin-top: 100px;
+    }
+}
 
 @media only screen and (min-width: 515px) {
     .comic-text{
