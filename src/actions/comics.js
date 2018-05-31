@@ -35,7 +35,6 @@ function searchComic(URI) {
 
 export const findComic = URI => dispatch => {
     dispatch(findComicRequest());
-    console.log(URI);
     searchComic(URI)
         .then(comic => {
             dispatch(findComicSuccess(comic))
@@ -46,6 +45,11 @@ export const findComic = URI => dispatch => {
         })
         .catch(error => dispatch(findComicError(error)));
 };
+
+export const FIND_COMIC_CHARACTER_REQUEST = 'FIND_COMIC_CHARACTER_REQUEST';
+export const findComicCharacterRequest = () => ({
+    type: FIND_COMIC_CHARACTER_REQUEST
+});
 
 export const FIND_COMIC_CHARACTER_SUCCESS = 'FIND_COMIC_CHARACTER_SUCCESS';
 export const findComicCharacterSuccess = comicCharacter => ({
@@ -64,9 +68,9 @@ function searchComicCharacter(id) {
 }
 
 export const findComicCharacter = id => dispatch => {
+    dispatch(findComicCharacterRequest());
     searchComicCharacter(id)
         .then(comicId => {
-            console.log(comicId);
             dispatch(findComicCharacterSuccess(comicId))
         })
         .catch(error => dispatch(findComicError(error)));
