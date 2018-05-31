@@ -70,9 +70,26 @@ h1 {
     .header-text {
         margin-left: 20px;
         display: inline-block;
+        position: relative;
+        bottom: 2px;
     }
 
     .search-input {
         width: 600px;
+    }
+}
+
+@media only screen and (max-width: 698px) {
+    .marvel-logo {
+        width: 150px;
+        display: inline-block;
+    }
+
+    .header-text {
+        font-size: 25px;
+        margin-left: 8px;
+        position: relative;
+        bottom: 2px;
+        display: inline-block;
     }
 }
