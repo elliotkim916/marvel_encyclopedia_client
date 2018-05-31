@@ -10,18 +10,18 @@ Marvel films and television shows are being released more than ever, with more n
 
 Landing Page:
 
-<img width="1664" alt="screen shot 2018-05-31 at 2 22 00 pm" src="https://user-images.githubusercontent.com/26806013/40810590-166873a4-64e3-11e8-89c0-d18260a38b55.png">
+<img width="1669" alt="screen shot 2018-05-31 at 3 31 57 pm" src="https://user-images.githubusercontent.com/26806013/40811858-df85ab36-64e7-11e8-888c-d66c13aa03d7.png">
 
 Registration Page:
 
-<img width="1679" alt="screen shot 2018-05-31 at 3 16 27 pm" src="https://user-images.githubusercontent.com/26806013/40811340-ad2b19e8-64e5-11e8-97d6-584119230c05.png">
+<img width="1679" alt="screen shot 2018-05-31 at 3 33 48 pm" src="https://user-images.githubusercontent.com/26806013/40811906-15f75a02-64e8-11e8-9a26-1cd3acd7d942.png">
 
-Dashboard Page:  Where the users saved comic books live.  Saved issues are clickable, opening a new page with information on that comic, & issues can be deleted by clicking on Remove Comic. 
+Dashboard Page:  Saved issues are clickable, opening a new page with information on that comic. 
 
 <img width="1662" alt="screen shot 2018-05-31 at 2 25 42 pm" src="https://user-images.githubusercontent.com/26806013/40810671-6726775a-64e3-11e8-946b-5a9b118adc9d.png"><br/>
 ![screen shot 2018-05-31 at 2 32 07 pm](https://user-images.githubusercontent.com/26806013/40810743-9a6ba1da-64e3-11e8-9f86-7332690e6123.png)
 
-Search Results Page:  All characters & issues are clickable, opening a new page with information on that particular item.  Issues can be saved by clicking on ALREADY READ or READ LATER.
+Search Results Page:  All characters & issues are clickable, opening a new page with information on that particular item.
 
 ![screen shot 2018-05-31 at 2 32 47 pm](https://user-images.githubusercontent.com/26806013/40810773-b97efc2a-64e3-11e8-9367-9e5ce8c3a6c1.png)
 ![screen shot 2018-05-31 at 2 33 50 pm](https://user-images.githubusercontent.com/26806013/40810800-ca0bfaf2-64e3-11e8-8546-71a104cfad05.png)
@@ -31,7 +31,7 @@ Comic Page:  All characters are clickable, opening a new page with information o
 
 ![screen shot 2018-05-31 at 2 30 25 pm](https://user-images.githubusercontent.com/26806013/40810896-1193c878-64e4-11e8-9f9e-0d543813db05.png)
 
-Event Page:  All characters & issues are clickable, opening a new page with information on that particular item.  Issues can be saved by clicking on ALREADY READ or READ LATER.
+Event Page:  All characters & issues are clickable, opening a new page with information on that particular item.
 
 ![screen shot 2018-05-31 at 2 31 16 pm](https://user-images.githubusercontent.com/26806013/40810951-3c63ad20-64e4-11e8-9bbd-2549f456244c.png)
 ![screen shot 2018-05-31 at 2 31 37 pm](https://user-images.githubusercontent.com/26806013/40810960-466af8e6-64e4-11e8-84dc-962d2de9956a.png)
