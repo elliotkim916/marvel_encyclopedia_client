@@ -38,23 +38,6 @@
     background-color: #000000;
 }
 
- /* .avengers-icon {
-     animation: nudge 5s linear infinite alternate;
- } 
-  @keyframes nudge {
-    0%, 100% {
-      transform: translate(0, 0);
-    }
-    
-    50% {
-      transform: translate(150px, 0);
-    }
-    
-    80% {
-      transform: translate(-150px, 0);
-    }
-  } */
-
 .header-one {
     font-size: 2em;
     letter-spacing: 1px;

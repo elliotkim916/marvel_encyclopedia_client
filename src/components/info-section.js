@@ -38,6 +38,7 @@ export default function InfoSection(props) {
             <div className="info explain">
                 <img
                     src={avengers_icon}
+                    className="avengers-icon"
                     alt=""
                 />
                 <p className="info-section-text">With every character search result, you can save the comics you want to read in the future & save the comics you have already read to your profile page.</p>
@@ -53,7 +54,3 @@ export default function InfoSection(props) {
         </section>
     );
 }
-
-// "https://i.annihil.us/u/prod/marvel/i/mg/b/40/54adba004fe21.png"
-// "https://static1.squarespace.com/static/51b3dc8ee4b051b96ceb10de/t/5a8c709253450a0e67a1a041/1519153307713/marvel-comics-reveals-their-new-avengers-superhero-roster2?format=750w"
-// "https://lumiere-a.akamaihd.net/v1/images/usa_spider-man_chi_kid_arachnid_n_82f070c1.png?region=0%2C0%2C300%2C300"
