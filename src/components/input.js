@@ -21,10 +21,6 @@ export default class Input extends React.Component {
         
         return (
             <div className="form-input">
-                <label htmlFor={this.props.input.name}>
-                    {error}
-                    {warning}
-                </label>
                 <input
                     {...this.props.input}
                     id={this.props.input.name}
@@ -34,6 +30,10 @@ export default class Input extends React.Component {
                     aria-label={`${this.props.label}`}
                     className="user-input"   
                 /><span className="focus-border"></span>
+                <label htmlFor={this.props.input.name}>
+                    {error}
+                    {warning}
+                </label>
             </div>
         )
     }
