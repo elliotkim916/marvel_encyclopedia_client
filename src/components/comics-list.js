@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import {findComic} from '../actions/comics';
 import {addData} from '../actions/protected-data';
 import './comics-list.css';
+import './dashboard.css';
 
 export class ComicsList extends React.Component {
     onAdd(e, title, read, imgUrl, uri, username) {
@@ -19,10 +20,9 @@ export class ComicsList extends React.Component {
         this.props.dispatch(findComic(uri));
     }
 
-    render() {
-        let urls = '';
-        if (this.props.character.urls) { 
-            urls = this.props.character.urls.map((link) => link.url);
+    renderResults() {
+        if (this.props.loading) {
+             return <div className="loader">L O A D I N G . . . </div>
         }
 
         let comicTitles = '';
@@ -84,14 +84,27 @@ export class ComicsList extends React.Component {
                 </li>
             ));
         }
-        
+
+        return (
+        <ul className="comics-list-all">
+            {comicTitles}
+        </ul>
+        );
+    }  
+    
+    render() {
+        let urls = '';
+        if (this.props.character.urls) { 
+            urls = this.props.character.urls.map((link) => link.url);
+        }
+
         return (
             <section className="comics-list-section">
                 <header className="comics-list-header">
-                    <h2 className="h2">COMIC BOOK APPEARANCES</h2>
+                <h2 className="h2">COMIC BOOK APPEARANCES</h2>
                 </header>
-                <ul>
-                    {comicTitles}
+                <ul className="comics-list-all">
+                    {this.renderResults()}
                 </ul>
                 <div className="more-comics-link">
                     <a 
@@ -108,7 +121,8 @@ export class ComicsList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser
+    loggedIn: state.auth.currentUser,
+    loading: state.characterReducer.comicLoading
 });
 
 export default connect(mapStateToProps)(ComicsList);
