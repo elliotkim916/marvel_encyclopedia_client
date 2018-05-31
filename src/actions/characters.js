@@ -51,6 +51,11 @@ export const searchCharacter = name => dispatch => {
         });
 };
 
+export const SEARCH_CHARACTER_COMIC_REQUEST = 'SEARCH_CHARACTER_COMIC_REQUEST';
+export const searchCharacterComicRequest = () => ({
+    type: SEARCH_CHARACTER_COMIC_REQUEST
+});
+
 export const SEARCH_CHARACTER_COMIC_SUCCESS = 'SEARCH_CHARACTER_COMIC_SUCCESS';
 export const searchCharacterComicSuccess = characterComic => ({
     type: SEARCH_CHARACTER_COMIC_SUCCESS,
@@ -68,10 +73,16 @@ function searchCharacterComic(id) {
 }
 
 export const findCharacterComic = id => dispatch => {
+    dispatch(searchCharacterComicRequest());
     searchCharacterComic(id)
         .then(characterId => dispatch(searchCharacterComicSuccess(characterId)))
         .catch(error => dispatch(searchCharacterError(error)));
 };
+
+export const SEARCH_CHARACTER_EVENT_REQUEST = 'SEARCH_CHARACTER_EVENT_REQUEST';
+export const searchCharacterEventRequest = () => ({
+    type: SEARCH_CHARACTER_EVENT_REQUEST
+});
 
 export const SEARCH_CHARACTER_EVENT_SUCCESS = 'SEARCH_CHARACTER_EVENT_SUCCESS';
 export const searchCharacterEventSuccess = characterEvent => ({
@@ -90,6 +101,7 @@ function searchCharacterEvent(id) {
 }
 
 export const findCharacterEvent = id => dispatch => {
+    dispatch(searchCharacterEventRequest());
     searchCharacterEvent(id)
         .then(characterId => dispatch(searchCharacterEventSuccess(characterId)))
         .catch(error => dispatch(searchCharacterError(error)));
