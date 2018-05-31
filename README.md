@@ -19,6 +19,7 @@ Registration Page:
 Dashboard Page: 
 
 <img width="1662" alt="screen shot 2018-05-31 at 2 25 42 pm" src="https://user-images.githubusercontent.com/26806013/40810671-6726775a-64e3-11e8-946b-5a9b118adc9d.png">
+
 ![screen shot 2018-05-31 at 2 32 07 pm](https://user-images.githubusercontent.com/26806013/40810743-9a6ba1da-64e3-11e8-9f86-7332690e6123.png)
 
 Search Results Page:
