@@ -5,7 +5,11 @@ import {findEvent} from '../actions/events';
 import './events-list.css';
 
 export class EventsList extends React.Component {
-    render() {
+    renderResults() {
+        if (this.props.loading) {
+            return <div className="loader">L O A D I N G . . . </div>;
+        }
+
         let eventTitles = '';
         if (this.props.event) {
             eventTitles = this.props.event.map((event, index) => (
@@ -21,20 +25,32 @@ export class EventsList extends React.Component {
                     /><br/>     
                     <Link className="event-title-link" to="/event">{event.title}</Link>
                 </li>
-            ))
+            ));
         }
 
         return (
+        <ul className="events-list-all">
+            {eventTitles}
+        </ul>    
+        );
+    }
+
+    render() {
+        return (
             <div className="events-list-section">
                 <header className="events-list-header">
-                    <h2 className="event-header">COMIC EVENTS & CROSSOVERS</h2>
+                    <div className="lines"><h2 className="event-header">COMIC EVENTS & CROSSOVERS</h2></div>
                 </header>
                 <ul className="events-list-all">
-                {eventTitles}
+                    {this.renderResults()}
                 </ul>    
             </div>
         );
     }
 }
 
-export default connect()(EventsList);
+const mapStateToProps = state => ({
+    loading: state.characterReducer.eventLoading
+});
+
+export default connect(mapStateToProps)(EventsList);
