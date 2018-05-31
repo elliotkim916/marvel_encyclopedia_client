@@ -15,7 +15,7 @@ export class Comic extends React.Component {
 
     renderResults() {
         if (this.props.loading) {
-            return <div className="character-loading">L O A D I N G . . . </div>;
+            return <div className="loader">L O A D I N G . . . </div>;
         }
 
         let character = '';
