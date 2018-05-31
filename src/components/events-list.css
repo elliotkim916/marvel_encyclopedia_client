@@ -1,5 +1,5 @@
 .events-list-section {
-    background-color: #222;
+    background-color: whitesmoke;
     padding-bottom: 35px;
     min-height: 200px;
 }
@@ -20,12 +20,6 @@
 
 .event-cover-img {
     margin-bottom: 10px;
-}
-
-.event-header {
-    color: whitesmoke;
-    letter-spacing: 1px;
-    font-size: 30px;    
 }
 
 .event-history {
@@ -49,7 +43,7 @@
 }
 
 .event-title-link {
-    color: gainsboro;
+    color: #000000;
     border: none;
     font-size: 1em;
     font-family: 'Montserrat';
@@ -64,7 +58,41 @@
 }
 
 .events-list-all {
-    margin-right: 45px;
+    margin-left: -20px;
+}
+
+.event-header,
+.event-container-header {
+    color: #000000;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 0 15px;
+    position: relative;
+}
+
+.event-header:before,
+.event-container-header:before,
+.event-header:after,
+.event-container-header:after {
+    background: #222;
+    content: "";
+    display: block;
+    height: 5px;
+    position: absolute;
+        top: 50%;
+        width: 400%;
+}
+.event-header:before,
+.event-container-header:before {
+    right: 100%
+}
+.event-header:after,
+.event-container-header:after {
+    left: 100%;
+}
+.lines {
+    overflow:hidden;
+    text-align: center;
 }
 
 @media only screen and (max-width: 400px) {
