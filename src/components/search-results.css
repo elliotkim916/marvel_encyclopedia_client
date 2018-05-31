@@ -23,3 +23,12 @@
     width: 300px;
     margin-top: 75px;
 }
+
+hr.style10 {
+    height: 6px;
+    color: #000000;
+	background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+    border: 0;
+    margin-top: -35px;
+    margin-bottom: 45px;
+}
