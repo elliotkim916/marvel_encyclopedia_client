@@ -13,29 +13,13 @@ export class Comic extends React.Component {
         clearAuthToken();
     }
 
-    render() {
-        let title = '';
-        let issueNumber = '';
-        let pageCount = '';
-        let description = '';
-        let imgUrl = '';
-        let urls = '';
+    renderResults() {
+        if (this.props.loading) {
+            return <div className="character-loading">L O A D I N G . . . </div>;
+        }
+
         let character = '';
-
         if (this.props.comicResult) {
-            title = this.props.comicResult.title;
-            issueNumber = this.props.comicResult.issueNumber;
-            pageCount = this.props.comicResult.pageCount;
-            description = this.props.comicResult.description;
-        
-            if (this.props.comicResult.thumbnail) {
-                imgUrl = this.props.comicResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + this.props.comicResult.thumbnail.extension;
-            }
-        
-            if (this.props.comicResult.urls) { 
-                urls = this.props.comicResult.urls.map((link, index) => link.url);
-            }
-
             if (this.props.comicCharacter) {
                 character = this.props.comicCharacter.map((character, index) => 
                     <li 
@@ -53,7 +37,37 @@ export class Comic extends React.Component {
                 );
             }
         }
+
+        return (
+            <ul className="character-list">
+                {character}
+            </ul>
+        );
+    }
+
+    render() {
+        let title = '';
+        let issueNumber = '';
+        let pageCount = '';
+        let description = '';
+        let imgUrl = '';
+        let urls = '';
+
+        if (this.props.comicResult) {
+            title = this.props.comicResult.title;
+            issueNumber = this.props.comicResult.issueNumber;
+            pageCount = this.props.comicResult.pageCount;
+            description = this.props.comicResult.description;
         
+            if (this.props.comicResult.thumbnail) {
+                imgUrl = this.props.comicResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + this.props.comicResult.thumbnail.extension;
+            }
+        
+            if (this.props.comicResult.urls) { 
+                urls = this.props.comicResult.urls.map((link, index) => link.url);
+            }
+        }
+
         if (!imgUrl) {
             return null;
         }
@@ -99,7 +113,7 @@ export class Comic extends React.Component {
                 <div className="character-container">
                     <h2 className="container-header">CHARACTERS IN THIS ISSUE</h2>
                         <ul className="character-list">
-                            {character}
+                            {this.renderResults()}
                         </ul>
                 </div>    
             </section>
@@ -110,7 +124,8 @@ export class Comic extends React.Component {
 const mapStateToProps = state => ({
     comicResult: state.comicReducer.clickedComic,
     comicCharacter: state.comicReducer.comicCharacter,
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    loading: state.comicReducer.loading
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Comic));
