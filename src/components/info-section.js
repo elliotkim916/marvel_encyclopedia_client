@@ -14,7 +14,7 @@ export default function InfoSection(props) {
                         <img 
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/2000px-MarvelLogo.svg.png" 
                             alt="Marvel Encyclopedia"
-                            className="marvel-logo"
+                            className="marvel-logo-one"
                         /><div className="header-second-word">ENCYCLOPEDIA</div>
                     </h1>
                     <h2 className="landing-pg-header">Your source for all things Marvel.</h2>
