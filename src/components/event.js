@@ -23,20 +23,12 @@ export class Event extends React.Component {
         }
     }
 
-    render() {
-        let imgUrl = '';
-        let urls = '';
+    renderCharacters() {
+        if (this.props.characterLoading) {
+            return <div className="loader">L O A D I N G . . . </div>;
+        }
+
         let character = '';
-        let comic = '';
-
-        if (this.props.eventResult.thumbnail) {
-            imgUrl = this.props.eventResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + this.props.eventResult.thumbnail.extension;
-        }
-
-        if (this.props.eventResult.urls) {
-            urls = this.props.eventResult.urls.map((link, index) => link.url);
-        }
-
         if (this.props.eventCharacter) {
             character = this.props.eventCharacter.map((character, index) => 
                 <li 
@@ -56,6 +48,19 @@ export class Event extends React.Component {
             );
         }
 
+        return (
+            <ul className="event-character-list">
+                {character}
+            </ul>
+        );
+    }
+
+    renderComics() {
+        if (this.props.comicLoading) {
+            return <div className="loader">L O A D I N G . . . </div>;
+        }
+
+        let comic = '';
         if (this.props.eventComic) {
             comic = this.props.eventComic.map((comic, index) => 
                 <li 
@@ -120,6 +125,25 @@ export class Event extends React.Component {
             );
         }
 
+        return (
+            <ul className="event-comic-list">
+                {comic}
+            </ul>
+        );
+    }
+
+    render() {
+        let imgUrl = '';
+        let urls = '';
+
+        if (this.props.eventResult.thumbnail) {
+            imgUrl = this.props.eventResult.thumbnail.path.slice(5) + '/portrait_uncanny.' + this.props.eventResult.thumbnail.extension;
+        }
+
+        if (this.props.eventResult.urls) {
+            urls = this.props.eventResult.urls.map((link, index) => link.url);
+        }
+
         if (!imgUrl) {
             return null;
         }
@@ -161,16 +185,16 @@ export class Event extends React.Component {
                 </div>
 
                 <div className="event-character-container">
-                    <h2 className="event-container-header">CHARACTERS IN THIS EVENT</h2>
+                    <h2 className="event-character-header">CHARACTERS IN THIS EVENT</h2>
                         <ul className="event-character-list">
-                            {character}
+                            {this.renderCharacters()}
                         </ul>
                 </div>
 
                 <div className="event-comic-container">
-                    <h2 className="event-container-header">{this.props.eventResult.title} CORE ISSUES & TIE-IN ISSUES</h2>
+                    <div className="lines"><h2 className="event-container-header">{this.props.eventResult.title} CORE ISSUES & TIE-IN ISSUES</h2></div>
                         <ul className="event-comic-list">
-                            {comic}
+                            {this.renderComics()}
                         </ul>
                         <div className="see-more-link">
                             <a 
@@ -191,7 +215,9 @@ const mapStateToProps = state => ({
     eventResult: state.eventReducer.clickedEvent,
     eventCharacter: state.eventReducer.eventCharacter,
     eventComic: state.eventReducer.eventComic,
-    loggedIn: state.auth.currentUser
+    loggedIn: state.auth.currentUser,
+    characterLoading: state.eventReducer.eventCharacterLoading,
+    comicLoading: state.eventReducer.eventComicLoading
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Event));
