@@ -47,6 +47,11 @@ export const findEvent = URI => dispatch => {
         .catch(error => dispatch(findEventError(error)));
 };
 
+export const SEARCH_EVENT_CHARACTER_REQUEST = 'SEARCH_EVENT_CHARACTER_REQUEST';
+export const searchEventCharacterRequest = () => ({
+    type: SEARCH_EVENT_CHARACTER_REQUEST,
+});
+
 export const SEARCH_EVENT_CHARACTER_SUCCESS = 'SEARCH_EVENT_CHARACTER_SUCCESS';
 export const searchEventCharacterSuccess = eventCharacter => ({
     type: SEARCH_EVENT_CHARACTER_SUCCESS,
@@ -64,10 +69,16 @@ function searchEventCharacter(id) {
 }
 
 export const findEventCharacter = id => dispatch => {
+    dispatch(searchEventCharacterRequest());
     searchEventCharacter(id)
         .then(eventId => dispatch(searchEventCharacterSuccess(eventId)))
         .catch(error => dispatch(findEventError(error)));
 };
+
+export const SEARCH_EVENT_COMIC_REQUEST = 'SEARCH_EVENT_COMIC_REQUEST';
+export const searchEventComicRequest = () => ({
+    type: SEARCH_EVENT_COMIC_REQUEST,
+});
 
 export const SEARCH_EVENT_COMIC_SUCCESS = 'SEARCH_EVENT_COMIC_SUCCESS';
 export const searchEventComicSuccess = eventComic => ({
@@ -86,6 +97,7 @@ function searchEventComic(id) {
 }
 
 export const findEventComic = id => dispatch => {
+    dispatch(searchEventComicRequest());
     searchEventComic(id)
         .then(comicId => dispatch(searchEventComicSuccess(comicId)))
         .catch(error => dispatch(findEventError(error)));
