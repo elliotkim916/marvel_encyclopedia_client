@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import {Provider} from 'react-redux';
-
+import sinon from 'sinon';
+const dispatch = sinon.spy();
 import {SearchResults} from './search-results';
 
 describe('<SearchResults />', () => {
@@ -3457,9 +3457,7 @@ describe('<SearchResults />', () => {
     }
     it('Renders without crashing', () => {
         const wrapper = shallow(
-            <Provider store={testStore}>
-                <SearchResults/>
-            </Provider>
-        )
+          <SearchResults dispatch={dispatch} {...testStore} />
+        );
     });
 });

@@ -3,6 +3,7 @@ import {shallow, mount, render} from 'enzyme';
 import {Provider} from 'react-redux';
 import {Dashboard} from './dashboard';
 import sinon from 'sinon';
+const dispatch = sinon.spy();
 
 describe('<Dashboard />', () => {
     const dashboardStore = {
@@ -32,9 +33,7 @@ describe('<Dashboard />', () => {
       
       it('Renders without crashing', () => {
         const wrapper = shallow(
-            <Provider store={dashboardStore}>
-                <Dashboard />
-            </Provider>
+                <Dashboard dispatch={dispatch} {...dashboardStore}/>
         );
     });
 });
