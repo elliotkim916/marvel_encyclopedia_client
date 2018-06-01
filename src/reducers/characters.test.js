@@ -6,7 +6,9 @@ describe('characterReducer', () => {
         expect(state).toHaveProperty('searchedCharacter', {});
         expect(state).toHaveProperty('searchedCharacterComic', []);
         expect(state).toHaveProperty('searchedCharacterEvent', []);
-        expect(state).toHaveProperty('loading', false);
+        expect(state).toHaveProperty('characterLoading', false);
+        expect(state).toHaveProperty('comicLoading', false);
+        expect(state).toHaveProperty('eventLoading', false);
         expect(state).toHaveProperty('error', null);
     });
 

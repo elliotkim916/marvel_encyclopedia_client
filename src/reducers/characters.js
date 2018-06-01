@@ -12,7 +12,7 @@ const initialState = {
     searchedCharacter: {},
     searchedCharacterComic: [],
     searchedCharacterEvent: [],
-    characterloading: false,
+    characterLoading: false,
     comicLoading: false,
     eventLoading: false,
     error: null
