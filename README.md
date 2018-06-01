@@ -55,6 +55,7 @@ Event Page:
 * Express
 * Mongo
 * Mongoose
+* [Github Repository for Server Side Code](https://github.com/elliotkim916/marvel_encyclopedia_api)  
 
 ### Testing
 * Mocha
@@ -70,6 +71,7 @@ Event Page:
 * Delete comic book from dashboard
 
 ## **Demo**
+[Live Demo](https://marvel-encyclopedia.netlify.com/)
 
 ## Author
 * Elliot Kim - Front-End Development/Testing/Styling , Back-End Development/Database Design/Testing
