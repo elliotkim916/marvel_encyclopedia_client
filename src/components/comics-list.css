@@ -27,12 +27,11 @@
 
 .already-read-input, .read-later-input {
     margin-right: 7px;
-    height: 45px;
     width: 120px;
     border-radius: 4px;
     color: white;
     background-color: black;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
