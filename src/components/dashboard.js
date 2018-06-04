@@ -28,8 +28,6 @@ export class Dashboard extends React.Component {
         if (result) {
             this.props.dispatch(deleteData(id))
             .then(data => window.location.reload());
-        } else {
-            window.location.reload();
         }
     }
 
