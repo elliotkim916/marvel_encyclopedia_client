@@ -87,7 +87,6 @@ export const deleteData = _id => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then((data) => dispatch(deleteProtectedDataSuccess(data)))
-    .then(window.location.reload())
     .catch(err => {
         dispatch(fetchProtectedDataError(err))
     });
