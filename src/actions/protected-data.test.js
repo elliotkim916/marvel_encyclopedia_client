@@ -35,7 +35,6 @@ describe('addProtectedDataSuccess', () => {
         const comic = {'Thor': 'Thor Dies!'};
         const action = addProtectedDataSuccess(comic);
         expect(action.type).toEqual(ADD_PROTECTED_DATA_SUCCESS);
-        // expect(action.addComicdata).toEqual(comic);
     });
 });
 
