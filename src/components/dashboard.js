@@ -26,10 +26,8 @@ export class Dashboard extends React.Component {
         e.preventDefault();
         const result = window.confirm('Are you sure you want to delete?  If so, click OK.');
         if (result) {
-            this.props.dispatch(deleteData(id))
-            .then(data => window.location.reload());
-        } else {
-           window.location.assign('/dashboard');
+            this.props.dispatch(deleteData(id));
+            
         }
     }
 

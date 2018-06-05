@@ -24,7 +24,8 @@ export default function protectedDataReducer(state=initialState, action) {
         });
     } else if (action.type === DELETE_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
-            error: action.error
+            data: state.data.filter(comic => comic._id !== action.id),
+            error: null
         });
     } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
         return Object.assign({}, state, {
