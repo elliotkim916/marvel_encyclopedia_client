@@ -29,7 +29,7 @@ export class Dashboard extends React.Component {
             this.props.dispatch(deleteData(id))
             .then(data => window.location.reload());
         } else {
-            e.target.blur();
+           window.location.assign('/dashboard');
         }
     }
 
