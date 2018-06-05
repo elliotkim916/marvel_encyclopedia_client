@@ -75,7 +75,6 @@ export const addData = (title, read, imgUrl, resourceURI, username) => (dispatch
 export const deleteData = _id => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const url = `${API_BASE_URL}/marvel/` + _id;
-    console.log(url);
     const headers = {
         Authorization: `Bearer ${authToken}`,
         'Content-Type': `application/json`
