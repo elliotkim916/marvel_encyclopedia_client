@@ -27,7 +27,7 @@ export class Dashboard extends React.Component {
         const result = window.confirm('Are you sure you want to delete?  If so, click OK.');
         if (result) {
             this.props.dispatch(deleteData(id));
-            
+            window.location.reload();    
         }
     }
 
@@ -49,11 +49,12 @@ export class Dashboard extends React.Component {
                     >
                         <div
                             className="comic-info" 
-                            onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
+                        >
                             <img 
                                 src={item.imgUrl.slice(5)} 
                                 alt=""
                                 className="cover-image" 
+                                onClick={() => this.props.dispatch(findComic(item.resourceURI))}
                             />
                             <button 
                                 onClick={(e) => this.onDelete(item._id, e)}
@@ -61,7 +62,7 @@ export class Dashboard extends React.Component {
                             >
                             <i className="fa fa-trash-o" aria-hidden="true"></i> Remove Comic
                             </button>
-                            <div className="comic-text">
+                            <div className="comic-text" onClick={() => this.props.dispatch(findComic(item.resourceURI))}>
                                 <Link className="title-link" to="/comic">{item.title}</Link><br/>
                                 <span className="item-read">{item.read}</span>
                             </div>
