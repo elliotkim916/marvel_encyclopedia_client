@@ -27,7 +27,7 @@ export class Dashboard extends React.Component {
         const result = window.confirm('Are you sure you want to delete?  If so, click OK.');
         if (result) {
             this.props.dispatch(deleteData(id))
-            window.location.reload();
+            .then(data => window.location.reload());
         } else {
             e.target.blur();
         }
