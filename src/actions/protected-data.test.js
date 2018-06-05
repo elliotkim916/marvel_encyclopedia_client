@@ -41,9 +41,8 @@ describe('addProtectedDataSuccess', () => {
 
 describe('deleteProtectedDataSuccess', () => {
     it('Should return the action', () => {
-        const error = 'Deleted!';
-        const action = deleteProtectedDataSuccess(error);
+        const id = 'Deleted!';
+        const action = deleteProtectedDataSuccess(id);
         expect(action.type).toEqual(DELETE_PROTECTED_DATA_SUCCESS);
-        expect(action.error).toEqual(error);
     });
 });
