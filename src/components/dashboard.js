@@ -22,7 +22,7 @@ export class Dashboard extends React.Component {
         clearAuthToken();
     }
 
-    onDelete(e, id) {
+    onDelete(id, e) {
         e.preventDefault();
         const result = window.confirm('Are you sure you want to delete?  If so, click OK.');
         if (result) {
@@ -58,7 +58,7 @@ export class Dashboard extends React.Component {
                                 className="cover-image" 
                             />
                             <button 
-                                onClick={(e) => this.onDelete(e, item._id)}
+                                onClick={(e) => this.onDelete(item._id, e)}
                                 className="remove-comic-btn"
                             >
                             <i className="fa fa-trash-o" aria-hidden="true"></i> Remove Comic
