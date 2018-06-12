@@ -5,6 +5,4 @@ export const TS = "2018-05-07T05:25:16.227Z";
 export const HASH = "06629b5ece79a47a43298a7ebc99af21";
 
 // server-side
-export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-
-// 'http://localhost:8080/api'
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
