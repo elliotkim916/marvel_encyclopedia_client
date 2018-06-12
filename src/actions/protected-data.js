@@ -20,7 +20,7 @@ export const addProtectedDataSuccess = addComicData => ({
 });
 
 export const DELETE_PROTECTED_DATA_SUCCESS = 'DELETE_PROTECTED_DATA_SUCCESS';
-export const deleteProtectedDataSuccess = id => ({
+export const deleteProtectedDataSuccess = id => ({ 
     type: DELETE_PROTECTED_DATA_SUCCESS,
     id
 });
@@ -83,9 +83,9 @@ export const deleteData = _id => (dispatch, getState) => {
         headers,
         method: 'DELETE'
     })
-    .then(res => normalizeResponseErrors(res))
-    .then(res => res.json())
-    .then(() => dispatch(deleteProtectedDataSuccess(_id)))
+    .then(() => {
+        dispatch(deleteProtectedDataSuccess(_id))
+    })
     .catch(err => {
         dispatch(fetchProtectedDataError(err))
     });
