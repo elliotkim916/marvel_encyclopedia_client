@@ -11,6 +11,23 @@ body {
   text-align: center;
   line-height: 1.5;
   background-color: whitesmoke;
+  height: 100%;
+}
+
+html, #root, .App {
+  height: 100%;
+}
+
+main {
+  height: 100%;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 a {
