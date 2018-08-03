@@ -1,5 +1,12 @@
- language: node_js
- node_js: node
- cache:
-   directories:
-     - node_modules
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: dW8F6HQrOwyic2u3ea1ZKi4i0ChmhGKpprM7nXGt148FLVEnnfEkuMNO8lZihQieCXq+GZnDs7OVGCsa4Jfp2SMUmvWU8K175+xunpZRif2cUg9PRVMUyd6VyYJjCeyIV+ZVq1mkK0XQ0b2uGqJK8zigXJKlK5Wwcb2RHtYk4wjoIts2BirIRZrK5HKx8YYA1bdJXtLGinHAPBN82zQKPmQk/ruL7Ep9p8gYBlcM9IswnPxNxjpY2aFOE+o1ERJCkZ7qSEFN8XUwkBtiBKjtal88hDOde2YuYlGtaAf1Or+kW42+SGhZOR0hHoZs1VIsWOi6Fa3fD2h1qMvlXQaeDn9GcdPREe6/lbcqf7jJ1ArC8/9cUwA0jetIwvdJzePdCGsP0TeiBmyiOuDy5tEn5mxezDFhFs+6ffIigr1bwHcC6RrC43krNlY6cppF0CffVm/8AAYb/3KbNR4m2vBBCcm5NuA9W8+Ks3VzuoHMzqBFAPRg5pr6/L9mgyOrYfcr+xhg8K1LaDs9dLLhaJOYEnl4jgEkFjqJhBtzcKa/bQDvyc8xCqdrpfguozBupWK9BNVPi+fdovgpdCpRP70msPY4nJY2Oxuj4rDBjTAJQ+FpLy+Pefh6NHujhbCrxSc7V9HrTlDmzUDUwTz66RX+BljReiYdwYSNREBiOjrfTaQ=
+  app: enigmatic-lowlands-24493
+  on:
+    repo: elliotkim916/marvel_encyclopedia_client
