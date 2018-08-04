@@ -36,7 +36,7 @@ Marvel films and television shows are being released more than ever, with more n
 * Delete comic book from dashboard
 
 ## **Demo**
-[Live Demo](https://marvel-encyclopedia.netlify.com/)
+[Live Demo](https://enigmatic-lowlands-24493.herokuapp.com/)
 
 ## Author
 * Elliot Kim - Front-End Development/Testing/Styling , Back-End Development/Database Design/Testing
