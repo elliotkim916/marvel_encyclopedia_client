@@ -17,9 +17,19 @@ export class Event extends React.Component {
 
     onAdd(e, title, read, imgUrl, uri, username) {
         e.preventDefault();
-        const result = window.confirm(`To add this comic book to your homepage as ${read}, continue by clicking OK.  Otherwise, click Cancel.`);
-        if (result) {
-            this.props.dispatch(addData(title, read, imgUrl, uri, username))
+        let already_exists = false;
+        let comics_array = this.props.protectedData.data;
+    
+        comics_array.forEach(comic => {
+        if (comic.title === title) {
+            already_exists = true;
+            window.alert(`The comic ${comic.title} has already been saved to Your Read & Unread Comics list.`);
+        }
+    });
+
+        if (!already_exists) {
+            this.props.dispatch(addData(title, read, imgUrl, uri, username));
+            window.alert(`The comic ${title} has been saved to Your Read & Unread Comics list.`);
         }
     }
 
@@ -217,7 +227,8 @@ const mapStateToProps = state => ({
     eventComic: state.eventReducer.eventComic,
     loggedIn: state.auth.currentUser,
     characterLoading: state.eventReducer.eventCharacterLoading,
-    comicLoading: state.eventReducer.eventComicLoading
+    comicLoading: state.eventReducer.eventComicLoading,
+    protectedData: state.protectedData.data
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Event));
