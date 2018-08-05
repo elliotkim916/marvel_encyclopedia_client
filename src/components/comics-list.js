@@ -9,9 +9,19 @@ import './dashboard.css';
 export class ComicsList extends React.Component {
     onAdd(e, title, read, imgUrl, uri, username) {
         e.preventDefault();
-        const result = window.confirm(`To add this comic book to your homepage as ${read}, continue by clicking OK.  Otherwise, click Cancel.`);
-        if (result) {
-            this.props.dispatch(addData(title, read, imgUrl, uri, username))
+        let already_exists = false;
+        let comics_array = this.props.protectedData.data;
+    
+        comics_array.forEach(comic => {
+        if (comic.title === title) {
+            already_exists = true;
+            window.alert(`The comic ${comic.title} has already been saved to Your Read & Unread Comics list.`);
+        }
+    });
+
+        if (!already_exists) {
+            this.props.dispatch(addData(title, read, imgUrl, uri, username));
+            window.alert(`The comic ${title} has been saved to Your Read & Unread Comics list.`);
         }
     }
 
@@ -122,7 +132,8 @@ export class ComicsList extends React.Component {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser,
-    loading: state.characterReducer.comicLoading
+    loading: state.characterReducer.comicLoading,
+    protectedData: state.protectedData.data
 });
 
 export default connect(mapStateToProps)(ComicsList);
