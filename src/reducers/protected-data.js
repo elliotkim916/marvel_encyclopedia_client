@@ -19,7 +19,7 @@ export default function protectedDataReducer(state=initialState, action) {
         });
     } else if (action.type === ADD_PROTECTED_DATA_SUCCESS) {
         return Object.assign({}, state, {
-            addComicData: action.addComicdata,
+            addComicData: {data: state.data.data.push(action.addComicData)},
             error: null
         });
     } else if (action.type === DELETE_PROTECTED_DATA_SUCCESS) {
