@@ -11,7 +11,6 @@ export class ComicsList extends React.Component {
         e.preventDefault();
         let already_exists = false;
         let comics_array = this.props.protectedData.data;
-    
         comics_array.forEach(comic => {
         if (comic.title === title) {
             already_exists = true;
