@@ -56,16 +56,6 @@
   width: 300px;
 }
 
-@media only screen and (max-width: 370px) {
-  .marvel-logo-one {
-    width: 250px;
-  }
-
-  .header-second-word {
-    font-size: 32px;
-  }
-}
-
 @media only screen and (max-width: 722px) {
   .header-second-word {
     margin-left: -8px;
