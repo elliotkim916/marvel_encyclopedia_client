@@ -30,7 +30,7 @@
 .register-redirect {
 	position: relative;
 	top: 20px;
-	letter-spacing: .75px;
+	letter-spacing: .35px;
 }
 
 .register-btn {
@@ -85,14 +85,9 @@
 	color: #000000;
 }
 
-.second-header {
+.second-header, .existing-acct {
 	color: #222;
-	letter-spacing: 1px;
-}
-
-.existing-acct {
-	color: #222;
-	letter-spacing: 1px;
+	letter-spacing: .35px;
 }
 
 .demo-username, .demo-password {
@@ -102,5 +97,5 @@
 
 .demo-container {
 	margin-top: 50px;
-	letter-spacing: 1px;
+	letter-spacing: .35px;
 }
