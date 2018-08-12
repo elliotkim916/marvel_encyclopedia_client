@@ -1,113 +1,113 @@
 #bookmark {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .comics-list-section {
-    background-color: whitesmoke;
-    min-height: 200px;
+  background-color: whitesmoke;
+  min-height: 200px;
 }
 
 .comics-list-header {
-    padding-top: 25px;
-    letter-spacing: 1px;
+  padding-top: 25px;
+  letter-spacing: 1px;
 }
 
 .comic-title-link {
-    color: #222;
-    font-size: 1em;
-    font-weight: bold;
-    font-family: 'Montserrat';
-    cursor: pointer;
+  color: #222;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: 'Montserrat';
+  cursor: pointer;
 }
 
 .comic-title-link:hover, .comic-title-link:focus {
-    outline: none;
-    text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 .already-read-input, .read-later-input {
-    margin-right: 7px;
-    width: 120px;
-    border-radius: 4px;
-    color: white;
-    background-color: black;
-    font-size: 18.5px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+  margin-right: 7px;
+  width: 120px;
+  border-radius: 4px;
+  color: white;
+  background-color: black;
+  font-size: 18.5px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
 .already-read-input:hover,
 .already-read-input:focus, 
 .read-later-input:hover,
 .read-later-input:focus {
-    outline: none;
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
 
 .comic-history {
-    cursor: pointer;
-    margin-top: 70px;
-    display: inline-block;
-    width: 350px;
+  cursor: pointer;
+  margin-top: 70px;
+  display: inline-block;
+  width: 350px;
 }
 
 .comic-cover-img {
-    transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 .comic-cover-img:hover, .comic-cover-img:focus {
-    -webkit-transform: scale(1.06);
-    -ms-transform: scale(1.06);
-    transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .already-read-label {
-    margin-right: 25px;
+  margin-right: 25px;
 }
 
 .already-read-label, .read-later-label {
-    color: black;
+  color: black;
 }
 
 .radio-btns {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .comics-new-link {
-    font-weight: bolder;
-    color: black;
-    font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  font-size: 25px;
 }
 
 .comics-new-link:hover, .comics-new-link:focus {
-    outline:none;
-    text-decoration: underline;
-    cursor: pointer;
+  outline:none;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .arrows {
-    color: red;
+  color: red;
 }
 
 .comic-container {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .comic-cover-img {
-    border: 1px solid black;
-    border: 1px solid black;
-    box-shadow: 5px 5px grey;
+  border: 1px solid black;
+  border: 1px solid black;
+  box-shadow: 5px 5px grey;
 }
 
 .h2 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 .comics-list-all {
-    margin-left: -25px;
+  margin-left: -25px;
 }
 
 /* spinner animation */
@@ -160,48 +160,48 @@
 }
 @-webkit-keyframes load2 {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   }
 }
 @keyframes load2 {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   }
 }
 
 @media only screen and (max-width: 765px) {
-    .comics-form {
-        padding-right: 40px;
-    }
-    
-    .more-comics-link {
-        margin-top: 70px;
-        margin-bottom: 20px;
-    }
+  .comics-form {
+    padding-right: 40px;
+  }
+  
+  .more-comics-link {
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (min-width: 765px) {
-    .comic-history {
-        margin-bottom: 80px;
-        width: 350px;
-    }
+  .comic-history {
+    margin-bottom: 80px;
+    width: 350px;
+  }
 
-    .more-comics-link {
-        margin-bottom: 40px;
-    }
+  .more-comics-link {
+    margin-bottom: 40px;
+  }
 
-    .comic-title-link {
-        width: 300px;
-        margin: 0 auto;
-    }
+  .comic-title-link {
+    width: 300px;
+    margin: 0 auto;
+  }
 }

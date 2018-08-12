@@ -1,228 +1,228 @@
 .dashboard-username {
-    font-weight: bold;
-    margin: 0 auto;
-    font-size: 3em;
-    margin: 0px 0px 175px 0px;
-    font-family: 'Montserrat';
-    letter-spacing: .5px;
+  font-weight: bold;
+  margin: 0 auto;
+  font-size: 3em;
+  margin: 0px 0px 175px 0px;
+  font-family: 'Montserrat';
+  letter-spacing: .5px;
 }
 
 .dashboard {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .dashboard-protected-data {
-    margin-top: -5px;
+  margin-top: -5px;
 }
 
 .remove-comic-btn {
-    cursor: pointer;
-    margin-bottom: 15px;
-    width: 170px;
-    height: 30px;
-    border-radius: 4px;
-    color: white;
-    background-color: black;
-    font-size: 0.95em;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    margin-top: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  width: 170px;
+  height: 30px;
+  border-radius: 4px;
+  color: white;
+  background-color: black;
+  font-size: 0.95em;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  margin-top: 10px;
 }
 
 .title-link {
-    font-size: 1em;
-    color: #000000;
-    font-family: 'Montserrat';
-    cursor: pointer;
+  font-size: 1em;
+  color: #000000;
+  font-family: 'Montserrat';
+  cursor: pointer;
 }
 
 .title-link:hover, .title-link:focus {
-    outline: none;
-    text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 .remove-comic-btn:hover, .remove-comic-btn:focus {
-    outline: none;
-    background-color: white;
-    border: 1px solid black;
-    color: black;
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
 
 .cover-image {
-    transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 .cover-image:hover, .cover-image:focus {
-    -webkit-transform: scale(1.06);
-    -ms-transform: scale(1.06);
-    transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .log-out {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .log-out:hover, .log-out:focus {
-    outline: none;
-    text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 .read-history {
-    cursor: pointer;
-    margin-top: 100px;
-    display: inline-block;
-    width: 250px;
+  cursor: pointer;
+  margin-top: 100px;
+  display: inline-block;
+  width: 250px;
 }
 
 .item-read {
-    color: darkslategray;
-    text-transform: uppercase;
-    position: relative;
-    top: 10px;
+  color: darkslategray;
+  text-transform: uppercase;
+  position: relative;
+  top: 10px;
 }
 
 .cover-image {
-    border: 1px solid black;
-    box-shadow: 5px 5px grey;
+  border: 1px solid black;
+  box-shadow: 5px 5px grey;
 }
 
 .protected-data-header {
-    font-weight: bolder;
-    letter-spacing: 1px;
-    margin-bottom: -65px;
-    font-size: 2em;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  margin-bottom: -65px;
+  font-size: 2em;
 }
 
 .protected-data-header {
-    display: inline-block;
-    padding: 0 15px;
-    position: relative;
+  display: inline-block;
+  padding: 0 15px;
+  position: relative;
 }
 
 .protected-data-header:before,
 .protected-data-header:after {
-    background: #222;
-    content: "";
-    display: block;
-    height: 5px;
-    position: absolute;
-        top: 50%;
-        width: 400%;
+  background: #222;
+  content: "";
+  display: block;
+  height: 5px;
+  position: absolute;
+    top: 50%;
+    width: 400%;
 }
 .protected-data-header:before {
-    right: 100%
+  right: 100%
 }
 .protected-data-header:after {
-    left: 100%;
+  left: 100%;
 }
 .lines {
-    overflow:hidden;
-    text-align: center;
+  overflow:hidden;
+  text-align: center;
 }
 
 /* animation effect for comic & event main images */
 .pulse {
-    box-shadow: 0 0 0 lightgrey;
-    animation: pulse 2s infinite;
+  box-shadow: 0 0 0 lightgrey;
+  animation: pulse 2s infinite;
   }
 
   .pulse:hover {
-    animation: none;
+  animation: none;
   }
   
   @-webkit-keyframes pulse {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 lightgrey;
-    }
-    70% {
-        -webkit-box-shadow: 0 0 0 4px lightgrey;
-    }
-    100% {
-        -webkit-box-shadow: 0 0 0 0 lightgrey;
-    }
+  0% {
+    -webkit-box-shadow: 0 0 0 0 lightgrey;
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 4px lightgrey;
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 lightgrey;
+  }
   }
   @keyframes pulse {
-    0% {
-      -moz-box-shadow: 0 0 0 0 lightgrey;
-      box-shadow: 0 0 0 0 lightgrey;
-    }
-    70% {
-        -moz-box-shadow: 0 0 0 4px lightgrey;
-        box-shadow: 0 0 0 4px lightgrey;
-    }
-    100% {
-        -moz-box-shadow: 0 0 0 0 lightgrey;
-        box-shadow: 0 0 0 0 lightgrey;
-    }
+  0% {
+    -moz-box-shadow: 0 0 0 0 lightgrey;
+    box-shadow: 0 0 0 0 lightgrey;
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 4px lightgrey;
+    box-shadow: 0 0 0 4px lightgrey;
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 lightgrey;
+    box-shadow: 0 0 0 0 lightgrey;
+  }
 }
 
 .ironman-icon {
-    margin-top: 145px;
+  margin-top: 145px;
 }
 
 .ironman-icon {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 50%;
-    animation: pulsing 3s infinite;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  animation: pulsing 3s infinite;
   }
 
   .ironman-icon:hover {
-    animation: none;
+  animation: none;
   }
   
   @-webkit-keyframes pulsing {
-    0% {
-      -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 24);
-    }
-    70% {
-        -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-    }
-    100% {
-        -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-    }
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 24);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
   }
   @keyframes pulsing {
-    0% {
-      -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 24);
-      box-shadow: 0 0 0 0 rgba(204,169,44, 24);
-    }
-    70% {
-        -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-        box-shadow: 0 0 0 10px rgba(204,169,44, 0);
-    }
-    100% {
-        -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-        box-shadow: 0 0 0 0 rgba(204,169,44, 0);
-    }
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 24);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 24);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+    box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
   }
 
 @media only screen and (max-width: 698px) {
-    .search-form-header {
-        padding-bottom: 1px;
-    }
+  .search-form-header {
+    padding-bottom: 1px;
+  }
 
-    .ironman-icon {
-        margin-top: 100px;
-    }
+  .ironman-icon {
+    margin-top: 100px;
+  }
 }
 
 @media only screen and (min-width: 515px) {
-    .comic-text{
-        width: 250px;
-    }
+  .comic-text{
+    width: 250px;
+  }
 }
 
 @media only screen and (min-width: 765px) {
-    .read-history {
-        float: left;
-        padding-left: 120px;
-        margin-bottom: 90px;
-    }
+  .read-history {
+    float: left;
+    padding-left: 120px;
+    margin-bottom: 90px;
+  }
 
-    .comic-text {
-        width: 175px;
-        height: 100px;
-    }
+  .comic-text {
+    width: 175px;
+    height: 100px;
+  }
 }

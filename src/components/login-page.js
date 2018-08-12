@@ -7,10 +7,12 @@ import './registration-page.css';
 
 export function LoginPage(props) {
 	if (props.loading) {
-		return 	<div className="account_loader">
-							<h3 className="loading_message">Logging in..</h3>
-							<div className="loader"></div>
-						</div>
+		return 	(
+			<div className="account_loader">
+				<h3 className="loading_message">Logging in..</h3>
+				<div className="loader"></div>
+			</div>
+		);
 	}
 
 	if (props.loggedIn) {

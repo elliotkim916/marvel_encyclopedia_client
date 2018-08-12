@@ -1,45 +1,45 @@
- .character-info-section {
-    background-color: #000000;
-    padding: 45px 15px;
+.character-info-section {
+  background-color: #000000;
+  padding: 45px 15px;
 }
 
 .character-text {
-    max-width: 450px;
-    margin-bottom: 40px;
-    text-align: left;
-    color: lightgray;
+  max-width: 450px;
+  margin-bottom: 40px;
+  text-align: left;
+  color: lightgray;
 }
 
 .searched-img {
-    border: 1px solid black;
-    box-shadow: 5px 5px grey;
+  border: 1px solid black;
+  box-shadow: 5px 5px grey;
 }
 
 .character-name {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 2.7em;
-    letter-spacing: 1px;
+  text-align: center;
+  color: whitesmoke;
+  font-size: 2.7em;
+  letter-spacing: 1px;
 }
 
 .info-new-link {
-    text-align: center;
-    font-weight: bold;
-    color: #ddd;
+  text-align: center;
+  font-weight: bold;
+  color: #ddd;
 }
 
 .info-new-link:hover {
-    text-decoration: underline;
-    cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .new-link {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 .character-arrows {
-    color: orangered;
-    font-size: 15px;
+  color: orangered;
+  font-size: 15px;
 }
 
 /* spinner animation */
@@ -92,43 +92,43 @@
 }
 @-webkit-keyframes load2 {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   }
 }
 @keyframes load2 {
   0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
   }
 }
 
 @media only screen and (max-width: 847px) {
-    .character-text, .character-name, .info-new-link {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .character-text, .character-name, .info-new-link {
+  margin-left: auto;
+  margin-right: auto;
+  }
 }
 
 @media only screen and (min-width: 847px) {
-    .searched-img {
-        display: inline-block;
-    }
+  .searched-img {
+  display: inline-block;
+  }
 
-    .character-description {
-        display: inline-block;
-        margin-left: 50px;
-    }
+  .character-description {
+  display: inline-block;
+  margin-left: 50px;
+  }
 
-    .character-name, .info-new-link {
-        text-align: left;
-    }
+  .character-name, .info-new-link {
+  text-align: left;
+  }
 }

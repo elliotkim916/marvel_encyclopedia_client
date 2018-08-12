@@ -1,75 +1,75 @@
 .info-section-header {
-    padding: 25px 0;
+  padding: 25px 0;
 }
 
 .information-section {
-    background-color: whitesmoke;
-    padding-bottom: 30px;
+  background-color: whitesmoke;
+  padding-bottom: 30px;
 }
 
 .info-section-text {
-    max-width: 380px;
-    margin: 0 auto;
-    text-align: center;
-    color: #000000;
-    letter-spacing: .6px;
-    margin-top: 25px;
-    margin-bottom: 35px;
+  max-width: 380px;
+  margin: 0 auto;
+  text-align: center;
+  color: #000000;
+  letter-spacing: .6px;
+  margin-top: 25px;
+  margin-bottom: 35px;
 }
 
 .info {
-    background-color: whitesmoke;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+  background-color: whitesmoke;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .landing-pg-header {
-    color: whitesmoke;
-    font-size: 2em;
-    word-spacing: 3px;
+  color: whitesmoke;
+  font-size: 2em;
+  word-spacing: 3px;
 }
 
 .header-second-word {
-    color: gainsboro;
+  color: gainsboro;
 }
 
 .title {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 .header-one {
-    font-size: 2em;
-    letter-spacing: 1px;
-    color: #000000;
+  font-size: 2em;
+  letter-spacing: 1px;
+  color: #000000;
 }
 
 .marvel-title-header {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .explain {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .marvel-logo-one {
-    width: 300px;
+  width: 300px;
 }
 
 @media only screen and (max-width: 722px) {
-    .header-second-word {
-        margin-left: -8px;
-    }
+  .header-second-word {
+    margin-left: -8px;
+  }
 }
 
 @media only screen and (min-width: 725px) {
-    .header-second-word {
-        margin-left: 30px;
-        display: inline-block;
-    }
+  .header-second-word {
+    margin-left: 30px;
+    display: inline-block;
+  }
 
-    .explain {
-        display: inline-block;
-        margin: 80px 45px 0px 45px;
-    }
+  .explain {
+    display: inline-block;
+    margin: 80px 45px 0px 45px;
+  }
 }

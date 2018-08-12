@@ -1,160 +1,160 @@
 .comic-section {
-    background-color: #eee;
-    color: black;
+  background-color: #eee;
+  color: black;
 }
 
 .container-header {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .description-container {
-    max-width: 600px;
-    text-align: left;
-    margin-top: 50px;
-    margin-bottom: 45px;
-    color: gray;
-    letter-spacing: 1px;
+  max-width: 600px;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 45px;
+  color: gray;
+  letter-spacing: 1px;
 }
 
 .issue-number {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .log-out-from-comic {
-    float: right;
-    margin-right: 5px;
-    margin-top: -35px;
-    font-weight: bold;
+  float: right;
+  margin-right: 5px;
+  margin-top: -35px;
+  font-weight: bold;
 }
 
 .back-home-from-comic {
-    float: left;
-    font-weight: bold;
-    margin-left: 5px;
-    margin-top: -35px;
+  float: left;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: -35px;
 }
 
 .comic-book-information {
-    background-color: black;
-    padding: 45px 15px 45px 15px;
+  background-color: black;
+  padding: 45px 15px 45px 15px;
 }
 
 .cover-art, .cover-artwork {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .comicBookTitle, .issueInformation {
-    color: white;
+  color: white;
 }
 
 .comicBookTitle {
-    font-size: 2.7em;
-    letter-spacing: 1px;
-    max-width: 611px;
-    text-transform: uppercase;
-    margin-top: 35px;
+  font-size: 2.7em;
+  letter-spacing: 1px;
+  max-width: 611px;
+  text-transform: uppercase;
+  margin-top: 35px;
 }
 
 .issueInformation {
-    color: gainsboro;
-    letter-spacing: 1px;
+  color: gainsboro;
+  letter-spacing: 1px;
 }
 
 .cover-art, .cover-artwork {
-    border: 1px solid black;
-    border: 1px solid black;
-    box-shadow: 5px 5px grey;
+  border: 1px solid black;
+  border: 1px solid black;
+  box-shadow: 5px 5px grey;
 }
 
 .cover-artwork {
-    animation: pulse 4s infinite;
+  animation: pulse 4s infinite;
 }
 
 .cover-artwork:hover {
-    animation: none;
+  animation: none;
 }
 
 .marvelComicsCharacter {
-    cursor: pointer; 
-    display: inline-block;
-    width: 350px;
-    margin-bottom: 45px;
+  cursor: pointer; 
+  display: inline-block;
+  width: 350px;
+  margin-bottom: 45px;
 }
 
 .cover-art {
-    transition-duration: 1s;
-    cursor: pointer;
-    margin-bottom: 10px;
+  transition-duration: 1s;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .cover-art:hover, .cover-art:focus {
-    -webkit-transform: scale(1.06);
-    -ms-transform: scale(1.06);
-    transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .character-name-link {
-    color: #000000;
-    font-weight: bold;
-    border: none;
-    font-size: 0.95em;
-    font-family: 'Montserrat';
-    cursor: pointer;
-    letter-spacing: 1px;
+  color: #000000;
+  font-weight: bold;
+  border: none;
+  font-size: 0.95em;
+  font-family: 'Montserrat';
+  cursor: pointer;
+  letter-spacing: 1px;
 }
 
 .character-name-link:hover, .character-name-link:focus {
-    outline: none;
-    text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 .character-container {
-    background-color: whitesmoke;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    margin-top: -20px;
-    margin-left: -40px;
+  background-color: whitesmoke;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  margin-top: -20px;
+  margin-left: -40px;
 }
 
 @media only screen and (max-width: 400px) {
-    .marvelComicsCharacter {
-        padding-right: 40px;
-    }
+  .marvelComicsCharacter {
+    padding-right: 40px;
+  }
 
-    .new-comic-link {
-        margin-top: 35px;
-    }
+  .new-comic-link {
+    margin-top: 35px;
+  }
 }
 
 @media only screen and (max-width: 1022px) {
-    .description-container {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 55px;
-        margin-bottom: 30px;
-    }
+  .description-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55px;
+    margin-bottom: 30px;
+  }
 
-    .comicBookTitle, .issueInformation, .description-container {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .comicBookTitle, .issueInformation, .description-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media only screen and (min-width: 1022px) {
    .cover-art {
-       display: inline-block;
+     display: inline-block;
    }
 
    .comicIssueDetails {
-       display: inline-block;
-       margin-left: 75px;
+     display: inline-block;
+     margin-left: 75px;
    }
 
    .issueInformation, .description-container, .comicBookTitle {
-       text-align: left;
+     text-align: left;
    }
 
    .new-comic-link {
-       text-align: left;
+     text-align: left;
    }
 }

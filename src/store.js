@@ -11,22 +11,22 @@ import {comicReducer} from './reducers/comics';
 import {eventReducer} from './reducers/events';
 
 const store = createStore(
-    combineReducers({
-        characterReducer: characterReducer,
-        comicReducer: comicReducer,
-        eventReducer: eventReducer,
-        form: formReducer,
-        auth: authReducer,
-        protectedData: protectedDataReducer
-    }),
-    applyMiddleware(thunk, logger)
+  combineReducers({
+    characterReducer: characterReducer,
+    comicReducer: comicReducer,
+    eventReducer: eventReducer,
+    form: formReducer,
+    auth: authReducer,
+    protectedData: protectedDataReducer
+  }),
+  applyMiddleware(thunk, logger)
 );
 
 const authToken = loadAuthToken();
 if (authToken) {
-    const token = authToken;
-    store.dispatch(setAuthToken(token));
-    store.dispatch(refreshAuthToken());
+  const token = authToken;
+  store.dispatch(setAuthToken(token));
+  store.dispatch(refreshAuthToken());
 }
 
 // store.dispatch(setAuthToken(token)) - lets React Application know you the user are authorized to use application

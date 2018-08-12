@@ -1,121 +1,121 @@
 .event-section {
-    color: #000000;
+  color: #000000;
 }
 
 .event-character-list, .event-comic-list {
-    margin-left: -15px;
+  margin-left: -15px;
 }
 
 .event-character-list {
-    padding-bottom: 35px;
+  padding-bottom: 35px;
 }
 
 .event-links {
-    margin-top: 35px;
-    margin-left: 20px;
+  margin-top: 35px;
+  margin-left: 20px;
 }
 
 .event-description {
-    background-color: black;
-    padding: 40px 20px 55px 20px;
+  background-color: black;
+  padding: 40px 20px 55px 20px;
 }
 
 .event-creator-container, .event-comic-container {
-    margin-top: 35px;
+  margin-top: 35px;
 }
 
 .event-character-container {
-    margin-top: -20px;
-    padding-top: 20px;
-    background-color: whitesmoke;
+  margin-top: -20px;
+  padding-top: 20px;
+  background-color: whitesmoke;
 }
 
 .event-character-name, .eventComicsName {
-    font-weight: bolder;
-    cursor: pointer;
-    margin-bottom: 55px;
+  font-weight: bolder;
+  cursor: pointer;
+  margin-bottom: 55px;
 }
 
 .eventsTitle {
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 50px;
-    font-size: 2.7em;
-    margin: 0 auto;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  font-size: 2.7em;
+  margin: 0 auto;
 }
 
 .eventsText {
-    color: gray;
-    text-align: left;
-    max-width: 350px;
-    margin-top: 45px;
+  color: gray;
+  text-align: left;
+  max-width: 350px;
+  margin-top: 45px;
 }
 
 .readMoreLink {
-    color: white;
+  color: white;
 }
 
 .more-link {
-    color: black;
-    font-size: 25px;
+  color: black;
+  font-size: 25px;
 }
 
 .back-home-from-comic, .log-out-from-comic {
-    color: white;
-    letter-spacing: 1px;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .eventCharactersName, .eventComicsName {
-    cursor: pointer;
-    margin-top: 70px;
-    display: inline-block;
-    width: 350px;
+  cursor: pointer;
+  margin-top: 70px;
+  display: inline-block;
+  width: 350px;
 }
 
 .character-cover-img:hover,
 .character-cover-img:focus, 
 .comic-cover-img:hover,
 .comic-cover-img:focus {
-    -webkit-transform: scale(1.06);
-    -ms-transform: scale(1.06);
-    transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+  -ms-transform: scale(1.06);
+  transform: scale(1.06);
 }
 
 .character-cover-img {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .character-cover-img, 
 .comic-cover-img,
 .eventCoversPicture {
-    border: 1px solid black;
-    border: 1px solid black;
-    box-shadow: 5px 5px grey;
-    transition-duration: 1s;
+  border: 1px solid black;
+  border: 1px solid black;
+  box-shadow: 5px 5px grey;
+  transition-duration: 1s;
 }
 
 .eventCoversPicture {
-    animation: pulse 4s infinite;
+  animation: pulse 4s infinite;
 }
 
 .eventCoversPicture:hover {
-    animation: none;
+  animation: none;
 }
 
 .readMoreLink {
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 }
 
 .see-more-link {
-    font-weight: bold;
-    font-size: 20px;
-    color: black;
-    cursor: pointer;
-    margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-bottom: 40px;
 }
 
 .more-link:hover,
@@ -132,79 +132,79 @@
 .event-person-name:focus, 
 .event-comic-link:hover,
 .event-comic-link:focus {
-    outline: none;
-    text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 .comic-cover-img {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .event-btns {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .event-comic-link {
-    color: #000000;
+  color: #000000;
 }
 
 .event-container-header, 
 .event-character-header,
 .event-header,
 .container-header {
-    letter-spacing: 1px;
-    font-size: 30px;
+  letter-spacing: 1px;
+  font-size: 30px;
 }
 
 .arrows {
-    color: red;
+  color: red;
 }
 
 .event-comic-container {
-    padding-bottom: 45px;
+  padding-bottom: 45px;
 }
 
 .eventCoversPicture {
-    margin-top: 45px;
+  margin-top: 45px;
 }
 
 @media only screen and (max-width: 400px) {
-    .eventCharactersName, .eventComicsName {
-        padding-right: 55px;
-    }
-    
-    .new-event-link {
-        text-align: center;
-    }
+  .eventCharactersName, .eventComicsName {
+    padding-right: 55px;
+  }
+  
+  .new-event-link {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 1114px) {
-    .eventsInformation, .eventsText, .readMoreLink {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .eventsInformation, .eventsText, .readMoreLink {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .eventsText {
-        margin-bottom: 45px;
-    }
+  .eventsText {
+    margin-bottom: 45px;
+  }
 
-    .eventCoversPicture {
-        margin-bottom: 30px;
-    }
+  .eventCoversPicture {
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (min-width: 1114px) {
-    .eventCoversPicture {
-        display: inline-block;
-    }
+  .eventCoversPicture {
+    display: inline-block;
+  }
 
-    .eventsInformation {
-        display: inline-block;
-        margin-left: 75px;
-    }
+  .eventsInformation {
+    display: inline-block;
+    margin-left: 75px;
+  }
 
-    .readMoreLink, .eventsTitle {
-        text-align: left;
-        margin-top: 40px;
-    }
+  .readMoreLink, .eventsTitle {
+    text-align: left;
+    margin-top: 40px;
+  }
 }

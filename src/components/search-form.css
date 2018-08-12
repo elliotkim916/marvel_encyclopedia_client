@@ -1,101 +1,101 @@
 .search-form-header {
-    padding-top: 5px;
-    padding-bottom: 75px;
-    background-color: black;
+  padding-top: 5px;
+  padding-bottom: 75px;
+  background-color: black;
 }
 
 .search-form {
-    padding-top: 25px;
-    padding-bottom: 70px;
-    background-color: black;
-    border-bottom: 1px solid black;
+  padding-top: 25px;
+  padding-bottom: 70px;
+  background-color: black;
+  border-bottom: 1px solid black;
 }
 
 .search-input[type="text"]::placeholder {
-    color: white;
+  color: white;
 }
 
 .search-input[type="text"] {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .search-btn {
-    margin-bottom: 25px;
-    width: 60px;
-    font-size: 2em;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    border-style: none;
+  margin-bottom: 25px;
+  width: 60px;
+  font-size: 2em;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-style: none;
 }
 
 .search-btn:focus {
-    outline: none;
-    border-bottom: 2px solid #338bd5;
+  outline: none;
+  border-bottom: 2px solid #338bd5;
 }
 
 h1 {
-    font-size: 2.5em;
-    letter-spacing: 1.5px;
-    margin-top: 80px;
+  font-size: 2.5em;
+  letter-spacing: 1.5px;
+  margin-top: 80px;
 }
 
 .marvel-logo {
-    width: 300px;
+  width: 300px;
 }
 
 .header-text {
-    color: gainsboro;
+  color: gainsboro;
 }
 
 .search-input {
-    height: 35px;
-    border-style: none;
-    background-color: black;
-    border-bottom: 1px solid white;
-    color: white;
-    border-radius: 0;
+  height: 35px;
+  border-style: none;
+  background-color: black;
+  border-bottom: 1px solid white;
+  color: white;
+  border-radius: 0;
 }
 
 .search-input:focus {
-    outline: none;
-    border-bottom: 2px solid #338bd5;
+  outline: none;
+  border-bottom: 2px solid #338bd5;
 }
 
 @media only screen and (max-width: 701px) {
-    .search-form-header {
-       padding-top: 45px;
+  .search-form-header {
+     padding-top: 45px;
    }
 
    .search-input {
-       width: 250px;
+     width: 250px;
    }
 }
 
 @media only screen and (min-width: 699px) {
-    .header-text {
-        margin-left: 20px;
-        display: inline-block;
-        position: relative;
-        bottom: 2px;
-    }
+  .header-text {
+    margin-left: 20px;
+    display: inline-block;
+    position: relative;
+    bottom: 2px;
+  }
 
-    .search-input {
-        width: 600px;
-    }
+  .search-input {
+    width: 600px;
+  }
 }
 
 @media only screen and (max-width: 698px) {
-    .marvel-logo {
-        width: 150px;
-        display: inline-block;
-    }
+  .marvel-logo {
+    width: 150px;
+    display: inline-block;
+  }
 
-    .header-text {
-        font-size: 25px;
-        margin-left: 8px;
-        position: relative;
-        bottom: 2px;
-        display: inline-block;
-    }
+  .header-text {
+    font-size: 25px;
+    margin-left: 8px;
+    position: relative;
+    bottom: 2px;
+    display: inline-block;
+  }
 }
