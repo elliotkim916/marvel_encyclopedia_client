@@ -10,7 +10,7 @@ export function LoginPage(props) {
 		return 	(
 			<div className="account_loader">
 				<h3 className="loading_message">Logging in..</h3>
-				<div className="loader"></div>
+				<div className="spinner"></div>
 			</div>
 		);
 	}
