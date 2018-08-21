@@ -10,7 +10,7 @@ export function RegistrationPage(props) {
 		return 	(
 			<div className="account_loader">
 				<h3 className="loading_message">Creating account..</h3>
-				<div className="loader"></div>
+				<div className="spinner"></div>
 			</div>
 			);
     }
