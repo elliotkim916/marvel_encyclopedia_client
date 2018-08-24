@@ -111,6 +111,16 @@
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .searched-img {
+    width: 250px;
+  }
+
+  .character-name {
+    font-size: 1.7em;
+  }
+}
+
 @media only screen and (max-width: 847px) {
   .character-text, .character-name, .info-new-link {
   margin-left: auto;

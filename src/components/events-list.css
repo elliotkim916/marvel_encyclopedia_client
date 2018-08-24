@@ -101,6 +101,12 @@
   }   
 }
 
+@media only screen and (max-width: 450px) {
+  .event-header {
+    font-size: 1.5em;
+  }
+}
+
 @media only screen and (min-width: 765px) {
   .event-history {
     margin-bottom: 80px;

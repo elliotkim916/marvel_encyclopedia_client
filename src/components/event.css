@@ -3,7 +3,7 @@
 }
 
 .event-character-list, .event-comic-list {
-  margin-left: -15px;
+  margin-left: -40px;
 }
 
 .event-character-list {
@@ -175,6 +175,20 @@
   
   .new-event-link {
     text-align: center;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .eventCoversPicture {
+    width: 250px;
+  }
+
+  .eventsTitle {
+    font-size: 1.7em;
+  }
+
+  .event-character-header {
+    font-size: 1.5em;
   }
 }
 

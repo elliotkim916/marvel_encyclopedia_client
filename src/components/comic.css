@@ -126,6 +126,16 @@
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .cover-art {
+    width: 250px;
+  }
+
+  .comicBookTitle {
+    font-size: 1.7em;
+  }
+}
+
 @media only screen and (max-width: 1022px) {
   .description-container {
     margin-left: auto;
