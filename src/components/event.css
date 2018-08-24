@@ -186,7 +186,7 @@
     font-size: 1.7em;
   }
 
-  .event-character-header {
+  .event-character-header, .event-container-header {
     font-size: 1.5em;
   }
 }
