@@ -206,6 +206,14 @@
   .ironman-icon {
     margin-top: 100px;
   }
+
+  .dashboard-username {
+    font-size: 2em;
+  }
+
+  .protected-data-header {
+    font-size: 1.5em;
+  }
 }
 
 @media only screen and (min-width: 515px) {

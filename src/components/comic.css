@@ -126,7 +126,7 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 698px) {
   .cover-art {
     width: 250px;
   }

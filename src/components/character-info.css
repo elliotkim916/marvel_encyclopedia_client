@@ -111,7 +111,7 @@
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 698px) {
   .searched-img {
     width: 250px;
   }
