@@ -179,6 +179,12 @@
   }
 }
 
+@media only screen and (max-width: 450px) {
+  .h2 {
+    font-size: 1.5em;
+  }
+}
+
 @media only screen and (max-width: 765px) {
   .comics-form {
     padding-right: 40px;
