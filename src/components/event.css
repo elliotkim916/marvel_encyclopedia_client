@@ -149,8 +149,7 @@
 }
 
 .event-container-header, 
-.event-character-header,
-.container-header {
+.event-character-header {
   letter-spacing: 1px;
   font-size: 30px;
 }
