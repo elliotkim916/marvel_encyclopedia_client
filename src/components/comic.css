@@ -134,6 +134,10 @@
   .comicBookTitle {
     font-size: 1.7em;
   }
+
+  .container-header {
+    font-size: 1.5em;
+  }
 }
 
 @media only screen and (max-width: 1022px) {
