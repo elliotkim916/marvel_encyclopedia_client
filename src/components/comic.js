@@ -13,10 +13,8 @@ export class Comic extends React.Component {
     clearAuthToken();
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
-      window.scrollTo(0, 0)
-    }
+  componentDidMount() {
+      window.scrollTo(0, 0);
   }
   
   renderResults() {
