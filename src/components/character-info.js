@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import './character-info.css'
+import './character-info.css';
 
 export class CharacterInfo extends React.Component {
   renderResults() {
