@@ -11,7 +11,7 @@ Marvel films and television shows are being released more than ever, with more n
 ### Front-End
 * HTML
 * CSS
-* Javscript
+* JavaScript
 * React
 * Redux
 
