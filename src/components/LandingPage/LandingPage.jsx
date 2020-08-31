@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-import TopNav from './top-nav';
-import InfoSection from './info-section';
+import TopNav from './TopNav/TopNav';
+import InfoSection from './InfoSection/InfoSection';
 
 const LandingPage = ({ loggedIn }) => {
   if (loggedIn) {

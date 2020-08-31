@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import './top-nav.css';
+import { Link } from 'react-router-dom';
+import './TopNav.module.css';
 
-export default function TopNav(props) {
+const TopNav = () => {
   return (
     <section>
       <nav>
@@ -13,8 +13,8 @@ export default function TopNav(props) {
               className="sign-up"
               aria-label="Create a new account"
             >
-            Sign up
-            </Link>    
+              Sign up
+            </Link>
           </li>
           <li className="nav-list-item">
             <Link
@@ -22,11 +22,13 @@ export default function TopNav(props) {
               className="log-in"
               aria-label="Log in with existing account"
             >
-            Log in
+              Log in
             </Link>
           </li>
         </ul>
       </nav>
     </section>
   );
-}
+};
+
+export default TopNav;

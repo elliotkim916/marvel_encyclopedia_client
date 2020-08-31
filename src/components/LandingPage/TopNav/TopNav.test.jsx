@@ -1,9 +1,9 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 
-import TopNav from './top-nav';
+import TopNav from './TopNav';
 
-describe ('<TopNav />', () => {
+describe('<TopNav />', () => {
   it('Renders without crashing', () => {
     shallow(<TopNav />);
   });

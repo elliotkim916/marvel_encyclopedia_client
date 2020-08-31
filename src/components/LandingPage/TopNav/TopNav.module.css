@@ -1,26 +1,28 @@
 .top-nav {
   margin: 0;
 }
- 
+
 .nav-list-item {
   float: right;
   margin-top: 15px;
   margin-right: 20px;
   text-decoration: none;
-} 
+}
 
-.sign-up:link, .log-in:link {
+.sign-up:link,
+.log-in:link {
   text-decoration: none;
   color: #aaa;
 }
 
-.sign-up, .log-in {
+.sign-up,
+.log-in {
   color: gainsboro;
 }
 
 .sign-up:focus,
 .sign-up:hover,
-.log-in:focus, 
+.log-in:focus,
 .log-in:hover {
   outline: none;
   text-decoration: underline;
@@ -32,7 +34,7 @@
   width: 140px;
   height: 40px;
   border-radius: 4px;
-  background-color: #BA0C2F;
+  background-color: #ba0c2f;
   color: white;
   border-style: none;
   font-size: 1em;
@@ -42,7 +44,8 @@
   transition-duration: 0.4s;
 }
 
-.sign-up-button:hover, .sign-up-button:focus {
+.sign-up-button:hover,
+.sign-up-button:focus {
   outline: none;
   background-color: #5c1010;
 }

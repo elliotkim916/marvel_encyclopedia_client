@@ -1,15 +1,15 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
 import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
-import LandingPage from './landing-page';
+import LandingPage from './LandingPage/LandingPage';
 import LoginPage from './login-page';
 import SearchResults from './search-results';
 import Comic from './comic';
 import Event from './event';
-import {refreshAuthToken} from '../actions/auth';
+import { refreshAuthToken } from '../actions/auth';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
@@ -25,10 +25,10 @@ export class App extends React.Component {
   }
 
   startPeriodicRefresh() {
-    this.refreshInterval = setInterval(() => 
-      this.props.dispatch(refreshAuthToken()),
-      60 * 60 * 100
-    )
+    this.refreshInterval = setInterval(
+      () => this.props.dispatch(refreshAuthToken()),
+      60 * 60 * 1000
+    );
   }
 
   stopPeriodicRefresh() {
@@ -49,9 +49,9 @@ export class App extends React.Component {
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/search-results" component={SearchResults} />
-              <Route exact path="/event" component={Event} />  
-              <Route exact path="/comic" component={Comic} />   
-            </Switch> 
+              <Route exact path="/event" component={Event} />
+              <Route exact path="/comic" component={Comic} />
+            </Switch>
           </main>
         </div>
       </Router>
@@ -59,9 +59,9 @@ export class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   hasAuthToken: state.auth.authToken !== null,
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
 });
 
 export default connect(mapStateToProps)(App);
