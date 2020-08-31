@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Route, Switch } from 'react-router-dom';
 import history from '../history';
-import Dashboard from './dashboard';
+import Dashboard from './Dashboard/Dashboard';
 import RegistrationPage from './registration-page';
 import LandingPage from './LandingPage/LandingPage';
 import LoginPage from './login-page';
