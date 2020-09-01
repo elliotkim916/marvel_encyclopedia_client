@@ -15,6 +15,7 @@ const SearchResults = ({
   searchCharacterEvent,
 }) => {
   let searchResults;
+
   if (searchResult) {
     searchResults = (
       <React.Fragment>
@@ -40,7 +41,6 @@ const mapStateToProps = (state) => ({
   searchResult: state.characterReducer.searchedCharacter,
   searchCharacterComic: state.characterReducer.searchedCharacterComic,
   searchCharacterEvent: state.characterReducer.searchedCharacterEvent,
-  authToken: state.auth.authToken,
 });
 
 export default requiresLogin()(connect(mapStateToProps)(SearchResults));
