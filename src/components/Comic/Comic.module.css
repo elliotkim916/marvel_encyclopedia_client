@@ -23,21 +23,23 @@
 
 .log-out-from-comic {
   float: right;
-  margin-right: 5px;
-  margin-top: -35px;
+  margin-right: 15px;
+  margin-top: 15px;
   font-weight: bold;
+  color: whitesmoke;
 }
 
 .back-home-from-comic {
   float: left;
   font-weight: bold;
-  margin-left: 5px;
-  margin-top: -35px;
+  margin-left: 15px;
+  margin-top: 15px;
+  color: whitesmoke;
 }
 
 .comic-book-information {
   background-color: black;
-  padding: 45px 15px 45px 15px;
+  padding: 0px 15px 45px 15px;
 }
 
 .cover-art,

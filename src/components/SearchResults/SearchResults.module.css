@@ -14,7 +14,8 @@
   color: whitesmoke;
 }
 
-.back-home:hover, .back-home:focus {
+.back-home:hover,
+.back-home:focus {
   outline: none;
   text-decoration: underline;
 }
@@ -27,7 +28,8 @@
 hr.style10 {
   height: 6px;
   color: #000000;
-  background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0 0;
+  background: url(http://ibrahimjabbari.com/english/images/hr-11.png) repeat-x 0
+    0;
   border: 0;
   margin-top: -35px;
   margin-bottom: 45px;

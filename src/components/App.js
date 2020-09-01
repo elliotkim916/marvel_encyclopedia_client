@@ -6,7 +6,7 @@ import Dashboard from './Dashboard/Dashboard';
 import RegistrationPage from './registration-page';
 import LandingPage from './LandingPage/LandingPage';
 import LoginPage from './login-page';
-import SearchResults from './search-results';
+import SearchResults from './SearchResults/SearchResults';
 import Comic from './Comic/Comic';
 import Event from './event';
 import { refreshAuthToken } from '../actions/auth';
