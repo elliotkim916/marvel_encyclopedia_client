@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ComicDescription = ({ comicResult }) => {
+const ComicDescription = React.memo(({ comicResult }) => {
   let imgUrl, urls;
 
   if (comicResult.thumbnail) {
@@ -43,6 +43,6 @@ const ComicDescription = ({ comicResult }) => {
       </div>
     </React.Fragment>
   );
-};
+});
 
 export default ComicDescription;
