@@ -11,12 +11,12 @@
   border-bottom: 1px solid black;
 }
 
-.search-input[type='text']::placeholder {
+.search-input::placeholder {
   color: white;
 }
 
-.search-input[type='text'] {
-  font-size: 1.5em;
+.search-input {
+  font-size: 1.5rem;
 }
 
 .search-btn {
