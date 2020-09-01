@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchProtectedData } from '../../actions/protected-data';
 import requiresLogin from '../requires-login';
-import SearchForm from '../search-form';
+import Search from '../Search/Search';
 import { clearAuthToken } from '../../local-storage';
 import { clearAuth } from '../../actions/auth';
 import DashboardItem from './DashboardItem';
@@ -45,7 +45,7 @@ const Dashboard = ({ dispatch, username, protectedData }) => {
         Log Out
       </a>
 
-      <SearchForm />
+      <Search />
       <br />
 
       <img src={ironman_icon} alt="Iron Man Icon" className="ironman-icon" />

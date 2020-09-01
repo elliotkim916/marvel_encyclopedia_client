@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from './local-storage';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import { reducer as formReducer } from 'redux-form';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
