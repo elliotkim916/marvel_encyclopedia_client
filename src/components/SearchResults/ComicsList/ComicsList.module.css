@@ -20,12 +20,14 @@
   cursor: pointer;
 }
 
-.comic-title-link:hover, .comic-title-link:focus {
+.comic-title-link:hover,
+.comic-title-link:focus {
   outline: none;
   text-decoration: underline;
 }
 
-.already-read-input, .read-later-input {
+.already-read-input,
+.read-later-input {
   margin-right: 7px;
   width: 120px;
   border-radius: 4px;
@@ -38,7 +40,7 @@
 }
 
 .already-read-input:hover,
-.already-read-input:focus, 
+.already-read-input:focus,
 .read-later-input:hover,
 .read-later-input:focus {
   outline: none;
@@ -58,7 +60,8 @@
   transition-duration: 1s;
 }
 
-.comic-cover-img:hover, .comic-cover-img:focus {
+.comic-cover-img:hover,
+.comic-cover-img:focus {
   -webkit-transform: scale(1.06);
   -ms-transform: scale(1.06);
   transform: scale(1.06);
@@ -68,7 +71,8 @@
   margin-right: 25px;
 }
 
-.already-read-label, .read-later-label {
+.already-read-label,
+.read-later-label {
   color: black;
 }
 
@@ -82,8 +86,9 @@
   font-size: 25px;
 }
 
-.comics-new-link:hover, .comics-new-link:focus {
-  outline:none;
+.comics-new-link:hover,
+.comics-new-link:focus {
+  outline: none;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -160,22 +165,22 @@
 }
 @-webkit-keyframes load2 {
   0% {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes load2 {
   0% {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -186,10 +191,10 @@
 }
 
 @media only screen and (max-width: 765px) {
-  .comics-form {
+  /* .comics-form {
     padding-right: 40px;
-  }
-  
+  } */
+
   .more-comics-link {
     margin-top: 70px;
     margin-bottom: 20px;

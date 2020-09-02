@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Search from '../Search/Search';
-import CharacterInfo from '../character-info';
-import ComicsList from '../comics-list';
-import EventsList from '../events-list';
+import CharacterInfo from './CharacterInfo/CharacterInfo';
+import ComicsList from './ComicsList/ComicsList';
+import EventsList from './EventsList/EventsList';
 import requiresLogin from '../requires-login';
 import Header from '../Header/Header';
 import SearchFail from './SearchFail';

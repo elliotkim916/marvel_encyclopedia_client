@@ -92,22 +92,22 @@
 }
 @-webkit-keyframes load2 {
   0% {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes load2 {
   0% {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -122,23 +122,26 @@
 }
 
 @media only screen and (max-width: 847px) {
-  .character-text, .character-name, .info-new-link {
-  margin-left: auto;
-  margin-right: auto;
+  .character-text,
+  .character-name,
+  .info-new-link {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media only screen and (min-width: 847px) {
   .searched-img {
-  display: inline-block;
+    display: inline-block;
   }
 
   .character-description {
-  display: inline-block;
-  margin-left: 50px;
+    display: inline-block;
+    margin-left: 50px;
   }
 
-  .character-name, .info-new-link {
-  text-align: left;
+  .character-name,
+  .info-new-link {
+    text-align: left;
   }
 }

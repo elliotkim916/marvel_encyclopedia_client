@@ -29,7 +29,8 @@
   margin-top: 70px;
 }
 
-.event-cover-img:hover, .event-cover-img:focus {
+.event-cover-img:hover,
+.event-cover-img:focus {
   -webkit-transform: scale(1.06);
   -ms-transform: scale(1.06);
   transform: scale(1.06);
@@ -52,7 +53,8 @@
   letter-spacing: 1px;
 }
 
-.event-title-link:hover, .event-title-link:focus {
+.event-title-link:hover,
+.event-title-link:focus {
   outline: none;
   text-decoration: underline;
 }
@@ -75,23 +77,23 @@
 .event-header:after,
 .event-container-header:after {
   background: #222;
-  content: "";
+  content: '';
   display: block;
   height: 5px;
   position: absolute;
-    top: 50%;
-    width: 400%;
+  top: 50%;
+  width: 400%;
 }
 .event-header:before,
 .event-container-header:before {
-  right: 100%
+  right: 100%;
 }
 .event-header:after,
 .event-container-header:after {
   left: 100%;
 }
 .lines {
-  overflow:hidden;
+  overflow: hidden;
   text-align: center;
 }
 
@@ -102,7 +104,7 @@
 @media only screen and (max-width: 400px) {
   .event-history {
     padding-right: 40px;
-  }   
+  }
 }
 
 @media only screen and (max-width: 698px) {
