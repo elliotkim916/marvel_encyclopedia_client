@@ -1,9 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import LoginForm from './LoginForm';
 
 describe('<LoginForm />', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(<LoginForm />);
+  });
+
   it('Renders without crashing', () => {
-    shallow(<LoginForm />);
+    expect(wrapper).not.toBeNull();
   });
 });
