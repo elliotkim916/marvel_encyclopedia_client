@@ -5,7 +5,7 @@ import history from '../history';
 import Dashboard from './Dashboard/Dashboard';
 import RegistrationPage from './registration-page';
 import LandingPage from './LandingPage/LandingPage';
-import LoginPage from './login-page';
+import LoginPage from './Login/LoginPage';
 import SearchResults from './SearchResults/SearchResults';
 import Comic from './Comic/Comic';
 import Event from './event';

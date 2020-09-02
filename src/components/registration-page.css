@@ -48,123 +48,132 @@
 }
 @-webkit-keyframes load2 {
   0% {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes load2 {
   0% {
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-  -webkit-transform: rotate(360deg);
-  transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
 .account_loader {
-	margin-top: 55px;
+  margin-top: 55px;
 }
 
 .loading_message {
-	font-size: 2em;
+  font-size: 2em;
 }
 
 .login-page {
-	background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 .user-input {
-	border-style: none;
-	border-bottom: 2px solid #222;
-	margin-top: 20px;
-	font-style: italic;
-	background-color: whitesmoke;
-	width: 200px;
-	font-size: 1em;
-	font-family: 'Montserrat', 'sans-serif';
-	border-radius: 0; 
+  border-style: none;
+  border-bottom: 2px solid #222;
+  margin-top: 20px;
+  font-style: italic;
+  background-color: whitesmoke;
+  width: 200px;
+  font-size: 1em;
+  font-family: 'Montserrat', 'sans-serif';
+  border-radius: 0;
 }
 
 .user-input:focus {
-	outline: none;
-	border-bottom-color: #338bd5;
+  outline: none;
+  border-bottom-color: #338bd5;
 }
 
 .register-redirect {
-	position: relative;
-	top: 20px;
-	letter-spacing: .35px;
+  position: relative;
+  top: 20px;
+  letter-spacing: 0.35px;
 }
 
 .register-btn {
-	margin: 25px 0px 20px 0px;
-	width: 200px;
-	height: 30px;
-	cursor: pointer;
-	border-radius: 4px;
-	font-size: 1em;
-	letter-spacing: 1px;
-	background-color: gainsboro;
-	color: #222;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
+  margin: 25px 0px 20px 0px;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  background-color: gainsboro;
+  color: #222;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
 }
 
-.register-btn:hover, 
+.register-btn:hover,
 .register-btn:focus {
-	outline: none;
-	background-color: #000000;
-	color: white;
+  outline: none;
+  background-color: #000000;
+  color: white;
 }
 
 .click-here {
-	color: #000000;
+  color: #000000;
 }
 
 .click-here:hover,
 .click-here:focus {
-	outline: none;
-	text-decoration: underline;
+  outline: none;
+  text-decoration: underline;
 }
 
 .marvel-header {
-	color: black;
+  color: black;
 }
 
 .marvel-header:focus {
-	outline: none;
-	border-bottom: 1px solid #338bd5;
+  outline: none;
+  border-bottom: 1px solid #338bd5;
 }
 
 .register-logo {
-	width: 150px;
+  width: 150px;
 }
 
 .second-word {
-	position: relative;
-	bottom: 2px;
-	letter-spacing: 1px;
-	margin-left: 15px;
-	color: #000000;
+  position: relative;
+  bottom: 2px;
+  letter-spacing: 1px;
+  margin-left: 15px;
+  color: #000000;
 }
 
-.second-header, .existing-acct {
-	color: #222;
-	letter-spacing: .35px;
+.second-header,
+.existing-acct {
+  color: #222;
+  letter-spacing: 0.35px;
 }
 
-.demo-username, .demo-password {
-	text-align: center;
-	margin-top: -15px;
+.demo-username,
+.demo-password {
+  text-align: center;
+  margin-top: -15px;
 }
 
 .demo-container {
-	margin-top: 50px;
-	letter-spacing: .35px;
+  margin-top: 50px;
+  letter-spacing: 0.35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

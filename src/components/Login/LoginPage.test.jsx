@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
-import LandingPage from './LandingPage';
+import LoginPage from './LoginPage';
 import sinon from 'sinon';
 const dispatch = sinon.spy();
 
-describe('<LandingPage />', () => {
+describe(<LoginPage />, () => {
   const mockStore = {
     match: {
       path: '/Dashboard',
@@ -37,7 +37,7 @@ describe('<LandingPage />', () => {
   it('Renders without crashing', () => {
     shallow(
       <Provider store={mockStore}>
-        <LandingPage />
+        <LoginPage />
       </Provider>
     );
   });
