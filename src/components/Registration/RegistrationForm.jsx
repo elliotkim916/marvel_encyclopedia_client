@@ -27,12 +27,11 @@ const RegistrationForm = ({ dispatch }) => {
     const user = { username, password };
 
     const response = await dispatch(registerUser(user));
-    console.log(response);
 
     if (response.username && response._id) {
       dispatch(login(username, password));
     } else {
-      // Add error handling in reducer and to DOM
+      // Add error handling
       window.alert('Registration Error!');
     }
 

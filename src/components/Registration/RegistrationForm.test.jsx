@@ -1,10 +1,14 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-
+import { mount } from 'enzyme';
 import RegistrationForm from './RegistrationForm';
 
 describe('<RegistrationForm />', () => {
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(<RegistrationForm />);
+  });
+
   it('Renders without crashing', () => {
-    shallow(<RegistrationForm />);
+    expect(wrapper).not.toBeNull();
   });
 });
