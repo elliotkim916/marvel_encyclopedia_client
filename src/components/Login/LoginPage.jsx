@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import AuthHeader from '../Header/AuthHeader';
 import LoginForm from './LoginForm';
 import LoginDemoAccount from './LoginDemoAccount';
-import '../registration-page.css';
+import '../Registration/RegistrationPage.module.css';
 
 const LoginPage = ({ loading, loggedIn, loginError, dispatch }) => {
   if (loading) {

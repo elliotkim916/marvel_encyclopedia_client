@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { login } from '../../actions/auth';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import '../registration-page.css';
+import '../Registration/RegistrationPage.module.css';
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string().required(),

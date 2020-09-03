@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../registration-page.css';
+import '../Registration/RegistrationPage.module.css';
 
-const AuthHeader = () => {
+const AuthHeader = ({ auth }) => {
   return (
     <header>
       <h2>
@@ -15,6 +15,10 @@ const AuthHeader = () => {
           <span className="second-word">ENCYCLOPEDIA</span>
         </Link>
       </h2>
+
+      {auth === 'registration' && (
+        <h3 className="second-header">Begin your Marvel journey now!</h3>
+      )}
     </header>
   );
 };

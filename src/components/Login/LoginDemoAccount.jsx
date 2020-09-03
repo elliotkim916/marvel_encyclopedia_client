@@ -1,5 +1,5 @@
 import React from 'react';
-import '../registration-page.css';
+import '../Registration/RegistrationPage.module.css';
 
 const LoginDemoAccount = () => {
   return (
