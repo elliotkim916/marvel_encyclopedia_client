@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import requiresLogin from '../requires-login';
+import requiresLogin from '../Login/RequiresLogin';
 import Header from '../Header/Header';
 import ComicCharacter from './ComicCharacter';
 import ComicDescription from './ComicDescription';

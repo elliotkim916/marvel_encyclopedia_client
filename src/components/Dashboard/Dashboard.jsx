@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchProtectedData } from '../../actions/protected-data';
-import requiresLogin from '../requires-login';
+import requiresLogin from '../Login/RequiresLogin';
 import Search from '../Search/Search';
 import { clearAuthToken } from '../../local-storage';
 import { clearAuth } from '../../actions/auth';

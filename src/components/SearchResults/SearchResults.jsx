@@ -4,7 +4,7 @@ import Search from '../Search/Search';
 import Description from './Description/Description';
 import ComicsList from './ComicsList/ComicsList';
 import EventsList from './EventsList/EventsList';
-import requiresLogin from '../requires-login';
+import requiresLogin from '../Login/RequiresLogin';
 import Header from '../Header/Header';
 import SearchFail from './SearchFail';
 import './SearchResults.module.css';
