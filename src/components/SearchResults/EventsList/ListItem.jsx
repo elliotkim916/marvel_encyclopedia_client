@@ -4,25 +4,25 @@ import { findEvent } from '../../../actions/events';
 import { searchCharacter } from '../../../actions/characters';
 import './EventsList.module.css';
 
-const EventListItem = ({ event, character, dispatch }) => {
-  const imgUrl = `${event.thumbnail.path.slice(5)}/portrait_fantastic.${
-    event.thumbnail.extension
+const ListItem = ({ item, character, dispatch }) => {
+  const imgUrl = `${item.thumbnail.path.slice(5)}/portrait_fantastic.${
+    item.thumbnail.extension
   }`;
 
   let action;
   character
-    ? (action = () => dispatch(searchCharacter(event.name)))
-    : (action = () => dispatch(findEvent(event.resourceURI)));
+    ? (action = () => dispatch(searchCharacter(item.name)))
+    : (action = () => dispatch(findEvent(item.resourceURI)));
 
   return (
     <li className="event-history" onClick={action}>
       <img src={imgUrl} alt="Event cover" className="event-cover-img" />
       <br />
       <Link className="event-title-link" to="/event">
-        {character ? event.name : event.title}
+        {character ? item.name : item.title}
       </Link>
     </li>
   );
 };
 
-export default EventListItem;
+export default ListItem;

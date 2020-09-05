@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import EventListItem from './EventListItem';
+import ListItem from './ListItem';
 import './EventsList.module.css';
 
 const EventsList = ({ loading, event, dispatch }) => {
@@ -10,7 +10,7 @@ const EventsList = ({ loading, event, dispatch }) => {
     }
 
     const eventTitles = event.map((event, index) => (
-      <EventListItem key={index} event={event} dispatch={dispatch} />
+      <ListItem key={index} item={event} dispatch={dispatch} />
     ));
 
     return <ul className="events-list-all">{eventTitles}</ul>;
@@ -23,7 +23,7 @@ const EventsList = ({ loading, event, dispatch }) => {
           <h2 className="event-header">COMIC EVENTS & CROSSOVERS</h2>
         </div>
       </header>
-      <ul className="events-list-all">{renderResults()}</ul>
+      {renderResults()}
     </div>
   );
 };

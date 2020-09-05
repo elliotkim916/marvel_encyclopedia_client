@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from '../Login/RequiresLogin';
 import Header from '../Header/Header';
-import ComicCharacter from './ComicCharacter';
 import ComicDescription from './ComicDescription';
+import ListItem from '../SearchResults/EventsList/ListItem';
 import './Comic.module.css';
 
 const Comic = ({ dispatch, loading, comicResult, comicCharacter }) => {
@@ -17,7 +17,12 @@ const Comic = ({ dispatch, loading, comicResult, comicCharacter }) => {
     }
 
     const comicCharacters = comicCharacter.map((character, index) => (
-      <ComicCharacter key={index} character={character} dispatch={dispatch} />
+      <ListItem
+        key={index}
+        item={character}
+        dispatch={dispatch}
+        character={true}
+      />
     ));
 
     return <ul className="character-list">{comicCharacters}</ul>;

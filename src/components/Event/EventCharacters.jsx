@@ -1,5 +1,5 @@
 import React from 'react';
-import EventListItem from '../SearchResults/EventsList/EventListItem';
+import ListItem from '../SearchResults/EventsList/ListItem';
 import './Event.module.css';
 
 const EventCharacters = ({ characterLoading, eventCharacter, dispatch }) => {
@@ -9,8 +9,8 @@ const EventCharacters = ({ characterLoading, eventCharacter, dispatch }) => {
     }
 
     const character = eventCharacter.map((character, index) => (
-      <EventListItem
-        event={character}
+      <ListItem
+        item={character}
         dispatch={dispatch}
         key={index}
         character={true}
