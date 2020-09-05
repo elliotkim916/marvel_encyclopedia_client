@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { findEvent } from '../../../actions/events';
-import { searchCharacter } from '../../../actions/characters';
+import { findEvent } from '../../../store/actions/events';
+import { searchCharacter } from '../../../store/actions/characters';
 import './EventsList.module.css';
 
 const ListItem = ({ item, character, dispatch }) => {

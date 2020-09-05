@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { login } from '../../actions/auth';
+import { login } from '../../store/actions/auth';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import '../Registration/RegistrationPage.module.css';

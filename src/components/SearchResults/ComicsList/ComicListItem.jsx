@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { findComic } from '../../../actions/comics';
-import { addData } from '../../../actions/protected-data';
+import { findComic } from '../../../store/actions/comics';
+import { addData } from '../../../store/actions/protected-data';
 import './ComicsList.module.css';
 
 const ComicListItem = ({ dispatch, comic, protectedData, username }) => {

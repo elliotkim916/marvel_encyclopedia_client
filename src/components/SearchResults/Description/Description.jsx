@@ -26,11 +26,14 @@ const Description = ({ loading, data, event }) => {
         <hr className="style10" />
 
         <img src={imgUrl} alt="" className="searched-img" />
+
         <div className="character-description">
           <h2 className="character-name">
             {event ? data.title : data.name.toUpperCase()}
           </h2>
+
           <p className="character-text">{data.description}</p>
+
           <div className="info-new-link">
             <a
               href={event ? urls[0] : urls[1]}

@@ -1,9 +1,8 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { loadAuthToken } from './local-storage';
+import { loadAuthToken } from '../local-storage';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 // import logger from 'redux-logger';
-import { reducer as formReducer } from 'redux-form';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
 import { characterReducer } from './reducers/characters';
@@ -15,7 +14,6 @@ const store = createStore(
     characterReducer: characterReducer,
     comicReducer: comicReducer,
     eventReducer: eventReducer,
-    form: formReducer,
     auth: authReducer,
     protectedData: protectedDataReducer,
   }),
@@ -35,12 +33,6 @@ if (authToken) {
 // store is the first thing thats loaded
 export default store;
 
-// formReducer keeps the values of our form fields updated within the state & keeps track of
-// information like whether we've submitted the form & if the contents of the form are valid
-
-// createStore adds characterReducer to our store, and uses applyMiddleware to add Redux Thunk to our store too
-
 // Redux Thunk allows action creators to return functions to be run
 // The functions can run asynchronous code like our AJAX request
-
 // Redux Thunk allows you to create async actions

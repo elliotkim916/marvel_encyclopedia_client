@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchProtectedData } from '../../actions/protected-data';
+import { fetchProtectedData } from '../../store/actions/protected-data';
+import { clearAuth } from '../../store/actions/auth';
 import requiresLogin from '../Login/RequiresLogin';
 import Search from '../Search/Search';
 import { clearAuthToken } from '../../local-storage';
-import { clearAuth } from '../../actions/auth';
 import DashboardItem from './DashboardItem';
 import ironman_icon from '../../images/ironman_icon.png';
 import './Dashboard.module.css';

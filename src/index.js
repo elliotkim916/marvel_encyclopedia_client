@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
-import store from './store';
+import store from './store/store';
 import './index.css';
 import 'font-awesome/css/font-awesome.min.css';
 

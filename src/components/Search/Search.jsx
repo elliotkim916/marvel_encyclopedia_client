@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
-import { searchCharacter } from '../../actions/characters';
+import { searchCharacter } from '../../store/actions/characters';
 import { Formik, Form, Field } from 'formik';
 import SearchHeader from './SearchHeader';
 import './Search.module.css';

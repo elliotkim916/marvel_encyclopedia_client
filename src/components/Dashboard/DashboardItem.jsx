@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { findComic } from '../../actions/comics';
-import { deleteData } from '../../actions/protected-data';
+import { findComic } from '../../store/actions/comics';
+import { deleteData } from '../../store/actions/protected-data';
 
 const DashboardItem = React.memo(({ dispatch, item }) => {
   const onDelete = (id, e) => {

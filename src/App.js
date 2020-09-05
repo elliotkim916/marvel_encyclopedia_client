@@ -9,7 +9,7 @@ import LoginPage from './components/Login/LoginPage';
 import SearchResults from './components/SearchResults/SearchResults';
 import Comic from './components/Comic/Comic';
 import Event from './components/Event/Event';
-import { refreshAuthToken } from './actions/auth';
+import { refreshAuthToken } from './store/actions/auth';
 
 export class App extends React.Component {
   componentDidUpdate(prevProps) {
