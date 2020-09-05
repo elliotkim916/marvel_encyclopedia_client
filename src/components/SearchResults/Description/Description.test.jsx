@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Provider } from 'react-redux';
-import CharacterInfo from './CharacterInfo';
+import Description from './Description';
 import sinon from 'sinon';
 const dispatch = sinon.spy();
 
-describe('<CharacterInfo />', () => {
-  const characterInfoProps = {
+describe('<Description />', () => {
+  const mockProps = {
     character: {
       id: 1009664,
       name: 'Thor',
@@ -443,7 +443,7 @@ describe('<CharacterInfo />', () => {
   it('Renders without crashing', () => {
     shallow(
       <Provider store={mockStore}>
-        <CharacterInfo {...characterInfoProps} />
+        <Description {...mockProps} />
       </Provider>
     );
   });

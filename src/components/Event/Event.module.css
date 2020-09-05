@@ -2,7 +2,8 @@
   color: #000000;
 }
 
-.event-character-list, .event-comic-list {
+.event-character-list,
+.event-comic-list {
   margin-left: -20px;
 }
 
@@ -20,7 +21,8 @@
   padding: 40px 20px 55px 20px;
 }
 
-.event-creator-container, .event-comic-container {
+.event-creator-container,
+.event-comic-container {
   margin-top: 35px;
 }
 
@@ -30,7 +32,8 @@
   background-color: whitesmoke;
 }
 
-.event-character-name, .eventComicsName {
+.event-character-name,
+.eventComicsName {
   font-weight: bolder;
   cursor: pointer;
   margin-bottom: 55px;
@@ -62,12 +65,14 @@
   font-size: 25px;
 }
 
-.back-home-from-comic, .log-out-from-comic {
+.back-home-from-comic,
+.log-out-from-comic {
   color: white;
   letter-spacing: 1px;
 }
 
-.eventCharactersName, .eventComicsName {
+.eventCharactersName,
+.eventComicsName {
   cursor: pointer;
   margin-top: 70px;
   display: inline-block;
@@ -75,7 +80,7 @@
 }
 
 .character-cover-img:hover,
-.character-cover-img:focus, 
+.character-cover-img:focus,
 .comic-cover-img:hover,
 .comic-cover-img:focus {
   -webkit-transform: scale(1.06);
@@ -87,7 +92,7 @@
   margin-bottom: 10px;
 }
 
-.character-cover-img, 
+.character-cover-img,
 .comic-cover-img,
 .eventCoversPicture {
   border: 1px solid black;
@@ -127,9 +132,9 @@
 .back-home-from-comic:hover,
 .back-home-from-comic:focus,
 .log-out-from-comic:hover,
-.log-out-from-comic:focus, 
+.log-out-from-comic:focus,
 .event-person-name:hover,
-.event-person-name:focus, 
+.event-person-name:focus,
 .event-comic-link:hover,
 .event-comic-link:focus {
   outline: none;
@@ -148,7 +153,7 @@
   color: #000000;
 }
 
-.event-container-header, 
+.event-container-header,
 .event-character-header {
   letter-spacing: 1px;
   font-size: 30px;
@@ -167,10 +172,11 @@
 }
 
 @media only screen and (max-width: 400px) {
-  .eventCharactersName, .eventComicsName {
+  .eventCharactersName,
+  .eventComicsName {
     padding-right: 55px;
   }
-  
+
   .new-event-link {
     text-align: center;
   }
@@ -185,13 +191,16 @@
     font-size: 1.7em;
   }
 
-  .event-character-header, .event-container-header {
+  .event-character-header,
+  .event-container-header {
     font-size: 1.5em;
   }
 }
 
 @media only screen and (max-width: 1114px) {
-  .eventsInformation, .eventsText, .readMoreLink {
+  .eventsInformation,
+  .eventsText,
+  .readMoreLink {
     margin-left: auto;
     margin-right: auto;
   }
@@ -215,7 +224,8 @@
     margin-left: 75px;
   }
 
-  .readMoreLink, .eventsTitle {
+  .readMoreLink,
+  .eventsTitle {
     text-align: left;
     margin-top: 40px;
   }

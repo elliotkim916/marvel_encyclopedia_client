@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Search from '../Search/Search';
-import CharacterInfo from './CharacterInfo/CharacterInfo';
+import Description from './Description/Description';
 import ComicsList from './ComicsList/ComicsList';
 import EventsList from './EventsList/EventsList';
 import requiresLogin from '../requires-login';
@@ -19,7 +19,7 @@ const SearchResults = ({
   if (searchResult) {
     searchResults = (
       <React.Fragment>
-        <CharacterInfo character={searchResult} />
+        <Description data={searchResult} />
         <ComicsList character={searchResult} comic={searchCharacterComic} />
         <EventsList character={searchResult} event={searchCharacterEvent} />
       </React.Fragment>
