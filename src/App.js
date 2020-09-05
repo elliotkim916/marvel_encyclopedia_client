@@ -8,7 +8,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import LoginPage from './components/Login/LoginPage';
 import SearchResults from './components/SearchResults/SearchResults';
 import Comic from './components/Comic/Comic';
-import Event from './components/event';
+import Event from './components/Event/Event';
 import { refreshAuthToken } from './actions/auth';
 
 export class App extends React.Component {
