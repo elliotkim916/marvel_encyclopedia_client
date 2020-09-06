@@ -2,9 +2,9 @@ import React from 'react';
 import ListItem from '../SearchResults/EventsList/ListItem';
 import './Event.module.css';
 
-const EventCharacters = ({ characterLoading, eventCharacter, dispatch }) => {
+const EventCharacters = ({ loading, eventCharacter, dispatch }) => {
   const renderCharacters = () => {
-    if (characterLoading) {
+    if (loading) {
       return <div className="loader">L O A D I N G . . . </div>;
     }
 

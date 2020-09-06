@@ -5,7 +5,7 @@ import {
   SEARCH_EVENT_CHARACTER_SUCCESS,
   SEARCH_EVENT_COMIC_REQUEST,
   SEARCH_EVENT_COMIC_SUCCESS,
-  FIND_EVENT_ERROR
+  FIND_EVENT_ERROR,
 } from '../actions/events';
 
 const initialState = {
@@ -13,50 +13,57 @@ const initialState = {
   eventCharacter: [],
   eventComic: [],
   loading: false,
-  eventCharacterLoading: false,
-  eventComicLoading: false,
-  error: null
-}
+  error: null,
+};
 
-export function eventReducer(state=initialState, action) {
-  if (action.type === FIND_EVENT_REQUEST) {
-    return Object.assign({}, state, {
-      loading: true,
-      error: null
-    });
-  } else if (action.type === SEARCH_EVENT_CHARACTER_REQUEST) {
-    return Object.assign({}, state, {
-      eventCharacterLoading: true,
-      error: null
-  }); 
-  } else if (action.type === SEARCH_EVENT_COMIC_REQUEST) {
-    return Object.assign({}, state, {
-      eventComicLoading: true,
-      error: null
-  });  
-  } else if (action.type === FIND_EVENT_SUCCESS) {
-    return Object.assign({}, state, {
-      clickedEvent: action.event,
-      loading: false,
-      error: null
-    });
-  } else if (action.type === SEARCH_EVENT_CHARACTER_SUCCESS) {
-    return Object.assign({}, state, {
-      eventCharacter: action.eventCharacter,
-      eventCharacterLoading: false,
-      error: null
-    }); 
-  } else if (action.type === SEARCH_EVENT_COMIC_SUCCESS) {
-    return Object.assign({}, state, {
-      eventComic: action.eventComic,
-      eventComicLoading: false,
-      error: null
-    });
-  } else if (action.type === FIND_EVENT_ERROR) {
-    return Object.assign({}, state, {
-      error: action.error,
-      loading: false
-    });
+const findEventRequest = (state, action) => {
+  return { ...state, loading: true };
+};
+
+const findEventSuccess = (state, action) => {
+  return { ...state, loading: false, clickedEvent: action.event };
+};
+
+const findEventError = (state, action) => {
+  return { ...state, error: action.error };
+};
+
+const searchEventCharacterRequest = (state, action) => {
+  return { ...state, loading: true };
+};
+
+const searchEventCharacterSuccess = (state, action) => {
+  return {
+    ...state,
+    eventCharacter: action.eventCharacter,
+    loading: false,
+  };
+};
+const searchEventComicRequest = (state, action) => {
+  return { ...state, loading: true };
+};
+
+const searchEventComicSuccess = (state, action) => {
+  return { ...state, eventComic: action.eventComic, loading: false };
+};
+
+export function eventReducer(state = initialState, action) {
+  switch (action.type) {
+    case FIND_EVENT_REQUEST:
+      return findEventRequest(state, action);
+    case SEARCH_EVENT_CHARACTER_REQUEST:
+      return searchEventCharacterRequest(state, action);
+    case SEARCH_EVENT_COMIC_REQUEST:
+      return searchEventComicRequest(state, action);
+    case FIND_EVENT_SUCCESS:
+      return findEventSuccess(state, action);
+    case SEARCH_EVENT_CHARACTER_SUCCESS:
+      return searchEventCharacterSuccess(state, action);
+    case SEARCH_EVENT_COMIC_SUCCESS:
+      return searchEventComicSuccess(state, action);
+    case FIND_EVENT_ERROR:
+      return findEventError(state, action);
+    default:
+      return state;
   }
-  return state;
 }

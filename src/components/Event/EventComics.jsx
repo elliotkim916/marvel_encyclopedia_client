@@ -5,13 +5,13 @@ import './Event.module.css';
 const EventComics = ({
   eventResult,
   eventComic,
-  comicLoading,
+  loading,
   protectedData,
   loggedIn,
   dispatch,
 }) => {
   const renderComics = () => {
-    if (comicLoading) {
+    if (loading) {
       return <div className="loader">L O A D I N G . . . </div>;
     }
 

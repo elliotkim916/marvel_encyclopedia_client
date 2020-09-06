@@ -9,9 +9,8 @@ import './Event.module.css';
 
 const Event = ({
   dispatch,
-  characterLoading,
+  loading,
   eventCharacter,
-  comicLoading,
   eventComic,
   eventResult,
   loggedIn,
@@ -29,7 +28,7 @@ const Event = ({
       </div>
 
       <EventCharacters
-        characterLoading={characterLoading}
+        loading={loading}
         eventCharacter={eventCharacter}
         dispatch={dispatch}
       />
@@ -37,7 +36,7 @@ const Event = ({
       <EventComics
         eventResult={eventResult}
         eventComic={eventComic}
-        comicLoading={comicLoading}
+        loading={loading}
         protectedData={protectedData}
         loggedIn={loggedIn}
         dispatch={dispatch}
@@ -51,8 +50,7 @@ const mapStateToProps = (state) => ({
   eventCharacter: state.eventReducer.eventCharacter,
   eventComic: state.eventReducer.eventComic,
   loggedIn: state.auth.currentUser,
-  characterLoading: state.eventReducer.eventCharacterLoading,
-  comicLoading: state.eventReducer.eventComicLoading,
+  loading: state.eventReducer.loading,
   protectedData: state.protectedData.data,
 });
 
