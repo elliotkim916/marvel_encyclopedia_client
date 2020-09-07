@@ -10,7 +10,6 @@ const ModalCmp = ({
   modalFunction,
   message,
   buttonText,
-  // setDeleteSuccess,
   toDelete,
   deleteFunction,
   deleteId,
@@ -29,6 +28,11 @@ const ModalCmp = ({
     },
   };
 
+  let modalFunc;
+  message === 'Your delete was successful.'
+    ? (modalFunc = () => dispatch(modalFunction()))
+    : (modalFunc = () => modalFunction(false));
+
   return (
     <Modal
       isOpen={modalState}
@@ -43,8 +47,6 @@ const ModalCmp = ({
             type="button"
             className="already-read-input"
             onClick={() => {
-              modalFunction(false);
-              // setDeleteSuccess(true);
               dispatch(deleteFunction(deleteId));
             }}
           >
@@ -62,7 +64,7 @@ const ModalCmp = ({
         <button
           type="button"
           className="already-read-input"
-          onClick={() => modalFunction(false)}
+          onClick={modalFunc}
         >
           {buttonText}
         </button>

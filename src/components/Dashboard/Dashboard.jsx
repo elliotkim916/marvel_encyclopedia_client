@@ -24,7 +24,7 @@ const Dashboard = ({ dispatch, username, protectedData }) => {
     if (protectedData) {
       if (protectedData.length > 0) {
         const results = protectedData.map((item) => (
-          <DashboardItem dispatch={dispatch} item={item} key={item._id} />
+          <DashboardItem item={item} key={item._id} />
         ));
 
         return (

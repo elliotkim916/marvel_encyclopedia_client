@@ -3,12 +3,14 @@ import {
   FETCH_PROTECTED_DATA_ERROR,
   ADD_PROTECTED_DATA_SUCCESS,
   DELETE_PROTECTED_DATA_SUCCESS,
+  REFRESH_PROTECTED_DATA_DELETE,
 } from '../actions/protected-data';
 
 const initialState = {
   data: '',
   addComicData: '',
   error: null,
+  deleteFinish: false,
 };
 
 const fetchProtectedDataSuccess = (state, action) => {
@@ -30,6 +32,14 @@ const deleteProtectedDataSuccess = (state, action) => {
   return {
     ...state,
     data: { data: state.data.data.filter((comic) => comic._id !== action.id) },
+    deleteFinish: true,
+  };
+};
+
+const refreshProtectedDataDelete = (state, action) => {
+  return {
+    ...state,
+    deleteFinish: false,
   };
 };
 
@@ -43,6 +53,8 @@ export default function protectedDataReducer(state = initialState, action) {
       return deleteProtectedDataSuccess(state, action);
     case FETCH_PROTECTED_DATA_ERROR:
       return fetchProtectedDataError(state, action);
+    case REFRESH_PROTECTED_DATA_DELETE:
+      return refreshProtectedDataDelete(state, action);
     default:
       return state;
   }

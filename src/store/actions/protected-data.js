@@ -25,6 +25,11 @@ export const deleteProtectedDataSuccess = (id) => ({
   id,
 });
 
+export const REFRESH_PROTECTED_DATA_DELETE = 'REFRESH_PROTECTED_DATA_DELETE';
+export const refreshProtectedDataDelete = () => ({
+  type: REFRESH_PROTECTED_DATA_DELETE,
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const username = getState().auth.currentUser.username;
