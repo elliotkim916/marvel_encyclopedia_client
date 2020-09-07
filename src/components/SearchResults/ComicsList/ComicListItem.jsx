@@ -37,31 +37,39 @@ const ComicListItem = ({ comic, username }) => {
     setSaveData({ title, read, imgUrl, resourceURI, username });
   };
 
+  const duplicateSave = () => {
+    if (modalIsOpen && duplicateSaved) {
+      return (
+        <ModalCmp
+          modalState={modalIsOpen}
+          modalFunction={setIsOpen}
+          message="That comic has already been saved to Your Read & Unread Comics list."
+          buttonText="Okay"
+        />
+      );
+    } else {
+      return null;
+    }
+  };
+
+  const newSave = () => {
+    if (modalIsOpen && !duplicateSaved) {
+      return (
+        <ModalCmp
+          modalState={modalIsOpen}
+          modalFunction={setIsOpen}
+          message="The comic has been saved to Your Read & Unread Comics list."
+          buttonText="Okay"
+        />
+      );
+    } else {
+      return null;
+    }
+  };
+
   const imgUrl = `${comic.thumbnail.path.slice(5)}/portrait_fantastic.${
     comic.thumbnail.extension
   }`;
-
-  if (modalIsOpen && duplicateSaved) {
-    return (
-      <ModalCmp
-        modalState={modalIsOpen}
-        modalFunction={setIsOpen}
-        message="That comic has already been saved to Your Read & Unread Comics list."
-        buttonText="Okay"
-      />
-    );
-  }
-
-  if (modalIsOpen && !duplicateSaved) {
-    return (
-      <ModalCmp
-        modalState={modalIsOpen}
-        modalFunction={setIsOpen}
-        message="The comic has been saved to Your Read & Unread Comics list."
-        buttonText="Okay"
-      />
-    );
-  }
 
   return (
     <li className="comic-history">
@@ -95,6 +103,9 @@ const ComicListItem = ({ comic, username }) => {
           READ LATER
         </button>
       </div>
+
+      {duplicateSave()}
+      {newSave()}
     </li>
   );
 };
