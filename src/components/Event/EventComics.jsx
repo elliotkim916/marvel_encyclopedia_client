@@ -2,27 +2,14 @@ import React from 'react';
 import ComicListItem from '../SearchResults/ComicsList/ComicListItem';
 import './Event.module.css';
 
-const EventComics = ({
-  eventResult,
-  eventComic,
-  loading,
-  protectedData,
-  loggedIn,
-  dispatch,
-}) => {
+const EventComics = ({ eventResult, eventComic, loading, loggedIn }) => {
   const renderComics = () => {
     if (loading) {
       return <div className="loader">L O A D I N G . . . </div>;
     }
 
     const comic = eventComic.map((comic, index) => (
-      <ComicListItem
-        key={index}
-        comic={comic}
-        protectedData={protectedData}
-        username={loggedIn.username}
-        dispatch={dispatch}
-      />
+      <ComicListItem key={index} comic={comic} username={loggedIn.username} />
     ));
 
     return <ul className="event-comic-list">{comic}</ul>;

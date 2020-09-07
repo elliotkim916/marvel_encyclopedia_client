@@ -14,7 +14,6 @@ const Event = ({
   eventComic,
   eventResult,
   loggedIn,
-  protectedData,
 }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,9 +36,7 @@ const Event = ({
         eventResult={eventResult}
         eventComic={eventComic}
         loading={loading}
-        protectedData={protectedData}
         loggedIn={loggedIn}
-        dispatch={dispatch}
       />
     </section>
   );
@@ -51,7 +48,6 @@ const mapStateToProps = (state) => ({
   eventComic: state.eventReducer.eventComic,
   loggedIn: state.auth.currentUser,
   loading: state.eventReducer.loading,
-  protectedData: state.protectedData.data,
 });
 
 export default requiresLogin()(connect(mapStateToProps)(Event));

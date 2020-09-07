@@ -1,28 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProtectedData } from '../../../store/actions/protected-data';
 import { findComic } from '../../../store/actions/comics';
 import { addData } from '../../../store/actions/protected-data';
 import ModalCmp from '../../Modal/ModalCmp';
 import './ComicsList.module.css';
 
-const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
+const ComicListItem = ({ comic, username }) => {
+  const dispatch = useDispatch();
+  const savedComics = useSelector((state) => state.protectedData.data.data);
+  const [saveData, setSaveData] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [duplicateSaved, setDuplicateSaved] = useState(false);
 
+  useEffect(() => {
+    if (saveData) {
+      const { title, read, imgUrl, resourceURI, username } = saveData;
+      const duplicateComic = savedComics.find((comic) => comic.title === title);
+
+      if (duplicateComic) {
+        setDuplicateSaved(true);
+      } else {
+        dispatch(addData(title, read, imgUrl, resourceURI, username)).then(() =>
+          dispatch(fetchProtectedData())
+        );
+      }
+    }
+  }, [saveData]);
+
   const onAdd = (e, comic, read, username) => {
     e.preventDefault();
-
     const { title, thumbnail, resourceURI } = comic;
     const imgUrl = `${thumbnail.path}/portrait_fantastic.${thumbnail.extension}`;
-    const comicsArray = protectedData.data;
-
-    const comicFound = comicsArray.find((comic) => comic.title === title);
-
-    if (comicFound) {
-      setDuplicateSaved(true);
-    } else {
-      dispatch(addData(title, read, imgUrl, resourceURI, username));
-    }
+    setIsOpen(true);
+    setSaveData({ title, read, imgUrl, resourceURI, username });
   };
 
   const imgUrl = `${comic.thumbnail.path.slice(5)}/portrait_fantastic.${
@@ -70,10 +82,7 @@ const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
         <button
           type="submit"
           className="already-read-input"
-          onClick={(e) => {
-            setIsOpen(true);
-            onAdd(e, comic, 'ALREADY READ', username);
-          }}
+          onClick={(e) => onAdd(e, comic, 'ALREADY READ', username)}
         >
           ALREADY READ
         </button>
@@ -81,10 +90,7 @@ const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
         <button
           type="submit"
           className="read-later-input"
-          onClick={(e) => {
-            setIsOpen(true);
-            onAdd(e, comic, 'READ LATER', username);
-          }}
+          onClick={(e) => onAdd(e, comic, 'READ LATER', username)}
         >
           READ LATER
         </button>

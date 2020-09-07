@@ -22,7 +22,7 @@ const fetchProtectedDataError = (state, action) => {
 const addProtectedDataSuccess = (state, action) => {
   return {
     ...state,
-    addComicData: { data: [...state.data.data, action.addComicData] },
+    addComicData: { data: [action.addComicData, ...state.data.data] },
   };
 };
 

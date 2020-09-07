@@ -4,27 +4,14 @@ import ComicListItem from './ComicListItem';
 import './ComicsList.module.css';
 import '../../Dashboard/Dashboard.module.css';
 
-const ComicsList = ({
-  loading,
-  dispatch,
-  protectedData,
-  comic,
-  loggedIn,
-  character,
-}) => {
+const ComicsList = ({ loading, comic, loggedIn, character }) => {
   const renderResults = () => {
     if (loading) {
       return <div className="loader">L O A D I N G . . . </div>;
     }
 
     const comicTitles = comic.map((comic, index) => (
-      <ComicListItem
-        key={index}
-        comic={comic}
-        dispatch={dispatch}
-        protectedData={protectedData}
-        username={loggedIn.username}
-      />
+      <ComicListItem key={index} comic={comic} username={loggedIn.username} />
     ));
 
     return <ul className="comics-list-all">{comicTitles}</ul>;
@@ -55,7 +42,6 @@ const ComicsList = ({
 const mapStateToProps = (state) => ({
   loggedIn: state.auth.currentUser,
   loading: state.characterReducer.comicLoading,
-  protectedData: state.protectedData.data,
 });
 
 export default connect(mapStateToProps)(ComicsList);
