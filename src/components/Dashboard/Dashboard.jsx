@@ -8,6 +8,7 @@ import { clearAuthToken } from '../../local-storage';
 import DashboardItem from './DashboardItem';
 import ironman_icon from '../../images/ironman_icon.png';
 import './Dashboard.module.css';
+import Modal from 'react-modal';
 
 const Dashboard = ({ dispatch, username, protectedData }) => {
   useEffect(() => {

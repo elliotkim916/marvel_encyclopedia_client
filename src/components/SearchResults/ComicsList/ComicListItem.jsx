@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { findComic } from '../../../store/actions/comics';
 import { addData } from '../../../store/actions/protected-data';
+import ModalCmp from '../../Modal/ModalCmp';
 import './ComicsList.module.css';
 
 const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [duplicateSaved, setDuplicateSaved] = useState(false);
+
   const onAdd = (e, comic, read, username) => {
     e.preventDefault();
 
@@ -15,20 +19,37 @@ const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
     const comicFound = comicsArray.find((comic) => comic.title === title);
 
     if (comicFound) {
-      window.alert(
-        `The comic ${comic.title} has already been saved to Your Read & Unread Comics list.`
-      );
+      setDuplicateSaved(true);
     } else {
       dispatch(addData(title, read, imgUrl, resourceURI, username));
-      window.alert(
-        `The comic ${title} has been saved to Your Read & Unread Comics list.`
-      );
     }
   };
 
   const imgUrl = `${comic.thumbnail.path.slice(5)}/portrait_fantastic.${
     comic.thumbnail.extension
   }`;
+
+  if (modalIsOpen && duplicateSaved) {
+    return (
+      <ModalCmp
+        modalState={modalIsOpen}
+        modalFunction={setIsOpen}
+        message="That comic has already been saved to Your Read & Unread Comics list."
+        buttonText="Okay"
+      />
+    );
+  }
+
+  if (modalIsOpen && !duplicateSaved) {
+    return (
+      <ModalCmp
+        modalState={modalIsOpen}
+        modalFunction={setIsOpen}
+        message="The comic has been saved to Your Read & Unread Comics list."
+        buttonText="Okay"
+      />
+    );
+  }
 
   return (
     <li className="comic-history">
@@ -49,7 +70,10 @@ const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
         <button
           type="submit"
           className="already-read-input"
-          onClick={(e) => onAdd(e, comic, 'ALREADY READ', username)}
+          onClick={(e) => {
+            setIsOpen(true);
+            onAdd(e, comic, 'ALREADY READ', username);
+          }}
         >
           ALREADY READ
         </button>
@@ -57,7 +81,10 @@ const ComicListItem = ({ dispatch, comic, protectedData, username }) => {
         <button
           type="submit"
           className="read-later-input"
-          onClick={(e) => onAdd(e, comic, 'READ LATER', username)}
+          onClick={(e) => {
+            setIsOpen(true);
+            onAdd(e, comic, 'READ LATER', username);
+          }}
         >
           READ LATER
         </button>
