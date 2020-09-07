@@ -1,19 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { findComic } from '../../store/actions/comics';
 import { deleteData } from '../../store/actions/protected-data';
+import ModalCmp from '../Modal/ModalCmp';
 
 const DashboardItem = React.memo(({ dispatch, item }) => {
-  const onDelete = (id, e) => {
-    e.preventDefault();
-    const result = window.confirm(
-      'Are you sure you want to delete?  If so, click OK.'
-    );
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
+  // const [deleteSuccess, setDeleteSuccess] = useState(false);
 
-    if (result) {
-      dispatch(deleteData(id));
-    }
-  };
+  if (modalIsOpen) {
+    return (
+      <ModalCmp
+        message="Are you sure you want to delete?"
+        buttonText="Yes"
+        modalState={modalIsOpen}
+        modalFunction={setIsOpen}
+        toDelete={true}
+        deleteId={deleteId}
+        deleteFunction={deleteData}
+        // setDeleteSuccess={setDeleteSuccess}
+      />
+    );
+  }
+
+  // if (deleteSuccess === true) {
+  //   return (
+  //     <ModalCmp
+  //       message="Your delete was successful."
+  //       buttonText="Okay"
+  //       modalState={deleteSuccess}
+  //       modalFunction={setDeleteSuccess}
+  //     />
+  //   );
+  // }
 
   return (
     <div className="read-history">
@@ -25,10 +45,14 @@ const DashboardItem = React.memo(({ dispatch, item }) => {
           onClick={() => dispatch(findComic(item.resourceURI))}
         />
         <button
-          onClick={(e) => onDelete(item._id, e)}
+          onClick={() => {
+            setDeleteId(item._id);
+            setIsOpen(true);
+          }}
           className="remove-comic-btn"
         >
-          <i className="fa fa-trash-o" aria-hidden="true"></i> Remove Comic
+          <i className="fa fa-trash-o" aria-hidden="true"></i>
+          Remove Comic
         </button>
         <div
           className="comic-text"

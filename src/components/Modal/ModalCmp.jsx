@@ -1,10 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { useDispatch } from 'react-redux';
 import '../SearchResults/ComicsList/ComicsList.module.css';
 
 Modal.setAppElement('#root');
 
-const ModalCmp = ({ modalState, modalFunction, message, buttonText }) => {
+const ModalCmp = ({
+  modalState,
+  modalFunction,
+  message,
+  buttonText,
+  // setDeleteSuccess,
+  toDelete,
+  deleteFunction,
+  deleteId,
+}) => {
+  const dispatch = useDispatch();
+
   const customStyles = {
     content: {
       top: '50%',
@@ -24,13 +36,37 @@ const ModalCmp = ({ modalState, modalFunction, message, buttonText }) => {
       style={customStyles}
     >
       <h3>{message}</h3>
-      <button
-        type="button"
-        className="already-read-input"
-        onClick={() => modalFunction(false)}
-      >
-        {buttonText}
-      </button>
+
+      {toDelete ? (
+        <React.Fragment>
+          <button
+            type="button"
+            className="already-read-input"
+            onClick={() => {
+              modalFunction(false);
+              // setDeleteSuccess(true);
+              dispatch(deleteFunction(deleteId));
+            }}
+          >
+            Yes
+          </button>
+          <button
+            type="button"
+            className="already-read-input"
+            onClick={() => modalFunction(false)}
+          >
+            No
+          </button>
+        </React.Fragment>
+      ) : (
+        <button
+          type="button"
+          className="already-read-input"
+          onClick={() => modalFunction(false)}
+        >
+          {buttonText}
+        </button>
+      )}
     </Modal>
   );
 };

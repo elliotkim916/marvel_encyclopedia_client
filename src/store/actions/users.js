@@ -1,5 +1,3 @@
-import { SubmissionError } from 'redux-form';
-
 import { API_BASE_URL } from '../../config';
 // import { normalizeResponseErrors } from './utils';
 
@@ -18,17 +16,6 @@ export const registerUser = (user) => (dispatch) => {
         console.log(err);
         const { reason, message, location } = err;
         console.log(reason, message, location);
-        // when user tries to register with a username that is already taken
-        if (reason === 'ValidationError') {
-          throw Promise.reject(
-            new SubmissionError({
-              [location]: message,
-            })
-          );
-        }
-        throw new SubmissionError({
-          [location]: message,
-        });
       })
   );
 };
