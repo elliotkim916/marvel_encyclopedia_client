@@ -44,13 +44,41 @@ export class App extends React.Component {
         <div className="App">
           <main>
             <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route exact path="/register" component={RegistrationPage} />
-              <Route exact path="/login" component={LoginPage} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route exact path="/search-results" component={SearchResults} />
-              <Route exact path="/event" component={Event} />
-              <Route exact path="/comic" component={Comic} />
+              <Route
+                exact
+                path="/"
+                component={(props) => <LandingPage {...props} />}
+              />
+              <Route
+                exact
+                path="/register"
+                component={(props) => <RegistrationPage {...props} />}
+              />
+              <Route
+                exact
+                path="/login"
+                component={(props) => <LoginPage {...props} />}
+              />
+              <Route
+                exact
+                path="/dashboard"
+                component={(props) => <Dashboard {...props} />}
+              />
+              <Route
+                exact
+                path="/search-results"
+                component={(props) => <SearchResults {...props} />}
+              />
+              <Route
+                exact
+                path="/event"
+                component={(props) => <Event {...props} />}
+              />
+              <Route
+                exact
+                path="/comic"
+                component={(props) => <Comic {...props} />}
+              />
             </Switch>
           </main>
         </div>

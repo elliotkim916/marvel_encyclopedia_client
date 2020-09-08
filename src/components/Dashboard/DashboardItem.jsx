@@ -35,7 +35,6 @@ const DashboardItem = React.memo(({ item }) => {
     }
   };
 
-  console.log(deleteFinished);
   const deleteFinish = () => {
     if (deleteFinished) {
       return (
