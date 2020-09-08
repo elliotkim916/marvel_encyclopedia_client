@@ -3,41 +3,49 @@ import {
   CLEAR_AUTH,
   AUTH_REQUEST,
   AUTH_SUCCESS,
-  AUTH_ERROR
+  AUTH_ERROR,
 } from '../actions/auth';
 
 const initialState = {
   authToken: null,
   currentUser: null,
   loading: false,
-  error: null
+  error: null,
 };
 
-export default function authReducer(state=initialState, action) {
-  if (action.type === SET_AUTH_TOKEN) {
-    return Object.assign({}, state, {
-      authToken: action.authToken
-    });
-  } else if (action.type === CLEAR_AUTH) {
-    return Object.assign({}, state, {
-      authToken: null,
-      currentUser: null
-    });
-  } else if (action.type === AUTH_REQUEST) {
-    return Object.assign({}, state, {
-      loading: true,
-      error: null
-    });
-  } else if (action.type === AUTH_SUCCESS) {
-    return Object.assign({}, state, {
-      loading: false,
-      currentUser: action.currentUser
-    });
-  } else if (action.type === AUTH_ERROR) {
-    return Object.assign({}, state, {
-      loading: false,
-      error: action.error
-    });
+const authRequest = (state, action) => {
+  return { ...state, loading: true };
+};
+
+const authSuccess = (state, action) => {
+  return { ...state, loading: false, currentUser: action.currentUser };
+};
+
+const setAuthToken = (state, action) => {
+  return { ...state, authToken: action.authToken };
+};
+
+const authError = (state, action) => {
+  return { ...state, loading: false, error: action.error };
+};
+
+const clearAuth = (state, action) => {
+  return { ...state, authToken: null, currentUser: null };
+};
+
+export default function authReducer(state = initialState, action) {
+  switch (action.type) {
+    case AUTH_REQUEST:
+      return authRequest(state, action);
+    case AUTH_SUCCESS:
+      return authSuccess(state, action);
+    case SET_AUTH_TOKEN:
+      return setAuthToken(state, action);
+    case AUTH_ERROR:
+      return authError(state, action);
+    case CLEAR_AUTH:
+      return clearAuth(state, action);
+    default:
+      return state;
   }
-  return state;
 }
