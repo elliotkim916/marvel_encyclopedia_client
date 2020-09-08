@@ -25,11 +25,13 @@ const Comic = ({ dispatch, loading, comicResult, comicCharacter }) => {
       />
     ));
 
+    if (comicCharacters.length < 1) {
+      return <h3>No characters were found..</h3>;
+    }
+
     return <ul className="character-list">{comicCharacters}</ul>;
   };
 
-  console.log(comicCharacter);
-  // account for if no characters are found..
   return (
     <section className="comic-section">
       <div className="comic-book-information">
