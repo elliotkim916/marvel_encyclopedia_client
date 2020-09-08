@@ -60,10 +60,7 @@ export const login = (username, password) => (dispatch) => {
     .then((res) => normalizeResponseErrors(res))
     .then((res) => res.json())
     .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
-    .catch((err) => {
-      console.log(err);
-      dispatch(authError(err));
-    });
+    .catch((err) => dispatch(authError(err)));
 };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
