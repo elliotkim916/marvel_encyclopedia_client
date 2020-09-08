@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { registerUser } from '../../store/actions/users';
 import { login } from '../../store/actions/auth';
 import { Formik, Form, Field } from 'formik';
@@ -15,27 +16,23 @@ const RegistrationSchema = Yup.object().shape({
     .required(),
 });
 
-const RegistrationForm = ({ dispatch }) => {
+const RegistrationForm = () => {
+  const dispatch = useDispatch();
   const inputRef = useRef();
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
-  const onSubmit = async (values, { resetForm }) => {
+  const onSubmit = async (values) => {
     const { username, password } = values;
-    const user = { username, password };
+    const newUser = { username, password };
 
-    const response = await dispatch(registerUser(user));
-
-    if (response.username && response._id) {
+    const response = await dispatch(registerUser(newUser));
+    const { user } = response;
+    if (user.username && user._id) {
       dispatch(login(username, password));
-    } else {
-      // Add error handling
-      window.alert('Registration Error!');
     }
-
-    resetForm();
   };
 
   const validateConfirmPassword = (password, confirmPassword) => {

@@ -8,7 +8,7 @@ import ModalCmp from '../Modal/ModalCmp';
 import { clearAuthError } from '../../store/actions/auth';
 import '../Registration/RegistrationPage.module.css';
 
-const LoginPage = ({ loading, loggedIn, loginError, hasError, dispatch }) => {
+const LoginPage = ({ loading, loggedIn, loginError, hasError }) => {
   if (loading) {
     return (
       <div className="account_loader">
@@ -36,7 +36,7 @@ const LoginPage = ({ loading, loggedIn, loginError, hasError, dispatch }) => {
   return (
     <div className="login-page">
       <AuthHeader />
-      <LoginForm dispatch={dispatch} />
+      <LoginForm />
 
       <span className="register-redirect">
         Don't have an account?{' '}

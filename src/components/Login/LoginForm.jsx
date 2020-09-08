@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import { login } from '../../store/actions/auth';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
@@ -9,7 +10,8 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required(),
 });
 
-const LoginForm = ({ dispatch }) => {
+const LoginForm = () => {
+  const dispatch = useDispatch();
   const inputRef = useRef();
 
   useEffect(() => {

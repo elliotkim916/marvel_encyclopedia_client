@@ -5,6 +5,7 @@ import { setAuthToken, refreshAuthToken } from './actions/auth';
 // import logger from 'redux-logger';
 import authReducer from './reducers/auth';
 import protectedDataReducer from './reducers/protected-data';
+import userReducer from './reducers/users';
 import { characterReducer } from './reducers/characters';
 import { comicReducer } from './reducers/comics';
 import { eventReducer } from './reducers/events';
@@ -14,6 +15,7 @@ const store = createStore(
     characterReducer: characterReducer,
     comicReducer: comicReducer,
     eventReducer: eventReducer,
+    userReducer: userReducer,
     auth: authReducer,
     protectedData: protectedDataReducer,
   }),
