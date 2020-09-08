@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { findEvent } from '../../../store/actions/events';
 import { searchCharacter } from '../../../store/actions/characters';
 import './EventsList.module.css';
 
-const ListItem = ({ item, character, dispatch }) => {
+const ListItem = ({ item, character }) => {
+  const dispatch = useDispatch();
   const imgUrl = `${item.thumbnail.path.slice(5)}/portrait_fantastic.${
     item.thumbnail.extension
   }`;

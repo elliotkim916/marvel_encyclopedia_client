@@ -8,7 +8,6 @@ import Header from '../Header/Header';
 import './Event.module.css';
 
 const Event = ({
-  dispatch,
   loading,
   eventCharacter,
   eventComic,
@@ -26,11 +25,7 @@ const Event = ({
         <Description data={eventResult} event={true} />
       </div>
 
-      <EventCharacters
-        loading={loading}
-        eventCharacter={eventCharacter}
-        dispatch={dispatch}
-      />
+      <EventCharacters loading={loading} eventCharacter={eventCharacter} />
 
       <EventComics
         eventResult={eventResult}

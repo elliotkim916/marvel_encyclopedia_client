@@ -3,19 +3,14 @@ import ListItem from '../SearchResults/EventsList/ListItem';
 import Loading from '../Loading/Loading';
 import './Event.module.css';
 
-const EventCharacters = ({ loading, eventCharacter, dispatch }) => {
+const EventCharacters = ({ loading, eventCharacter }) => {
   const renderCharacters = () => {
     if (loading) {
       return <Loading loadingMessage="Loading.." />;
     }
 
     const character = eventCharacter.map((character, index) => (
-      <ListItem
-        item={character}
-        dispatch={dispatch}
-        key={index}
-        character={true}
-      />
+      <ListItem item={character} key={index} character={true} />
     ));
 
     return <ul className="event-character-list">{character}</ul>;
