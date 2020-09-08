@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { searchCharacter } from '../../store/actions/characters';
 import { Formik, Form, Field } from 'formik';
 import SearchHeader from './SearchHeader';
 import './Search.module.css';
 
-const Search = ({ dispatch }) => {
+const Search = () => {
+  const dispatch = useDispatch();
   const searchRef = useRef();
 
   useEffect(() => {
@@ -45,4 +46,4 @@ const Search = ({ dispatch }) => {
   );
 };
 
-export default connect()(Search);
+export default Search;

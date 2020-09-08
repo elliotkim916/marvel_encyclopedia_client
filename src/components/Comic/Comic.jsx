@@ -4,6 +4,7 @@ import requiresLogin from '../Login/RequiresLogin';
 import Header from '../Header/Header';
 import ComicDescription from './ComicDescription';
 import ListItem from '../SearchResults/EventsList/ListItem';
+import Loading from '../Loading/Loading';
 import './Comic.module.css';
 
 const Comic = ({ dispatch, loading, comicResult, comicCharacter }) => {
@@ -13,7 +14,7 @@ const Comic = ({ dispatch, loading, comicResult, comicCharacter }) => {
 
   const renderCharacters = () => {
     if (loading) {
-      return <div className="loader">L O A D I N G . . . </div>;
+      return <Loading loadingMessage="Loading.." />;
     }
 
     const comicCharacters = comicCharacter.map((character, index) => (

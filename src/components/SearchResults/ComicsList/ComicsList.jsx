@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ComicListItem from './ComicListItem';
+import Loading from '../../Loading/Loading';
 import './ComicsList.module.css';
 import '../../Dashboard/Dashboard.module.css';
 
 const ComicsList = ({ loading, comic, loggedIn, character }) => {
   const renderResults = () => {
     if (loading) {
-      return <div className="loader">L O A D I N G . . . </div>;
+      return <Loading loadingMessage="Loading.." />;
     }
 
     const comicTitles = comic.map((comic, index) => (

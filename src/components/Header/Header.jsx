@@ -1,10 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { clearAuth } from '../../store/actions/auth';
 import { clearAuthToken } from '../../local-storage';
 import '../Comic/Comic.module.css';
 
-const Header = ({ dispatch }) => {
+const Header = () => {
+  const dispatch = useDispatch();
   const logOut = () => {
     dispatch(clearAuth());
     clearAuthToken();
@@ -22,4 +23,4 @@ const Header = ({ dispatch }) => {
   );
 };
 
-export default connect()(Header);
+export default Header;

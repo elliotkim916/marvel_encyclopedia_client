@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ListItem from './ListItem';
+import Loading from '../../Loading/Loading';
 import './EventsList.module.css';
 
 const EventsList = ({ loading, event, dispatch }) => {
   const renderResults = () => {
     if (loading) {
-      return <div className="loader">L O A D I N G . . . </div>;
+      return <Loading loadingMessage="Loading.." />;
     }
 
     const eventTitles = event.map((event, index) => (

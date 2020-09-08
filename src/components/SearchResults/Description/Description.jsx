@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Loading from '../../Loading/Loading';
 import './Description.module.css';
 
 const Description = ({ loading, data, event }) => {
   let imgUrl, urls;
 
   if (loading) {
-    return <div className="loading">L O A D I N G . . . </div>;
+    return <Loading loadingMessage="Loading.." />;
   }
 
   if (data) {

@@ -1,11 +1,12 @@
 import React from 'react';
 import ComicListItem from '../SearchResults/ComicsList/ComicListItem';
+import Loading from '../Loading/Loading';
 import './Event.module.css';
 
 const EventComics = ({ eventResult, eventComic, loading, loggedIn }) => {
   const renderComics = () => {
     if (loading) {
-      return <div className="loader">L O A D I N G . . . </div>;
+      return <Loading loadingMessage="Loading.." />;
     }
 
     const comic = eventComic.map((comic, index) => (

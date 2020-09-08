@@ -1,11 +1,12 @@
 import React from 'react';
 import ListItem from '../SearchResults/EventsList/ListItem';
+import Loading from '../Loading/Loading';
 import './Event.module.css';
 
 const EventCharacters = ({ loading, eventCharacter, dispatch }) => {
   const renderCharacters = () => {
     if (loading) {
-      return <div className="loader">L O A D I N G . . . </div>;
+      return <Loading loadingMessage="Loading.." />;
     }
 
     const character = eventCharacter.map((character, index) => (
