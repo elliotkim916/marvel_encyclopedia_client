@@ -31,6 +31,11 @@ export const authError = (error) => ({
   error,
 });
 
+export const CLEAR_AUTH_ERROR = 'CLEAR_AUTH_ERROR';
+export const clearAuthError = () => ({
+  type: CLEAR_AUTH_ERROR,
+});
+
 // SET_AUTH_TOKEN stores the encoded token which is used for authentication
 // The user info contained in the payload is stored by dispatching the authSuccess action
 const storeAuthInfo = (authToken, dispatch) => {
@@ -56,17 +61,8 @@ export const login = (username, password) => (dispatch) => {
     .then((res) => res.json())
     .then(({ authToken }) => storeAuthInfo(authToken, dispatch))
     .catch((err) => {
-      // const { code } = err;
-      // const message =
-      //   code === 401
-      //     ? 'Incorrect username or password'
-      //     : 'Unable to login, please try again';
+      console.log(err);
       dispatch(authError(err));
-      // return Promise.reject(
-      //   new SubmissionError({
-      //     _error: message
-      //   })
-      // );
     });
 };
 

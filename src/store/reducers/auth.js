@@ -4,6 +4,7 @@ import {
   AUTH_REQUEST,
   AUTH_SUCCESS,
   AUTH_ERROR,
+  CLEAR_AUTH_ERROR,
 } from '../actions/auth';
 
 const initialState = {
@@ -11,6 +12,7 @@ const initialState = {
   currentUser: null,
   loading: false,
   error: null,
+  hasError: false,
 };
 
 const authRequest = (state, action) => {
@@ -26,7 +28,11 @@ const setAuthToken = (state, action) => {
 };
 
 const authError = (state, action) => {
-  return { ...state, loading: false, error: action.error };
+  return { ...state, loading: false, error: action.error, hasError: true };
+};
+
+const clearAuthError = (state, action) => {
+  return { ...state, error: null, hasError: false };
 };
 
 const clearAuth = (state, action) => {
@@ -45,6 +51,8 @@ export default function authReducer(state = initialState, action) {
       return authError(state, action);
     case CLEAR_AUTH:
       return clearAuth(state, action);
+    case CLEAR_AUTH_ERROR:
+      return clearAuthError(state, action);
     default:
       return state;
   }

@@ -29,7 +29,8 @@ const ModalCmp = ({
   };
 
   let modalFunc;
-  message === 'Your delete was successful.'
+  message === 'Your delete was successful.' ||
+  'Login failed due to incorrect username or password.'
     ? (modalFunc = () => dispatch(modalFunction()))
     : (modalFunc = () => modalFunction(false));
 
