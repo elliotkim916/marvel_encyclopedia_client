@@ -6,16 +6,12 @@ import LoginForm from './LoginForm';
 import LoginDemoAccount from './LoginDemoAccount';
 import ModalCmp from '../Modal/ModalCmp';
 import { clearAuthError } from '../../store/actions/auth';
+import Loading from '../Loading/Loading';
 import '../Registration/RegistrationPage.module.css';
 
 const LoginPage = ({ loading, loggedIn, loginError, hasError }) => {
   if (loading) {
-    return (
-      <div className="account_loader">
-        <h3 className="loading_message">Logging in..</h3>
-        <div className="spinner"></div>
-      </div>
-    );
+    return <Loading loadingMessage="Logging in.." />;
   }
 
   if (loginError) {

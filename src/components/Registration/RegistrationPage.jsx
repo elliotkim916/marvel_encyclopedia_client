@@ -5,16 +5,12 @@ import AuthHeader from '../Header/AuthHeader';
 import RegistrationForm from './RegistrationForm';
 import ModalCmp from '../Modal/ModalCmp';
 import { clearCreateUserError } from '../../store/actions/users';
+import Loading from '../Loading/Loading';
 import './RegistrationPage.module.css';
 
 const RegistrationPage = ({ loading, loggedIn, createUserError, hasError }) => {
   if (loading) {
-    return (
-      <div className="account_loader">
-        <h3 className="loading_message">Creating account..</h3>
-        <div className="spinner"></div>
-      </div>
-    );
+    return <Loading loadingMessage="Creating user.." />;
   }
 
   if (createUserError) {
