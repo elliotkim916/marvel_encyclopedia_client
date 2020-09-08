@@ -29,7 +29,7 @@ const EventsList = ({ loading, event, dispatch }) => {
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.characterReducer.eventLoading,
+  loading: state.characterReducer.loading,
 });
 
 export default connect(mapStateToProps)(EventsList);

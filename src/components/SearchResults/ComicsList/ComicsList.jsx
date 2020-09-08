@@ -41,7 +41,7 @@ const ComicsList = ({ loading, comic, loggedIn, character }) => {
 
 const mapStateToProps = (state) => ({
   loggedIn: state.auth.currentUser,
-  loading: state.characterReducer.comicLoading,
+  loading: state.characterReducer.loading,
 });
 
 export default connect(mapStateToProps)(ComicsList);

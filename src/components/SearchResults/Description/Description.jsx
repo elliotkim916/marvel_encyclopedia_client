@@ -51,7 +51,7 @@ const Description = ({ loading, data, event }) => {
 };
 
 const mapStateToProps = (state) => ({
-  loading: state.characterReducer.characterLoading,
+  loading: state.characterReducer.loading,
 });
 
 export default connect(mapStateToProps)(Description);
