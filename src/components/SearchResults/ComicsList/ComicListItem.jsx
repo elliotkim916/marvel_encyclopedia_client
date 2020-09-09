@@ -9,7 +9,9 @@ import './ComicsList.module.css';
 
 const ComicListItem = ({ comic, username }) => {
   const dispatch = useDispatch();
-  const savedComics = useSelector((state) => state.protectedData.data.data);
+  const savedComics = useSelector(
+    (state) => state.protectedDataReducer.data.data
+  );
   const [saveData, setSaveData] = useState(null);
   const [modalIsOpen, setIsOpen] = useState(false);
   const [duplicateSaved, setDuplicateSaved] = useState(false);

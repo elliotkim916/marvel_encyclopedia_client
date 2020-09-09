@@ -47,10 +47,10 @@ const LoginPage = ({ loading, loggedIn, loginError, hasError }) => {
 };
 
 const mapStateToProps = (state) => ({
-  loggedIn: state.auth.currentUser !== null,
-  loading: state.auth.loading,
-  loginError: state.auth.error,
-  hasError: state.auth.hasError,
+  loggedIn: state.authReducer.currentUser !== null,
+  loading: state.authReducer.loading,
+  loginError: state.authReducer.error,
+  hasError: state.authReducer.hasError,
 });
 
 export default connect(mapStateToProps)(LoginPage);

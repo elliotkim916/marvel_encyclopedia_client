@@ -12,12 +12,12 @@ import { eventReducer } from './reducers/events';
 
 const store = createStore(
   combineReducers({
-    characterReducer: characterReducer,
-    comicReducer: comicReducer,
-    eventReducer: eventReducer,
-    userReducer: userReducer,
-    auth: authReducer,
-    protectedData: protectedDataReducer,
+    characterReducer,
+    comicReducer,
+    eventReducer,
+    userReducer,
+    protectedDataReducer,
+    authReducer,
   }),
   // applyMiddleware(thunk, logger)
   applyMiddleware(thunk)
@@ -34,7 +34,3 @@ if (authToken) {
 // store.dispatch(refreshAuthToken()) - gives user new auth token NOW while the refreshAuthToken function in App.js gives user new authToken every hour
 // store is the first thing thats loaded
 export default store;
-
-// Redux Thunk allows action creators to return functions to be run
-// The functions can run asynchronous code like our AJAX request
-// Redux Thunk allows you to create async actions

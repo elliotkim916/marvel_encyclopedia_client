@@ -31,8 +31,8 @@ export const refreshProtectedDataDelete = () => ({
 });
 
 export const fetchProtectedData = () => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
-  const username = getState().auth.currentUser.username;
+  const authToken = getState().authReducer.authToken;
+  const username = getState().authReducer.currentUser.username;
   const headers = {
     Authorization: `Bearer ${authToken}`,
   };
@@ -53,8 +53,8 @@ export const addData = (title, read, imgUrl, resourceURI, username) => (
   dispatch,
   getState
 ) => {
-  const authToken = getState().auth.authToken;
-  const username = getState().auth.currentUser.username;
+  const authToken = getState().authReducer.authToken;
+  const username = getState().authReducer.currentUser.username;
   const data = JSON.stringify({
     title: title,
     read: read,
@@ -81,7 +81,7 @@ export const addData = (title, read, imgUrl, resourceURI, username) => (
 };
 
 export const deleteData = (_id) => (dispatch, getState) => {
-  const authToken = getState().auth.authToken;
+  const authToken = getState().authReducer.authToken;
   const url = `${API_BASE_URL}/marvel/` + _id;
   const headers = {
     Authorization: `Bearer ${authToken}`,

@@ -44,8 +44,8 @@ const RegistrationPage = ({ loading, loggedIn, createUserError, hasError }) => {
 };
 
 const mapStateToProps = (state) => ({
-  loggedIn: state.auth.currentUser !== null,
-  loading: state.auth.loading,
+  loggedIn: state.authReducer.currentUser !== null,
+  loading: state.authReducer.loading,
   createUserError: state.userReducer.error,
   hasError: state.userReducer.hasError,
 });

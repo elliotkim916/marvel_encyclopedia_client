@@ -14,7 +14,7 @@ const DashboardItem = React.memo(({ item }) => {
   const [deleteId, setDeleteId] = useState(null);
 
   const deleteFinished = useSelector(
-    (state) => state.protectedData.deleteFinish
+    (state) => state.protectedDataReducer.deleteFinish
   );
 
   const deleteStart = () => {

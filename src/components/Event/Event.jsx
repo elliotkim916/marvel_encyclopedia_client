@@ -41,7 +41,7 @@ const mapStateToProps = (state) => ({
   eventResult: state.eventReducer.clickedEvent,
   eventCharacter: state.eventReducer.eventCharacter,
   eventComic: state.eventReducer.eventComic,
-  loggedIn: state.auth.currentUser,
+  loggedIn: state.authReducer.currentUser,
   loading: state.eventReducer.loading,
 });
 

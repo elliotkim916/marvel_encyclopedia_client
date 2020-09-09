@@ -51,7 +51,7 @@ const Comic = ({ dispatch, loading, comicResult, comicCharacter }) => {
 const mapStateToProps = (state) => ({
   comicResult: state.comicReducer.clickedComic,
   comicCharacter: state.comicReducer.comicCharacter,
-  loggedIn: state.auth.currentUser !== null,
+  loggedIn: state.authReducer.currentUser !== null,
   loading: state.comicReducer.loading,
 });
 

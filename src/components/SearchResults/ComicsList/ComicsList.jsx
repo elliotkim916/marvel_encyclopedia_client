@@ -41,7 +41,7 @@ const ComicsList = ({ loading, comic, loggedIn, character }) => {
 };
 
 const mapStateToProps = (state) => ({
-  loggedIn: state.auth.currentUser,
+  loggedIn: state.authReducer.currentUser,
   loading: state.characterReducer.loading,
 });
 

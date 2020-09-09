@@ -60,8 +60,8 @@ const Dashboard = ({ dispatch, username, protectedData }) => {
 
 const mapStateToProps = (state) => {
   return {
-    username: state.auth.currentUser.username,
-    protectedData: state.protectedData.data.data,
+    username: state.authReducer.currentUser.username,
+    protectedData: state.protectedDataReducer.data.data,
   };
 };
 

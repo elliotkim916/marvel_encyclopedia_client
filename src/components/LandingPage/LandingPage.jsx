@@ -5,7 +5,9 @@ import TopNav from './TopNav/TopNav';
 import InfoSection from './InfoSection/InfoSection';
 
 const LandingPage = () => {
-  const loggedIn = useSelector((state) => state.auth.currentUser !== null);
+  const loggedIn = useSelector(
+    (state) => state.authReducer.currentUser !== null
+  );
 
   if (loggedIn) {
     return <Redirect to="/dashboard" />;

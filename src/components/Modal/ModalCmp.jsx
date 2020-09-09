@@ -29,11 +29,15 @@ const ModalCmp = ({
   };
 
   let modalFunc;
-  message === 'Your delete was successful.' ||
-  'Login failed due to incorrect username or password.' ||
-  'Username already exists, please try a different username.'
-    ? (modalFunc = () => dispatch(modalFunction()))
-    : (modalFunc = () => modalFunction(false));
+  if (
+    message === 'Your delete was successful.' ||
+    message === 'Login failed due to incorrect username or password.' ||
+    message === 'Username already exists, please try a different username.'
+  ) {
+    modalFunc = () => dispatch(modalFunction());
+  } else {
+    modalFunc = () => modalFunction(false);
+  }
 
   return (
     <Modal
