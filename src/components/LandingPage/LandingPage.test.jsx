@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import LandingPage from './LandingPage';
 import sinon from 'sinon';
@@ -32,13 +32,19 @@ describe('<LandingPage />', () => {
     subscribe: () => {},
     dispatch,
     getState: () => {},
+    authReducer: '',
   };
 
-  it('Renders without crashing', () => {
-    shallow(
+  let wrapper;
+  beforeEach(() => {
+    wrapper = mount(
       <Provider store={mockStore}>
         <LandingPage />
       </Provider>
     );
+  });
+
+  it('Renders without crashing', () => {
+    expect(wrapper).not.toBeNull();
   });
 });
