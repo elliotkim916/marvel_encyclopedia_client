@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../../config';
-import { normalizeResponseErrors } from './utils';
+import { normalizeResponseErrors } from '../../shared/utils';
 import * as actionTypes from './actionTypes';
 
 export const createUserRequest = () => ({

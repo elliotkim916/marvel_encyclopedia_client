@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { clearAuth } from '../../store/actions/auth';
-import { clearAuthToken } from '../../local-storage';
+import { clearAuthToken } from '../../shared/local-storage';
 import '../Comic/Comic.module.css';
 
 const Header = () => {

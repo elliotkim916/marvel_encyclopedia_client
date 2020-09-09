@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import { loadAuthToken } from '../local-storage';
+import { loadAuthToken } from '../shared/local-storage';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 // import logger from 'redux-logger';
 import authReducer from './reducers/auth';

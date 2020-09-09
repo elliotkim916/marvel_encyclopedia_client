@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import { API_BASE_URL } from '../../config';
-import { normalizeResponseErrors } from './utils';
-import { saveAuthToken, clearAuthToken } from '../../local-storage';
+import { normalizeResponseErrors } from '../../shared/utils';
+import { saveAuthToken, clearAuthToken } from '../../shared/local-storage';
 import * as actionTypes from './actionTypes';
 
 export const setAuthToken = (authToken) => ({

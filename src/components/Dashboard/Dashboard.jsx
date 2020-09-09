@@ -4,7 +4,7 @@ import { fetchProtectedData } from '../../store/actions/protected-data';
 import { clearAuth } from '../../store/actions/auth';
 import requiresLogin from '../Login/RequiresLogin';
 import Search from '../Search/Search';
-import { clearAuthToken } from '../../local-storage';
+import { clearAuthToken } from '../../shared/local-storage';
 import DashboardItem from './DashboardItem';
 import ironman_icon from '../../images/ironman_icon.png';
 import './Dashboard.module.css';
