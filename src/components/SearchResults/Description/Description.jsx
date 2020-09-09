@@ -1,9 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Loading from '../../Loading/Loading';
 import './Description.module.css';
 
-const Description = ({ loading, data, event }) => {
+const Description = ({ data, event }) => {
+  const loading = useSelector((state) => state.characterReducer.loading);
   let imgUrl, urls;
 
   if (loading) {
@@ -51,8 +52,4 @@ const Description = ({ loading, data, event }) => {
   }
 };
 
-const mapStateToProps = (state) => ({
-  loading: state.characterReducer.loading,
-});
-
-export default connect(mapStateToProps)(Description);
+export default Description;

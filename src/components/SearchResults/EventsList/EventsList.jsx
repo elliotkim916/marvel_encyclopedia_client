@@ -1,10 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ListItem from './ListItem';
 import Loading from '../../Loading/Loading';
 import './EventsList.module.css';
 
-const EventsList = ({ loading, event, dispatch }) => {
+const EventsList = ({ event, dispatch }) => {
+  const loading = useSelector((state) => state.characterReducer.loading);
+
   const renderResults = () => {
     if (loading) {
       return <Loading loadingMessage="Loading.." />;
@@ -29,8 +31,4 @@ const EventsList = ({ loading, event, dispatch }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  loading: state.characterReducer.loading,
-});
-
-export default connect(mapStateToProps)(EventsList);
+export default EventsList;
