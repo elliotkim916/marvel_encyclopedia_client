@@ -1,20 +1,18 @@
 import { MARVEL_API_BASE_URL, PUBLIC_KEY, TS, HASH } from '../../config';
 import history from '../../history';
+import * as actionTypes from './actionTypes';
 
-export const FIND_COMIC_REQUEST = 'FIND_COMIC_REQUEST';
 export const findComicRequest = () => ({
-  type: FIND_COMIC_REQUEST,
+  type: actionTypes.FIND_COMIC_REQUEST,
 });
 
-export const FIND_COMIC_SUCCESS = 'FIND_COMIC_SUCCESS';
 export const findComicSuccess = (comic) => ({
-  type: FIND_COMIC_SUCCESS,
+  type: actionTypes.FIND_COMIC_SUCCESS,
   comic,
 });
 
-export const FIND_COMIC_ERROR = 'SEARCH_COMIC_ERROR';
 export const findComicError = (error) => ({
-  type: FIND_COMIC_ERROR,
+  type: actionTypes.FIND_COMIC_ERROR,
   error,
 });
 
@@ -42,14 +40,12 @@ export const findComic = (URI) => (dispatch) => {
     .catch((error) => dispatch(findComicError(error)));
 };
 
-export const FIND_COMIC_CHARACTER_REQUEST = 'FIND_COMIC_CHARACTER_REQUEST';
 export const findComicCharacterRequest = () => ({
-  type: FIND_COMIC_CHARACTER_REQUEST,
+  type: actionTypes.FIND_COMIC_CHARACTER_REQUEST,
 });
 
-export const FIND_COMIC_CHARACTER_SUCCESS = 'FIND_COMIC_CHARACTER_SUCCESS';
 export const findComicCharacterSuccess = (comicCharacter) => ({
-  type: FIND_COMIC_CHARACTER_SUCCESS,
+  type: actionTypes.FIND_COMIC_CHARACTER_SUCCESS,
   comicCharacter,
 });
 

@@ -1,10 +1,4 @@
-import {
-  FETCH_PROTECTED_DATA_SUCCESS,
-  FETCH_PROTECTED_DATA_ERROR,
-  ADD_PROTECTED_DATA_SUCCESS,
-  DELETE_PROTECTED_DATA_SUCCESS,
-  REFRESH_PROTECTED_DATA_DELETE,
-} from '../actions/protected-data';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   data: '',
@@ -45,15 +39,15 @@ const refreshProtectedDataDelete = (state, action) => {
 
 export default function protectedDataReducer(state = initialState, action) {
   switch (action.type) {
-    case FETCH_PROTECTED_DATA_SUCCESS:
+    case actionTypes.FETCH_PROTECTED_DATA_SUCCESS:
       return fetchProtectedDataSuccess(state, action);
-    case ADD_PROTECTED_DATA_SUCCESS:
+    case actionTypes.ADD_PROTECTED_DATA_SUCCESS:
       return addProtectedDataSuccess(state, action);
-    case DELETE_PROTECTED_DATA_SUCCESS:
+    case actionTypes.DELETE_PROTECTED_DATA_SUCCESS:
       return deleteProtectedDataSuccess(state, action);
-    case FETCH_PROTECTED_DATA_ERROR:
+    case actionTypes.FETCH_PROTECTED_DATA_ERROR:
       return fetchProtectedDataError(state, action);
-    case REFRESH_PROTECTED_DATA_DELETE:
+    case actionTypes.REFRESH_PROTECTED_DATA_DELETE:
       return refreshProtectedDataDelete(state, action);
     default:
       return state;

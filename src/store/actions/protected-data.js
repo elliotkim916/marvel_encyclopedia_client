@@ -1,33 +1,29 @@
 import { API_BASE_URL } from '../../config';
 import { normalizeResponseErrors } from './utils';
+import * as actionTypes from './actionTypes';
 
-export const FETCH_PROTECTED_DATA_SUCCESS = 'FETCH_PROTECTED_DATA_SUCCESS';
 export const fetchProtectedDataSuccess = (data) => ({
-  type: FETCH_PROTECTED_DATA_SUCCESS,
+  type: actionTypes.FETCH_PROTECTED_DATA_SUCCESS,
   protected: data,
 });
 
-export const FETCH_PROTECTED_DATA_ERROR = 'FETCH_PROTECTED_DATA_ERROR';
 export const fetchProtectedDataError = (error) => ({
-  type: FETCH_PROTECTED_DATA_ERROR,
+  type: actionTypes.FETCH_PROTECTED_DATA_ERROR,
   error,
 });
 
-export const ADD_PROTECTED_DATA_SUCCESS = 'ADD_PROTECTED_DATA_SUCCESS';
 export const addProtectedDataSuccess = (addComicData) => ({
-  type: ADD_PROTECTED_DATA_SUCCESS,
+  type: actionTypes.ADD_PROTECTED_DATA_SUCCESS,
   addComicData,
 });
 
-export const DELETE_PROTECTED_DATA_SUCCESS = 'DELETE_PROTECTED_DATA_SUCCESS';
 export const deleteProtectedDataSuccess = (id) => ({
-  type: DELETE_PROTECTED_DATA_SUCCESS,
+  type: actionTypes.DELETE_PROTECTED_DATA_SUCCESS,
   id,
 });
 
-export const REFRESH_PROTECTED_DATA_DELETE = 'REFRESH_PROTECTED_DATA_DELETE';
 export const refreshProtectedDataDelete = () => ({
-  type: REFRESH_PROTECTED_DATA_DELETE,
+  type: actionTypes.REFRESH_PROTECTED_DATA_DELETE,
 });
 
 export const fetchProtectedData = () => (dispatch, getState) => {

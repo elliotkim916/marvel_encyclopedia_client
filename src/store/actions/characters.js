@@ -6,21 +6,19 @@ import {
   HASH,
 } from '../../config';
 import history from '../../history';
+import * as actionTypes from './actionTypes';
 
-export const SEARCH_CHARACTER_REQUEST = 'SEARCH_CHARACTER_REQUEST';
 export const searchCharacterRequest = () => ({
-  type: SEARCH_CHARACTER_REQUEST,
+  type: actionTypes.SEARCH_CHARACTER_REQUEST,
 });
 
-export const SEARCH_CHARACTER_SUCCESS = 'SEARCH_CHARACTER_SUCCESS';
 export const searchCharacterSuccess = (character) => ({
-  type: SEARCH_CHARACTER_SUCCESS,
+  type: actionTypes.SEARCH_CHARACTER_SUCCESS,
   character,
 });
 
-export const SEARCH_CHARACTER_ERROR = 'SEARCH_CHARACTER_ERROR';
 export const searchCharacterError = (error) => ({
-  type: SEARCH_CHARACTER_ERROR,
+  type: actionTypes.SEARCH_CHARACTER_ERROR,
   error,
 });
 
@@ -54,14 +52,12 @@ export const searchCharacter = (name) => (dispatch) => {
     });
 };
 
-export const SEARCH_CHARACTER_COMIC_REQUEST = 'SEARCH_CHARACTER_COMIC_REQUEST';
 export const searchCharacterComicRequest = () => ({
-  type: SEARCH_CHARACTER_COMIC_REQUEST,
+  type: actionTypes.SEARCH_CHARACTER_COMIC_REQUEST,
 });
 
-export const SEARCH_CHARACTER_COMIC_SUCCESS = 'SEARCH_CHARACTER_COMIC_SUCCESS';
 export const searchCharacterComicSuccess = (characterComic) => ({
-  type: SEARCH_CHARACTER_COMIC_SUCCESS,
+  type: actionTypes.SEARCH_CHARACTER_COMIC_SUCCESS,
   characterComic,
 });
 
@@ -85,14 +81,12 @@ export const findCharacterComic = (id) => (dispatch) => {
     .catch((error) => dispatch(searchCharacterError(error)));
 };
 
-export const SEARCH_CHARACTER_EVENT_REQUEST = 'SEARCH_CHARACTER_EVENT_REQUEST';
 export const searchCharacterEventRequest = () => ({
-  type: SEARCH_CHARACTER_EVENT_REQUEST,
+  type: actionTypes.SEARCH_CHARACTER_EVENT_REQUEST,
 });
 
-export const SEARCH_CHARACTER_EVENT_SUCCESS = 'SEARCH_CHARACTER_EVENT_SUCCESS';
 export const searchCharacterEventSuccess = (characterEvent) => ({
-  type: SEARCH_CHARACTER_EVENT_SUCCESS,
+  type: actionTypes.SEARCH_CHARACTER_EVENT_SUCCESS,
   characterEvent,
 });
 

@@ -1,10 +1,4 @@
-import {
-  FIND_COMIC_REQUEST,
-  FIND_COMIC_SUCCESS,
-  FIND_COMIC_CHARACTER_REQUEST,
-  FIND_COMIC_CHARACTER_SUCCESS,
-  FIND_COMIC_ERROR,
-} from '../actions/comics';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   clickedComic: {},
@@ -35,15 +29,15 @@ const findComicError = (state, action) => {
 
 export default function comicReducer(state = initialState, action) {
   switch (action.type) {
-    case FIND_COMIC_REQUEST:
+    case actionTypes.FIND_COMIC_REQUEST:
       return findComicRequest(state, action);
-    case FIND_COMIC_CHARACTER_REQUEST:
+    case actionTypes.FIND_COMIC_CHARACTER_REQUEST:
       return findComicCharacterRequest(state, action);
-    case FIND_COMIC_SUCCESS:
+    case actionTypes.FIND_COMIC_SUCCESS:
       return findComicSuccess(state, action);
-    case FIND_COMIC_CHARACTER_SUCCESS:
+    case actionTypes.FIND_COMIC_CHARACTER_SUCCESS:
       return findComicCharacterSuccess(state, action);
-    case FIND_COMIC_ERROR:
+    case actionTypes.FIND_COMIC_ERROR:
       return findComicError(state, action);
     default:
       return state;

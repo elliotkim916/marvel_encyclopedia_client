@@ -1,20 +1,18 @@
 import { MARVEL_API_BASE_URL, PUBLIC_KEY, TS, HASH } from '../../config';
 import history from '../../history';
+import * as actionTypes from './actionTypes';
 
-export const FIND_EVENT_REQUEST = 'FIND_EVENT_REQUEST';
 export const findEventRequest = () => ({
-  type: FIND_EVENT_REQUEST,
+  type: actionTypes.FIND_EVENT_REQUEST,
 });
 
-export const FIND_EVENT_SUCCESS = 'FIND_EVENT_SUCCESS';
 export const findEventSuccess = (event) => ({
-  type: FIND_EVENT_SUCCESS,
+  type: actionTypes.FIND_EVENT_SUCCESS,
   event,
 });
 
-export const FIND_EVENT_ERROR = 'FIND_EVENT_ERROR';
 export const findEventError = (error) => ({
-  type: FIND_EVENT_ERROR,
+  type: actionTypes.FIND_EVENT_ERROR,
   error,
 });
 
@@ -43,14 +41,12 @@ export const findEvent = (URI) => (dispatch) => {
     .catch((error) => dispatch(findEventError(error)));
 };
 
-export const SEARCH_EVENT_CHARACTER_REQUEST = 'SEARCH_EVENT_CHARACTER_REQUEST';
 export const searchEventCharacterRequest = () => ({
-  type: SEARCH_EVENT_CHARACTER_REQUEST,
+  type: actionTypes.SEARCH_EVENT_CHARACTER_REQUEST,
 });
 
-export const SEARCH_EVENT_CHARACTER_SUCCESS = 'SEARCH_EVENT_CHARACTER_SUCCESS';
 export const searchEventCharacterSuccess = (eventCharacter) => ({
-  type: SEARCH_EVENT_CHARACTER_SUCCESS,
+  type: actionTypes.SEARCH_EVENT_CHARACTER_SUCCESS,
   eventCharacter,
 });
 
@@ -74,14 +70,12 @@ export const findEventCharacter = (id) => (dispatch) => {
     .catch((error) => dispatch(findEventError(error)));
 };
 
-export const SEARCH_EVENT_COMIC_REQUEST = 'SEARCH_EVENT_COMIC_REQUEST';
 export const searchEventComicRequest = () => ({
-  type: SEARCH_EVENT_COMIC_REQUEST,
+  type: actionTypes.SEARCH_EVENT_COMIC_REQUEST,
 });
 
-export const SEARCH_EVENT_COMIC_SUCCESS = 'SEARCH_EVENT_COMIC_SUCCESS';
 export const searchEventComicSuccess = (eventComic) => ({
-  type: SEARCH_EVENT_COMIC_SUCCESS,
+  type: actionTypes.SEARCH_EVENT_COMIC_SUCCESS,
   eventComic,
 });
 

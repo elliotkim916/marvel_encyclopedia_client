@@ -1,12 +1,4 @@
-import {
-  SEARCH_CHARACTER_REQUEST,
-  SEARCH_CHARACTER_SUCCESS,
-  SEARCH_CHARACTER_COMIC_REQUEST,
-  SEARCH_CHARACTER_COMIC_SUCCESS,
-  SEARCH_CHARACTER_EVENT_REQUEST,
-  SEARCH_CHARACTER_EVENT_SUCCESS,
-  SEARCH_CHARACTER_ERROR,
-} from '../actions/characters';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   searchedCharacter: {},
@@ -54,19 +46,19 @@ const searchCharacterError = (state, action) => {
 
 export default function characterReducer(state = initialState, action) {
   switch (action.type) {
-    case SEARCH_CHARACTER_REQUEST:
+    case actionTypes.SEARCH_CHARACTER_REQUEST:
       return searchCharacterRequest(state, action);
-    case SEARCH_CHARACTER_COMIC_REQUEST:
+    case actionTypes.SEARCH_CHARACTER_COMIC_REQUEST:
       return searchCharacterComicRequest(state, action);
-    case SEARCH_CHARACTER_EVENT_REQUEST:
+    case actionTypes.SEARCH_CHARACTER_EVENT_REQUEST:
       return searchCharacterEventRequest(state, action);
-    case SEARCH_CHARACTER_SUCCESS:
+    case actionTypes.SEARCH_CHARACTER_SUCCESS:
       return searchCharacterSuccess(state, action);
-    case SEARCH_CHARACTER_COMIC_SUCCESS:
+    case actionTypes.SEARCH_CHARACTER_COMIC_SUCCESS:
       return searchCharacterComicSuccess(state, action);
-    case SEARCH_CHARACTER_EVENT_SUCCESS:
+    case actionTypes.SEARCH_CHARACTER_EVENT_SUCCESS:
       return searchCharacterEventSuccess(state, action);
-    case SEARCH_CHARACTER_ERROR:
+    case actionTypes.SEARCH_CHARACTER_ERROR:
       return searchCharacterError(state, action);
     default:
       return state;

@@ -1,9 +1,4 @@
-import {
-  CREATE_USER_REQUEST,
-  CREATE_USER_SUCCESS,
-  CREATE_USER_ERROR,
-  CLEAR_CREATE_USER_ERROR,
-} from '../actions/users';
+import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   user: null,
@@ -30,13 +25,13 @@ const clearCreateUserError = (state, action) => {
 
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
-    case CREATE_USER_REQUEST:
+    case actionTypes.CREATE_USER_REQUEST:
       return createUserRequest(state, action);
-    case CREATE_USER_SUCCESS:
+    case actionTypes.CREATE_USER_SUCCESS:
       return createUserSuccess(state, action);
-    case CREATE_USER_ERROR:
+    case actionTypes.CREATE_USER_ERROR:
       return createUserError(state, action);
-    case CLEAR_CREATE_USER_ERROR:
+    case actionTypes.CLEAR_CREATE_USER_ERROR:
       return clearCreateUserError(state, action);
     default:
       return state;
