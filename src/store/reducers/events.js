@@ -47,7 +47,7 @@ const searchEventComicSuccess = (state, action) => {
   return { ...state, eventComic: action.eventComic, loading: false };
 };
 
-export function eventReducer(state = initialState, action) {
+export default function eventReducer(state = initialState, action) {
   switch (action.type) {
     case FIND_EVENT_REQUEST:
       return findEventRequest(state, action);

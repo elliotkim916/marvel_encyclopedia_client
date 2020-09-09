@@ -1,4 +1,4 @@
-import { characterReducer } from './characters';
+import characterReducer from './characters';
 
 describe('characterReducer', () => {
   it('Should set the initial state when nothing is passed in', () => {

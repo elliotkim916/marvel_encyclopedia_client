@@ -52,7 +52,7 @@ const searchCharacterError = (state, action) => {
   return { ...state, loading: false, error: action.error };
 };
 
-export function characterReducer(state = initialState, action) {
+export default function characterReducer(state = initialState, action) {
   switch (action.type) {
     case SEARCH_CHARACTER_REQUEST:
       return searchCharacterRequest(state, action);

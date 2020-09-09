@@ -33,7 +33,7 @@ const findComicError = (state, action) => {
   return { ...state, error: action.error, loading: false };
 };
 
-export function comicReducer(state = initialState, action) {
+export default function comicReducer(state = initialState, action) {
   switch (action.type) {
     case FIND_COMIC_REQUEST:
       return findComicRequest(state, action);
