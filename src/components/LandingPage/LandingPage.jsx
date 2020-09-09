@@ -1,11 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-
 import TopNav from './TopNav/TopNav';
 import InfoSection from './InfoSection/InfoSection';
 
-const LandingPage = ({ loggedIn }) => {
+const LandingPage = () => {
+  const loggedIn = useSelector((state) => state.auth.currentUser !== null);
+
   if (loggedIn) {
     return <Redirect to="/dashboard" />;
   }
@@ -18,8 +19,4 @@ const LandingPage = ({ loggedIn }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  loggedIn: state.auth.currentUser !== null,
-});
-
-export default connect(mapStateToProps)(LandingPage);
+export default LandingPage;
