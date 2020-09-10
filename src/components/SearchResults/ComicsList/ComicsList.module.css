@@ -50,10 +50,11 @@
 }
 
 .comic-history {
+  list-style-type: none;
   cursor: pointer;
   margin-top: 70px;
   display: inline-block;
-  width: 350px;
+  width: 300px;
 }
 
 .comic-cover-img {
@@ -113,6 +114,11 @@
 
 .comics-list-all {
   margin-left: -25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (max-width: 698px) {
@@ -135,7 +141,7 @@
 @media only screen and (min-width: 765px) {
   .comic-history {
     margin-bottom: 80px;
-    width: 350px;
+    width: 300px;
   }
 
   .more-comics-link {

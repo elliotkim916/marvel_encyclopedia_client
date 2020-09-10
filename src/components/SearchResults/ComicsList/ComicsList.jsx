@@ -25,7 +25,7 @@ const ComicsList = ({ loading, comic, loggedIn, character }) => {
       <header className="comics-list-header">
         <h2 className="h2">COMIC BOOK APPEARANCES</h2>
       </header>
-      <ul className="comics-list-all">{renderResults()}</ul>
+      {renderResults()}
       <div className="more-comics-link">
         <a
           href={urls[2]}

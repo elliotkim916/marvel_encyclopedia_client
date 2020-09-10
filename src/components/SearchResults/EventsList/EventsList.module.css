@@ -25,7 +25,7 @@
 .event-history {
   cursor: pointer;
   display: inline-block;
-  width: 350px;
+  width: 300px;
   margin-top: 70px;
 }
 
@@ -60,7 +60,11 @@
 }
 
 .events-list-all {
-  margin-left: -20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .event-header,
@@ -116,7 +120,7 @@
 @media only screen and (min-width: 765px) {
   .event-history {
     margin-bottom: 80px;
-    width: 350px;
+    width: 300px;
   }
 
   .event-title {
