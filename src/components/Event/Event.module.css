@@ -2,13 +2,17 @@
   color: #000000;
 }
 
-.event-character-list,
 .event-comic-list {
-  margin-left: -20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
 }
 
 .event-character-list {
-  padding-bottom: 35px;
+  padding: 0 0 35px 0;
 }
 
 .event-links {
@@ -120,7 +124,7 @@
   font-size: 20px;
   color: black;
   cursor: pointer;
-  margin-bottom: 40px;
+  margin: 70px 0 20px 0;
 }
 
 .more-link:hover,

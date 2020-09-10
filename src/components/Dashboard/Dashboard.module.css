@@ -12,7 +12,11 @@
 }
 
 .dashboard-protected-data {
-  margin-top: -5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .remove-comic-btn {
@@ -73,9 +77,9 @@
 
 .read-history {
   cursor: pointer;
-  margin-top: 100px;
   display: inline-block;
-  width: 250px;
+  width: 300px;
+  margin: 70px 0 0 0;
 }
 
 .item-read {
@@ -220,21 +224,8 @@
   }
 }
 
-@media only screen and (min-width: 515px) {
+@media only screen and (min-width: 615px) {
   .comic-text {
-    width: 250px;
-  }
-}
-
-@media only screen and (min-width: 765px) {
-  .read-history {
-    float: left;
-    padding-left: 120px;
-    margin-bottom: 90px;
-  }
-
-  .comic-text {
-    width: 175px;
     height: 100px;
   }
 }

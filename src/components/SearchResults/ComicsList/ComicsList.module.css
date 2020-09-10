@@ -26,9 +26,11 @@
   text-decoration: underline;
 }
 
+.read-later-input {
+  margin-left: 7px;
+}
 .already-read-input,
 .read-later-input {
-  margin-right: 7px;
   width: 120px;
   border-radius: 4px;
   color: white;
@@ -52,9 +54,9 @@
 .comic-history {
   list-style-type: none;
   cursor: pointer;
-  margin-top: 70px;
   display: inline-block;
   width: 300px;
+  margin: 70px 0 20px 0;
 }
 
 .comic-cover-img {
@@ -113,12 +115,23 @@
 }
 
 .comics-list-all {
-  margin-left: -25px;
+  padding-left: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+.more-comics-link {
+  margin: 70px 0 20px 0;
+}
+
+@media only screen and (min-width: 615px) {
+  .comic-history {
+    height: 300px;
+    margin-bottom: 90px;
+  }
 }
 
 @media only screen and (max-width: 698px) {
@@ -127,27 +140,7 @@
   }
 }
 
-@media only screen and (max-width: 765px) {
-  /* .comics-form {
-    padding-right: 40px;
-  } */
-
-  .more-comics-link {
-    margin-top: 70px;
-    margin-bottom: 20px;
-  }
-}
-
 @media only screen and (min-width: 765px) {
-  .comic-history {
-    margin-bottom: 80px;
-    width: 300px;
-  }
-
-  .more-comics-link {
-    margin-bottom: 40px;
-  }
-
   .comic-title-link {
     width: 300px;
     margin: 0 auto;

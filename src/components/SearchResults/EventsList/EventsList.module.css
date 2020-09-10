@@ -26,7 +26,7 @@
   cursor: pointer;
   display: inline-block;
   width: 300px;
-  margin-top: 70px;
+  margin: 70px 0 20px 0;
 }
 
 .event-cover-img:hover,
@@ -60,6 +60,7 @@
 }
 
 .events-list-all {
+  padding-left: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -105,12 +106,6 @@
   font-size: 30px;
 }
 
-@media only screen and (max-width: 400px) {
-  .event-history {
-    padding-right: 40px;
-  }
-}
-
 @media only screen and (max-width: 698px) {
   .event-header {
     font-size: 1.5em;
@@ -118,11 +113,6 @@
 }
 
 @media only screen and (min-width: 765px) {
-  .event-history {
-    margin-bottom: 80px;
-    width: 300px;
-  }
-
   .event-title {
     width: 200px;
   }
